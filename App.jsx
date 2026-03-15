@@ -701,8 +701,102 @@ const TOOLBOXEN_DATA = [
   },
 ];
 
-// ─── CERTIFICATEN → zie TEAM_ATTESTEN hierboven ───────────────────────────────
-// Eigen attesten worden opgezocht in TEAM_ATTESTEN op basis van user.name
+// ─── CERTIFICATEN — 93 medewerkers uit Excel ─────────────────────────────────
+const TEAM_ATTESTEN = [
+  {id:10,name:"Rachid Akdim",avatar:"RA",functie:"Zifter",role:"medewerker",attesten:[{naam:"Vrachtwagen",verval:"01/10/2029",status:"ok"},{naam:"Wiellader",verval:"01/10/2029",status:"ok"},{naam:"Wieldumper",verval:"01/10/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:11,name:"Ceyhan Arbil",avatar:"CA",functie:"Onderhoudselectricien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"28/09/2028",status:"ok"},{naam:"Vorkheftruck",verval:"28/09/2028",status:"ok"},{naam:"BA4",verval:"24/10/2028",status:"ok"},{naam:"BA5",verval:"25/10/2028",status:"ok"}]},
+  {id:12,name:"Dominique Audin",avatar:"DA",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"28/11/2023",status:"verlopen"},{naam:"Vrachtwagen",verval:"28/11/2028",status:"ok"},{naam:"Wiellader",verval:"28/11/2028",status:"ok"},{naam:"BA4",verval:"14/01/2027",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"12/07/2021",status:"verlopen"},{naam:"EHBO",verval:"07/04/2024",status:"verlopen"}]},
+  {id:13,name:"Kris Augusteyns",avatar:"KA",functie:"Sterhoek",role:"medewerker",attesten:[{naam:"Bobcat",verval:"09/07/2029",status:"ok"},{naam:"Wiellader",verval:"08/07/2029",status:"ok"},{naam:"Wieldumper",verval:"08/07/2029",status:"ok"},{naam:"doser",verval:"09/07/2029",status:"ok"},{naam:"hydraulische kraan",verval:"08/07/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"06/03/2028",status:"ok"},{naam:"EHBO",verval:"01/03/2024",status:"verlopen"}]},
+  {id:14,name:"Bart Blijweert",avatar:"BB",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"23/01/2024",status:"verlopen"},{naam:"Wiellader",verval:"23/01/2024",status:"verlopen"},{naam:"BA4",verval:"12/09/2021",status:"verlopen"}]},
+  {id:15,name:"Abdel-hak Charai",avatar:"AC",functie:"Ploegbaas productie",role:"leidinggevende",attesten:[{naam:"Vorkheftruck",verval:"17/01/2029",status:"ok"},{naam:"Wiellader",verval:"17/01/2029",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"BA5",verval:"23/04/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"27/10/2024",status:"verlopen"}]},
+  {id:16,name:"Abid Bouzambou",avatar:"AB",functie:"Fieldcoach operations",role:"leidinggevende",attesten:[{naam:"Vorkheftruck",verval:"23/01/2024",status:"verlopen"},{naam:"Wiellader",verval:"23/01/2024",status:"verlopen"},{naam:"BA4",verval:"14/01/2027",status:"ok"},{naam:"BA5",verval:"13/01/2027",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"08/07/2021",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"24/04/2024",status:"verlopen"}]},
+  {id:17,name:"Alejandro Compas",avatar:"AC",functie:"Zifter",role:"medewerker",attesten:[{naam:"Vrachtwagen",verval:"20/10/2028",status:"ok"},{naam:"Wiellader",verval:"20/10/2028",status:"ok"},{naam:"Wieldumper",verval:"17/06/2030",status:"ok"},{naam:"BA4",verval:"12/06/2030",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:18,name:"Marc Caluwe",avatar:"MC",functie:"Medewerker cleaning",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"12/01/2026",status:"verlopen"},{naam:"doser",verval:"12/01/2021",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:19,name:"Walter Cant",avatar:"WC",functie:"Medewerker cleaning",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"25/01/2024",status:"verlopen"},{naam:"Toolbox Steenzaagmachine",verval:"07/07/2021",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:20,name:"Andy Van Osselaer",avatar:"AV",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"31/05/2029",status:"ok"},{naam:"Vrachtwagen",verval:"16/06/2028",status:"ok"},{naam:"Wiellader",verval:"12/07/2028",status:"ok"},{naam:"Wieldumper",verval:"31/05/2029",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:21,name:"Ayad Tatar Aziz",avatar:"AT",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Wiellader",verval:"13/09/2029",status:"ok"},{naam:"BA4",verval:"12/06/2030",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:22,name:"Bert Verbraeken",avatar:"BV",functie:"Fieldcoach operations",role:"leidinggevende",attesten:[{naam:"Hoogtewerker",verval:"11/12/2028",status:"ok"},{naam:"Vorkheftruck",verval:"11/12/2028",status:"ok"},{naam:"Vrachtwagen",verval:"11/12/2028",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"11/12/2028",status:"ok"},{naam:"Overslagkraan",verval:"11/12/2028",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"11/01/2027",status:"ok"},{naam:"BA5",verval:"23/04/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"07/04/2024",status:"verlopen"}]},
+  {id:23,name:"Frederic Colman",avatar:"FC",functie:"",role:"medewerker",attesten:[{naam:"hydraulische kraan",verval:"12/09/2016",status:"verlopen"},{naam:"BA4",verval:"13/06/2030",status:"ok"}]},
+  {id:24,name:"Billal Rajib",avatar:"BR",functie:"Zifter",role:"medewerker",attesten:[{naam:"Vrachtwagen",verval:"28/01/2027",status:"ok"},{naam:"Wiellader",verval:"20/11/2030",status:"ok"},{naam:"BA4",verval:"14/01/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:25,name:"Franck connor",avatar:"FC",functie:"",role:"medewerker",attesten:[{naam:"BA4",verval:"13/06/2030",status:"ok"}]},
+  {id:26,name:"Romario De Backer",avatar:"RD",functie:"Sterhoek",role:"medewerker",attesten:[{naam:"Bobcat",verval:"09/07/2029",status:"ok"},{naam:"Wiellader",verval:"08/07/2029",status:"ok"},{naam:"Overslagkraan",verval:"08/09/2027",status:"ok"},{naam:"Wieldumper",verval:"08/07/2029",status:"ok"},{naam:"doser",verval:"09/07/2029",status:"ok"},{naam:"hydraulische kraan",verval:"08/07/2029",status:"ok"},{naam:"EHBO",verval:"01/05/2024",status:"verlopen"}]},
+  {id:27,name:"Petrus De Block",avatar:"PD",functie:"Onderhoudsmecanicien",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"25/01/2024",status:"verlopen"},{naam:"BA4",verval:"03/01/2029",status:"ok"}]},
+  {id:28,name:"Dany Smet",avatar:"DS",functie:"Onderhoudsmecanicien",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"23/01/2024",status:"verlopen"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:29,name:"David Boeckling",avatar:"DB",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"16/01/2029",status:"ok"},{naam:"Vorkheftruck",verval:"16/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"16/01/2029",status:"ok"},{naam:"Wiellader",verval:"16/01/2029",status:"ok"},{naam:"Wieldumper",verval:"16/01/2029",status:"ok"},{naam:"BA4",verval:"14/01/2027",status:"ok"},{naam:"BA5",verval:"23/04/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:30,name:"Kenny De Groot",avatar:"KD",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vrachtwagen",verval:"20/08/2029",status:"ok"},{naam:"Wieldumper",verval:"20/08/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:31,name:"Mario De Jonghe",avatar:"MD",functie:"Medewerker Groeve",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"14/12/2028",status:"ok"},{naam:"Wiellader",verval:"15/05/2029",status:"ok"},{naam:"Overslagkraan",verval:"14/12/2028",status:"ok"},{naam:"Wieldumper",verval:"15/05/2029",status:"ok"},{naam:"hydraulische kraan",verval:"08/07/2029",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:32,name:"Guido De Keersmaeker",avatar:"GD",functie:"Medewerker belading",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"12/10/2028",status:"ok"},{naam:"Vrachtwagen",verval:"12/10/2028",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"04/01/2028",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"13/06/2030",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"24/04/2024",status:"verlopen"}]},
+  {id:33,name:"Franky Vermeulen",avatar:"FV",functie:"Onderhoudsmecanicien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"08/10/2028",status:"ok"},{naam:"Vorkheftruck",verval:"08/10/2028",status:"ok"},{naam:"BA4",verval:"09/05/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"22/09/2024",status:"verlopen"}]},
+  {id:34,name:"Johny De Maeyer",avatar:"JD",functie:"Medewerker belading",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"03/09/2024",status:"verlopen"},{naam:"Vrachtwagen",verval:"03/09/2024",status:"verlopen"},{naam:"Overslagkraan",verval:"08/09/2027",status:"ok"}]},
+  {id:35,name:"Mario De Wilde",avatar:"MD",functie:"Medewerker belading",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"14/05/2029",status:"ok"},{naam:"Vorkheftruck",verval:"14/05/2029",status:"ok"},{naam:"Vrachtwagen",verval:"16/10/2028",status:"ok"},{naam:"Wiellader",verval:"16/10/2028",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"09/08/2024",status:"verlopen"}]},
+  {id:36,name:"Geert Cleys",avatar:"GC",functie:"Onderhoudsmecanicien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"24/03/2030",status:"ok"},{naam:"Vorkheftruck",verval:"24/03/2030",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"BA5",verval:"06/01/2031",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:37,name:"Hamid Diba",avatar:"HD",functie:"Zifter",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"31/05/2029",status:"ok"},{naam:"Vrachtwagen",verval:"12/04/2028",status:"ok"},{naam:"Wiellader",verval:"26/04/2028",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"BA5",verval:"06/01/2031",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:38,name:"Jean-Pierre De Keersmaeker",avatar:"JD",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"14/05/2029",status:"ok"},{naam:"Vorkheftruck",verval:"09/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"11/09/2028",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"09/01/2029",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"11/01/2027",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"02/08/2021",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"24/04/2024",status:"verlopen"}]},
+  {id:39,name:"Johan Vercruyssen",avatar:"JV",functie:"Onderhoudsmecanicien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"14/03/2029",status:"ok"},{naam:"Roterende verreiker",verval:"15/09/2030",status:"ok"},{naam:"Vorkheftruck",verval:"24/03/2030",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:40,name:"Johnny Felix",avatar:"JF",functie:"Ploegbaas productie",role:"leidinggevende",attesten:[{naam:"Hoogtewerker",verval:"16/01/2029",status:"ok"},{naam:"Vorkheftruck",verval:"16/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"16/01/2029",status:"ok"},{naam:"Wiellader",verval:"16/01/2029",status:"ok"},{naam:"Wieldumper",verval:"16/01/2029",status:"ok"},{naam:"BA4",verval:"14/01/2027",status:"ok"},{naam:"BA5",verval:"04/05/2027",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"06/07/2021",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:41,name:"Yousef Haij Assaf",avatar:"YH",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"06/03/2020",status:"verlopen"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"13/06/2030",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:42,name:"Arthur Henkie",avatar:"AH",functie:"Sterhoek_allround",role:"medewerker",attesten:[{naam:"Overslagkraan",verval:"08/09/2027",status:"ok"},{naam:"Wieldumper",verval:"14/03/2029",status:"ok"},{naam:"Asbest-Eenvoudige handelingen",verval:"09/09/2023",status:"verlopen"},{naam:"EHBO",verval:"01/03/2024",status:"verlopen"}]},
+  {id:43,name:"Glenn Hens",avatar:"GH",functie:"Sterhoek_allround",role:"medewerker",attesten:[{naam:"Bobcat",verval:"09/07/2029",status:"ok"},{naam:"Wiellader",verval:"08/07/2029",status:"ok"},{naam:"Overslagkraan",verval:"08/09/2027",status:"ok"},{naam:"Wieldumper",verval:"08/07/2029",status:"ok"},{naam:"doser",verval:"09/07/2029",status:"ok"},{naam:"hydraulische kraan",verval:"08/07/2029",status:"ok"},{naam:"Asbest-Eenvoudige handelingen",verval:"09/09/2023",status:"verlopen"}]},
+  {id:44,name:"Kenny Hens",avatar:"KH",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"25/01/2029",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"25/01/2029",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"14/01/2027",status:"ok"},{naam:"BA5",verval:"04/05/2027",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"18/05/2022",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:45,name:"Jurgen De Grave",avatar:"JD",functie:"Onderhoudselectricien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"13/09/2028",status:"ok"},{naam:"Vorkheftruck",verval:"13/09/2028",status:"ok"},{naam:"BA4",verval:"09/05/2027",status:"ok"},{naam:"BA5",verval:"14/06/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"07/04/2024",status:"verlopen"}]},
+  {id:46,name:"Irmgart Hooftman",avatar:"IH",functie:"Expeditie",role:"medewerker",attesten:[{naam:"EHBO",verval:"24/04/2024",status:"verlopen"}]},
+  {id:47,name:"Kjel Ivens",avatar:"KI",functie:"Onderhoudsmecanicien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"25/01/2024",status:"verlopen"},{naam:"Vorkheftruck",verval:"25/01/2024",status:"verlopen"},{naam:"BA4",verval:"09/05/2027",status:"ok"}]},
+  {id:48,name:"Abdelouahhab Jerroudi",avatar:"AJ",functie:"Medewerker Groeve",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"15/05/2029",status:"ok"},{naam:"Vorkheftruck",verval:"20/09/2029",status:"ok"},{naam:"Wiellader",verval:"15/05/2029",status:"ok"},{naam:"Wieldumper",verval:"15/05/2029",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:49,name:"Mehdi Jerroudi",avatar:"MJ",functie:"Medewerker Groeve",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"20/09/2029",status:"ok"},{naam:"Bobcat",verval:"28/03/2029",status:"ok"},{naam:"Wiellader",verval:"15/05/2029",status:"ok"},{naam:"Wieldumper",verval:"15/05/2029",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:50,name:"Tom Marcelis",avatar:"TM",functie:"Medewerker rollend materieel",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"11/12/2028",status:"ok"},{naam:"Vorkheftruck",verval:"11/12/2028",status:"ok"},{naam:"Vrachtwagen",verval:"11/12/2028",status:"ok"},{naam:"Bobcat",verval:"11/12/2028",status:"ok"},{naam:"Wiellader",verval:"11/12/2028",status:"ok"},{naam:"Overslagkraan",verval:"08/09/2027",status:"ok"},{naam:"Wieldumper",verval:"11/12/2028",status:"ok"},{naam:"BA4",verval:"09/05/2027",status:"ok"},{naam:"BA5",verval:"12/08/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:51,name:"Kawar Musa Ali",avatar:"KM",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"17/01/2029",status:"ok"},{naam:"Wiellader",verval:"17/01/2029",status:"ok"},{naam:"BA4",verval:"09/05/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:52,name:"Stefan Onghena",avatar:"SO",functie:"Medewerker Belading",role:"medewerker",attesten:[{naam:"Wieldumper",verval:"18/03/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:53,name:"Kayne Capon",avatar:"KC",functie:"Zifter",role:"medewerker",attesten:[{naam:"Vrachtwagen",verval:"18/08/2028",status:"ok"},{naam:"Wiellader",verval:"07/11/2028",status:"ok"},{naam:"Wieldumper",verval:"07/11/2028",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:54,name:"Jarno Paternoster",avatar:"JP",functie:"Opzak",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"23/02/2028",status:"ok"},{naam:"Wiellader",verval:"23/02/2028",status:"ok"},{naam:"Wieldumper",verval:"18/03/2029",status:"ok"}]},
+  {id:55,name:"Kenny Vercauteren",avatar:"KV",functie:"Ploegbaas productie",role:"leidinggevende",attesten:[{naam:"Vorkheftruck",verval:"25/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"25/01/2029",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"25/01/2029",status:"ok"},{naam:"Overslagkraan",verval:"23/01/2029",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"14/01/2027",status:"ok"},{naam:"BA5",verval:"23/04/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"01/06/2024",status:"verlopen"}]},
+  {id:56,name:"Mario Pelgrims",avatar:"MP",functie:"Sterhoek",role:"medewerker",attesten:[{naam:"Bobcat",verval:"09/07/2029",status:"ok"},{naam:"Wiellader",verval:"08/07/2029",status:"ok"},{naam:"Wieldumper",verval:"08/07/2029",status:"ok"},{naam:"doser",verval:"09/07/2029",status:"ok"},{naam:"hydraulische kraan",verval:"08/07/2029",status:"ok"}]},
+  {id:57,name:"Johan Praet",avatar:"JP",functie:"Sterhoek",role:"medewerker",attesten:[{naam:"Bobcat",verval:"09/07/2029",status:"ok"},{naam:"Wiellader",verval:"08/07/2029",status:"ok"},{naam:"Wieldumper",verval:"08/07/2029",status:"ok"},{naam:"doser",verval:"09/07/2029",status:"ok"},{naam:"hydraulische kraan",verval:"08/07/2029",status:"ok"},{naam:"EHBO",verval:"01/05/2024",status:"verlopen"}]},
+  {id:58,name:"Khalil Shekri",avatar:"KS",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Wiellader",verval:"03/07/2029",status:"ok"},{naam:"BA4",verval:"12/06/2030",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:59,name:"Gert Rotthier",avatar:"GR",functie:"Verantwoordelijke rollend materieel",role:"medewerker",attesten:[{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"07/04/2024",status:"verlopen"}]},
+  {id:60,name:"Boris Saman",avatar:"BS",functie:"Medewerker Labo",role:"medewerker",attesten:[{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:61,name:"Joost Schillemans",avatar:"JS",functie:"Sterhoek",role:"medewerker",attesten:[{naam:"Bobcat",verval:"09/07/2029",status:"ok"},{naam:"Wiellader",verval:"08/07/2029",status:"ok"},{naam:"Wieldumper",verval:"08/07/2029",status:"ok"},{naam:"doser",verval:"09/07/2029",status:"ok"},{naam:"hydraulische kraan",verval:"08/07/2029",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"}]},
+  {id:62,name:"Martine Schols",avatar:"MS",functie:"Medewerker cleaning",role:"medewerker",attesten:[{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:63,name:"Guy Seghers",avatar:"GS",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"24/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"24/01/2029",status:"ok"},{naam:"Wiellader",verval:"24/01/2029",status:"ok"},{naam:"Wieldumper",verval:"24/01/2029",status:"ok"},{naam:"BA4",verval:"11/01/2027",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"02/08/2021",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:64,name:"Kovan Tondeleir",avatar:"KT",functie:"Ploegbaas productie",role:"leidinggevende",attesten:[{naam:"Hoogtewerker",verval:"16/01/2029",status:"ok"},{naam:"Vorkheftruck",verval:"16/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"16/01/2029",status:"ok"},{naam:"Wiellader",verval:"16/01/2029",status:"ok"},{naam:"Wieldumper",verval:"16/01/2029",status:"ok"},{naam:"BA4",verval:"14/01/2027",status:"ok"},{naam:"BA5",verval:"14/06/2027",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"04/08/2021",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"27/10/2024",status:"verlopen"}]},
+  {id:65,name:"Kristof Desmedt",avatar:"KD",functie:"Onderhoudselectricien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"24/01/2030",status:"ok"},{naam:"Vorkheftruck",verval:"24/01/2030",status:"ok"},{naam:"BA5",verval:"06/01/2031",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:66,name:"Jonathan Smeets",avatar:"JS",functie:"Medewerker belading",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"12/10/2028",status:"ok"},{naam:"Vrachtwagen",verval:"12/10/2028",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"12/10/2028",status:"ok"},{naam:"Overslagkraan",verval:"08/09/2027",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:67,name:"Luis Gonzalez",avatar:"LG",functie:"Onderhoudsmecanicien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"19/06/2025",status:"verlopen"},{naam:"Vorkheftruck",verval:"06/07/2025",status:"verlopen"}]},
+  {id:68,name:"Lucien Smet",avatar:"LS",functie:"Medewerker belading",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"16/12/2028",status:"ok"},{naam:"Vorkheftruck",verval:"16/12/2028",status:"ok"},{naam:"Vrachtwagen",verval:"16/12/2028",status:"ok"},{naam:"Wiellader",verval:"16/12/2028",status:"ok"},{naam:"Overslagkraan",verval:"08/09/2027",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"18/05/2022",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"07/04/2024",status:"verlopen"}]},
+  {id:69,name:"Yves Spillemaeckers",avatar:"YS",functie:"Fieldcoach groeve",role:"leidinggevende",attesten:[{naam:"Vorkheftruck",verval:"14/12/2028",status:"ok"},{naam:"Bobcat",verval:"09/07/2029",status:"ok"},{naam:"Wiellader",verval:"08/07/2029",status:"ok"},{naam:"Overslagkraan",verval:"14/12/2028",status:"ok"},{naam:"Wieldumper",verval:"08/07/2029",status:"ok"},{naam:"doser",verval:"09/07/2029",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"Asbest-Eenvoudige handelingen",verval:"09/09/2023",status:"verlopen"}]},
+  {id:70,name:"Kasper Tassent",avatar:"KT",functie:"Medewerker Labo",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"22/05/2025",status:"verlopen"}]},
+  {id:71,name:"Malakzai Ziaullah",avatar:"MZ",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"20/09/2029",status:"ok"},{naam:"Vrachtwagen",verval:"04/02/2030",status:"ok"},{naam:"Wiellader",verval:"13/09/2029",status:"ok"},{naam:"Wieldumper",verval:"04/02/2030",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:72,name:"Maneebut Thanechot",avatar:"MT",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Wiellader",verval:"02/04/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:73,name:"Mohamed Fattah",avatar:"MF",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"10/01/2029",status:"ok"},{naam:"Wiellader",verval:"10/01/2029",status:"ok"},{naam:"BA4",verval:"11/01/2027",status:"ok"},{naam:"BA5",verval:"06/01/2031",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:74,name:"Zahir Topcu",avatar:"ZT",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Wiellader",verval:"20/03/2028",status:"ok"}]},
+  {id:75,name:"Sandra Van Grootel",avatar:"SV",functie:"Adm. Bediende Sterhoek",role:"medewerker",attesten:[{naam:"EHBO",verval:"01/05/2024",status:"verlopen"}]},
+  {id:76,name:"Nicholas Hermans",avatar:"NH",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"09/01/2029",status:"ok"},{naam:"Wiellader",verval:"09/01/2029",status:"ok"},{naam:"BA4",verval:"11/01/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:77,name:"Nickolay Brodelet",avatar:"NB",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"09/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"18/01/2029",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"09/01/2029",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"11/01/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"24/04/2024",status:"verlopen"}]},
+  {id:78,name:"Filip Van Landeghem",avatar:"FV",functie:"Medewerker Groeve",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"15/05/2029",status:"ok"},{naam:"Vorkheftruck",verval:"25/01/2024",status:"verlopen"},{naam:"Wiellader",verval:"15/05/2029",status:"ok"},{naam:"Wieldumper",verval:"15/05/2029",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:79,name:"Jasper Van der Meiren",avatar:"JV",functie:"",role:"medewerker",attesten:[{naam:"Roterende verreiker",verval:"15/09/2030",status:"ok"}]},
+  {id:80,name:"Pascal Van Roeyen",avatar:"PV",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Roterende verreiker",verval:"15/09/2030",status:"ok"},{naam:"Vorkheftruck",verval:"10/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"12/10/2028",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"10/01/2029",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"11/01/2027",status:"ok"},{naam:"BA5",verval:"23/04/2029",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"07/07/2021",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:81,name:"Alain Van Raemdonck",avatar:"AV",functie:"Medewerker belading",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"15/10/2028",status:"ok"},{naam:"Vrachtwagen",verval:"15/10/2028",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Overslagkraan",verval:"08/09/2027",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:82,name:"Kurt Van Raemdonck",avatar:"KV",functie:"Sterhoek_allround",role:"medewerker",attesten:[{naam:"Wieldumper",verval:"14/03/2029",status:"ok"},{naam:"Asbest-Eenvoudige handelingen",verval:"09/09/2023",status:"verlopen"}]},
+  {id:83,name:"Peter Van Raemdonck",avatar:"PV",functie:"Sterhoek",role:"medewerker",attesten:[{naam:"Wiellader",verval:"08/07/2029",status:"ok"},{naam:"Wieldumper",verval:"08/07/2029",status:"ok"},{naam:"hydraulische kraan",verval:"08/07/2029",status:"ok"},{naam:"Asbest-Eenvoudige handelingen",verval:"09/09/2023",status:"verlopen"},{naam:"EHBO",verval:"01/05/2024",status:"verlopen"}]},
+  {id:84,name:"Hans Vanuytsel",avatar:"HV",functie:"Sterhoek_allround",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"28/01/2024",status:"verlopen"},{naam:"Vorkheftruck",verval:"28/01/2024",status:"verlopen"},{naam:"Bobcat",verval:"09/07/2029",status:"ok"},{naam:"Wiellader",verval:"08/07/2029",status:"ok"},{naam:"Overslagkraan",verval:"08/09/2027",status:"ok"},{naam:"Wieldumper",verval:"08/07/2029",status:"ok"},{naam:"doser",verval:"09/07/2029",status:"ok"},{naam:"hydraulische kraan",verval:"08/07/2029",status:"ok"},{naam:"Asbest-Eenvoudige handelingen",verval:"09/09/2023",status:"verlopen"}]},
+  {id:85,name:"Senne Penneman",avatar:"SP",functie:"Onderhoudsmecanicien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"19/02/2031",status:"ok"},{naam:"Vorkheftruck",verval:"03/12/2025",status:"verlopen"}]},
+  {id:86,name:"Sonny Pagnon",avatar:"SP",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"10/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"12/10/2028",status:"ok"},{naam:"Wiellader",verval:"10/01/2029",status:"ok"},{naam:"BA4",verval:"11/01/2027",status:"ok"},{naam:"BA5",verval:"06/01/2031",status:"ok"},{naam:"Toolbox Steenzaagmachine",verval:"18/10/2022",status:"verlopen"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:87,name:"Stef Paternoster",avatar:"SP",functie:"Opzak",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"19/02/2031",status:"ok"},{naam:"Roterende verreiker",verval:"15/09/2030",status:"ok"},{naam:"Vorkheftruck",verval:"05/10/2027",status:"ok"},{naam:"Vrachtwagen",verval:"22/04/2030",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"18/10/2027",status:"ok"},{naam:"Overslagkraan",verval:"20/01/2031",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"01/06/2024",status:"verlopen"}]},
+  {id:88,name:"Steven Van Kersschaver",avatar:"SV",functie:"Verantwoordelijke onderhoud",role:"medewerker",attesten:[{naam:"BA4",verval:"09/05/2027",status:"ok"},{naam:"BA5",verval:"14/06/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"22/09/2024",status:"verlopen"}]},
+  {id:89,name:"Pauwel Vergauwen",avatar:"PV",functie:"Ploegbaas Belading",role:"leidinggevende",attesten:[{naam:"Vorkheftruck",verval:"25/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"25/01/2029",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"25/01/2029",status:"ok"},{naam:"Overslagkraan",verval:"23/01/2029",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:90,name:"Tom Vercauteren",avatar:"TV",functie:"Onderhoudselectricien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"29/03/2028",status:"ok"},{naam:"Roterende verreiker",verval:"15/09/2030",status:"ok"},{naam:"Vorkheftruck",verval:"29/03/2028",status:"ok"},{naam:"BA4",verval:"09/05/2027",status:"ok"},{naam:"BA5",verval:"12/08/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:91,name:"Dries Vernimmen",avatar:"DV",functie:"Project Ingenieur Sterhoek",role:"medewerker",attesten:[{naam:"Asbest-Eenvoudige handelingen",verval:"09/09/2023",status:"verlopen"},{naam:"EHBO",verval:"07/04/2024",status:"verlopen"}]},
+  {id:92,name:"Nele Vervynckt",avatar:"NV",functie:"Verantwoordelijke Labo",role:"medewerker",attesten:[{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"EHBO",verval:"24/04/2024",status:"verlopen"}]},
+  {id:93,name:"Tony Van Heue",avatar:"TV",functie:"Zifter",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"24/01/2029",status:"ok"},{naam:"Vrachtwagen",verval:"24/01/2029",status:"ok"},{naam:"Bobcat",verval:"04/01/2028",status:"ok"},{naam:"Wiellader",verval:"24/01/2029",status:"ok"},{naam:"Wieldumper",verval:"04/01/2028",status:"ok"},{naam:"BA4",verval:"09/05/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:94,name:"Wesley De Cock",avatar:"WD",functie:"Onderhoudsmecanicien",role:"medewerker",attesten:[{naam:"Hoogtewerker",verval:"23/05/2028",status:"ok"},{naam:"Vorkheftruck",verval:"07/11/2027",status:"ok"},{naam:"BA4",verval:"03/01/2029",status:"ok"},{naam:"BA5",verval:"06/01/2031",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"},{naam:"VCA",verval:"24/02/2025",status:"verlopen"}]},
+  {id:95,name:"Zirivan Shukri",avatar:"ZS",functie:"Operator allround",role:"medewerker",attesten:[{naam:"Vorkheftruck",verval:"17/01/2029",status:"ok"},{naam:"Wiellader",verval:"17/01/2029",status:"ok"},{naam:"BA4",verval:"14/01/2027",status:"ok"},{naam:"toolbox Interne transportmiddelen",verval:"02/02/2030",status:"ok"}]},
+  {id:96,name:"Legende",avatar:"L",functie:"Vrij dringend opleiding inplannen",role:"medewerker",attesten:[]},
+  {id:97,name:"Opleidingen inplannen: Op 02/01/2024 zal ik via het sectorfonds een opleiding BA4 inplannen voor diegene die dit nog niet hebben.",avatar:"OI",functie:"",role:"medewerker",attesten:[]},
+  {id:98,name:"David, Pascal, Abdel en Kenny Vercauteren Mentoropleiding:",avatar:"DP",functie:"1 en 28/09, telkens vanaf 8u op het hoofdkantoor",role:"medewerker",attesten:[]},
+  {id:99,name:"Die van eenvoudige asbesthandelingen staat ingepland op donderdag 04/01/2024",avatar:"DV",functie:"",role:"medewerker",attesten:[]},
+  {id:100,name:"logistieke opleidingen starten op 21/08 en de laatste dag is 13/10.",avatar:"LO",functie:"",role:"medewerker",attesten:[]},
+  {id:101,name:"EHBO: maart 2024 gaat iedereen nog een opfrissingscursus krijgen, zodat iedereen dezelfde geldigheidsdatum heeft.",avatar:"EM",functie:"",role:"medewerker",attesten:[]},
+  {id:102,name:"In elke ploeg moet een nijverheidshelper zitten - dit moet nog bekeken worden.",avatar:"IE",functie:"",role:"medewerker",attesten:[]}
+];
 
 // ─── CONTACTEN ────────────────────────────────────────────────────────────────
 const EHBO_LEDEN = [
@@ -735,12 +829,12 @@ const EHBO_LEDEN = [
 const IDFC_CONTACT = "Johny Bultheel (hoofd IDFC) · Nele Vervynckt · Bert Verbraecken";
 
 const VERTROUWENSPERSONEN = [
-  { naam:"Gert Rotthier",      rol:"Intern vertrouwenspersoon — Argex",       tel:"03/614.37.30", email:"gert.rotthier@argex.be",              desc:"Bereikbaar via Argex. Strikt vertrouwelijk en discreet.", kleur:AX.earth, init:"GR" },
-  { naam:"Jort Melis",         rol:"Intern vertrouwenspersoon — HYE",          tel:"03/250.13.95", email:"jort.melis@hye.be",                    desc:"Bereikbaar via HYE. Strikt vertrouwelijk en discreet.", kleur:AX.earth, init:"JM" },
-  { naam:"Liesbeth De Vylder", rol:"Intern vertrouwenspersoon — Navitec",      tel:"03/614.37.48", email:"liesbeth@navitec.be",                  desc:"Bereikbaar via Navitec. Strikt vertrouwelijk en discreet.", kleur:AX.earth, init:"LD" },
-  { naam:"Marc Van Laeken",    rol:"Intern vertrouwenspersoon — Pylonen De Kerf", tel:"03/614.37.83", email:"marc.vanlaeken@pylonendekerf.be",  desc:"Bereikbaar via Pylonen De Kerf. Strikt vertrouwelijk.", kleur:AX.earth, init:"MV" },
-  { naam:"Nikki Vande Voorde", rol:"Intern vertrouwenspersoon — HYE",          tel:"03/614.38.90", email:"nikki.vandevoorde@hye.be",             desc:"Bereikbaar via HYE. Strikt vertrouwelijk en discreet.", kleur:AX.earth, init:"NV" },
-  { naam:"Liantis — Externe vertrouwenspersoon", rol:"Ext. vertrouwenspersoon (Liantis)", tel:"078 150 200", email:"psy@liantis.be", desc:"Extern gesprek? Liantis is anoniem bereikbaar via 078 150 200 of psy@liantis.be.", kleur:AX.blue, init:"LI" },
+  { naam:"Gert Rotthier",      rol:"Intern vertrouwenspersoon — Argex",          tel:"03/614.37.30", email:"gert.rotthier@argex.be",            desc:"Bereikbaar via Argex. Strikt vertrouwelijk.", kleur:AX.earth, init:"GR" },
+  { naam:"Jort Melis",         rol:"Intern vertrouwenspersoon — HYE",             tel:"03/250.13.95", email:"jort.melis@hye.be",                  desc:"Bereikbaar via HYE. Strikt vertrouwelijk.", kleur:AX.earth, init:"JM" },
+  { naam:"Liesbeth De Vylder", rol:"Intern vertrouwenspersoon — Navitec",         tel:"03/614.37.48", email:"liesbeth@navitec.be",                desc:"Bereikbaar via Navitec. Strikt vertrouwelijk.", kleur:AX.earth, init:"LD" },
+  { naam:"Marc Van Laeken",    rol:"Intern vertrouwenspersoon — Pylonen De Kerf", tel:"03/614.37.83", email:"marc.vanlaeken@pylonendekerf.be",    desc:"Bereikbaar via Pylonen De Kerf.", kleur:AX.earth, init:"MV" },
+  { naam:"Nikki Vande Voorde", rol:"Intern vertrouwenspersoon — HYE",             tel:"03/614.38.90", email:"nikki.vandevoorde@hye.be",           desc:"Bereikbaar via HYE. Strikt vertrouwelijk.", kleur:AX.earth, init:"NV" },
+  { naam:"Liantis — Extern",   rol:"Externe vertrouwenspersoon (Liantis)",        tel:"078 150 200",  email:"psy@liantis.be",                    desc:"Anoniem en gratis: 078 150 200 of psy@liantis.be.", kleur:AX.blue, init:"LI" },
 ];
 
 // ─── NOODPLAN ─────────────────────────────────────────────────────────────────
@@ -1323,12 +1417,12 @@ function Dashboard({ user, setTab }) {
           </Card>
           <div style={{fontSize:11,fontWeight:700,color:AX.gray500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:10}}>Team certificaten</div>
           <Card>
-            {TEAM_ATTESTEN.slice(0,8).map(m=>{
+            {TEAM_ATTESTEN.filter(m=>m.attesten.some(a=>a.status==="verlopen")).slice(0,6).map(m=>{
               const nok=m.attesten.filter(a=>a.status==="verlopen");
-              if(!nok.length||!["leidinggevende","admin"].includes(user.role)) return null;
+              if(!nok.length||!isLead) return null;
               return (<div key={m.id} style={{marginBottom:10,paddingBottom:10,borderBottom:`1px solid ${AX.gray100}`}}>
                 <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:5}}><Av i={m.avatar} s={26} c={AX.amber}/><span style={{fontSize:13,fontWeight:700,color:AX.gray900}}>{m.name}</span></div>
-                {nok.map((o,i)=><div key={i} style={{marginLeft:34,fontSize:12,color:AX.red,marginBottom:2}}>⚠ {o.naam} — {o.verval}</div>)}
+                {nok.map((a,i)=><div key={i} style={{marginLeft:34,fontSize:12,color:AX.red,marginBottom:2}}>⚠ {a.naam} — verval: {a.verval}</div>)}
               </div>);
             })}
           </Card>
@@ -1533,75 +1627,62 @@ function Toolboxen() {
 
 // ─── OPLEIDINGEN ──────────────────────────────────────────────────────────────
 function Opleidingen({ user }) {
-  const isLead = user.role==="leidinggevende"||user.role==="admin";
-  const [zoek, setZoek] = useState("");
-  const [sel, setSel] = useState(null);
-  const [filterStatus, setFilterStatus] = useState("alles");
+  const isLead=user.role==="leidinggevende"||user.role==="admin";
+  const [sel,setSel]=useState(null);
+  const [zoek,setZoek]=useState("");
+  const [filterStatus,setFilterStatus]=useState("alles");
+  const klr=s=>({ok:AX.green,binnenkort:AX.amber,verlopen:AX.red}[s]||AX.gray400);
+  const lbl=s=>({ok:"Geldig",binnenkort:"Binnenkort",verlopen:"Verlopen"}[s]||s);
 
-  const klrStatus = s => ({ok:AX.green, binnenkort:AX.amber, verlopen:AX.red}[s]||AX.gray500);
-  const lblStatus = s => ({ok:"Geldig", binnenkort:"Vervalt binnenkort", verlopen:"Verlopen"}[s]||s);
+  // Eigen data ophalen uit TEAM_ATTESTEN op basis van naam
+  const eigenData = TEAM_ATTESTEN.find(m=>m.name===user.name)||{name:user.name,attesten:[]};
 
-  // Eigen attesten (medewerker)
-  const eigen = TEAM_ATTESTEN.find(m => m.name === user.name) || 
-                {name:user.name, functie:user.functie, attesten:[]};
-
-  // Attesten kaartje
-  const AttestatCard = ({att}) => (
+  // Detailkaart attesten
+  const AttCard=({att})=>(
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"9px 0",borderBottom:`1px solid ${AX.gray100}`}}>
       <div>
         <div style={{fontSize:13,fontWeight:600,color:AX.gray800}}>{att.naam}</div>
-        <div style={{fontSize:11,color:AX.gray500}}>Geldig tot: <strong style={{color:klrStatus(att.status)}}>{att.verval}</strong></div>
+        <div style={{fontSize:11,color:AX.gray500}}>Geldig tot: <strong style={{color:klr(att.status)}}>{att.verval}</strong></div>
       </div>
-      <Tag label={lblStatus(att.status)} color={klrStatus(att.status)}/>
+      <Tag label={lbl(att.status)} color={klr(att.status)}/>
     </div>
   );
 
-  // Statistieken voor eigen attesten
-  const eigenStats = {
-    ok: eigen.attesten.filter(a=>a.status==="ok").length,
-    binnenkort: eigen.attesten.filter(a=>a.status==="binnenkort").length,
-    verlopen: eigen.attesten.filter(a=>a.status==="verlopen").length,
-  };
-
-  if(!isLead) return (
-    <div className="fu">
-      <SectionHead sub={`${user.functie}`}>Mijn Opleidingen & Attesten</SectionHead>
-      <div style={{display:"flex",gap:8,marginBottom:16}}>
-        {[["ok","Geldig"],["binnenkort","Binnenkort"],["verlopen","Verlopen"]].map(([s,l])=>(
-          <Card key={s} style={{flex:1,textAlign:"center",borderTop:`3px solid ${klrStatus(s)}`}}>
-            <div style={{fontSize:24,fontWeight:900,color:klrStatus(s),fontFamily:"'Work Sans',sans-serif"}}>{eigenStats[s]}</div>
-            <div style={{fontSize:11,color:AX.gray500}}>{l}</div>
-          </Card>
-        ))}
-      </div>
-      {eigen.attesten.length===0
-        ? <Card><div style={{textAlign:"center",color:AX.gray400,padding:20,fontSize:13}}>Geen attesten gevonden voor {user.name}.</div></Card>
-        : <Card>{eigen.attesten.map((a,i)=><AttestatCard key={i} att={a}/>)}</Card>
-      }
-      {eigenStats.verlopen>0&&<Card style={{background:AX.redLight,border:`1px solid ${AX.red}33`,marginTop:12}}>
-        <div style={{fontSize:13,color:AX.red,fontWeight:700}}>⚠ {eigenStats.verlopen} verlopen attest(en) — meld dit aan je leidinggevende voor herinschrijving.</div>
-      </Card>}
-    </div>
-  );
-
-  // LEIDINGGEVENDE / ADMIN — volledig teamoverzicht
-  const gefilterd = TEAM_ATTESTEN
-    .filter(m => zoek==='' || m.name.toLowerCase().includes(zoek.toLowerCase()) || m.functie.toLowerCase().includes(zoek.toLowerCase()))
-    .filter(m => filterStatus==='alles' || m.attesten.some(a=>a.status===filterStatus));
-
-  if(sel) {
-    const m = TEAM_ATTESTEN.find(x=>x.id===sel);
-    const stats = {
-      ok: m.attesten.filter(a=>a.status==="ok").length,
-      binnenkort: m.attesten.filter(a=>a.status==="binnenkort").length,
-      verlopen: m.attesten.filter(a=>a.status==="verlopen").length,
-    };
+  // MEDEWERKER: enkel eigen attesten
+  if(!isLead) {
+    const stats={ok:eigenData.attesten.filter(a=>a.status==="ok").length,binnenkort:eigenData.attesten.filter(a=>a.status==="binnenkort").length,verlopen:eigenData.attesten.filter(a=>a.status==="verlopen").length};
     return (
       <div className="fu">
-        <button onClick={()=>setSel(null)} style={{background:"transparent",border:`1px solid ${AX.gray300}`,color:AX.gray700,padding:"7px 13px",borderRadius:7,cursor:"pointer",fontSize:13,fontFamily:"inherit",marginBottom:20}}>← Terug</button>
+        <SectionHead sub={eigenData.functie||user.functie}>Mijn Opleidingen & Attesten</SectionHead>
+        <div style={{display:"flex",gap:8,marginBottom:16}}>
+          {[["ok","Geldig"],["binnenkort","Binnenkort"],["verlopen","Verlopen"]].map(([s,l])=>(
+            <Card key={s} style={{flex:1,textAlign:"center",borderTop:`3px solid ${klr(s)}`}}>
+              <div style={{fontSize:24,fontWeight:900,color:klr(s),fontFamily:"'Work Sans',sans-serif"}}>{stats[s]}</div>
+              <div style={{fontSize:11,color:AX.gray500}}>{l}</div>
+            </Card>
+          ))}
+        </div>
+        {eigenData.attesten.length===0
+          ? <Card><div style={{textAlign:"center",color:AX.gray400,padding:20,fontSize:13}}>Geen attesten gevonden voor {user.name}. Contacteer HR.</div></Card>
+          : <Card>{eigenData.attesten.map((a,i)=><AttCard key={i} att={a}/>)}</Card>}
+        {stats.verlopen>0&&<Card style={{background:AX.redLight,border:`1px solid ${AX.red}33`,marginTop:12}}>
+          <div style={{fontSize:13,color:AX.red,fontWeight:700}}>⚠ {stats.verlopen} verlopen attest(en) — meld dit aan je leidinggevende.</div>
+        </Card>}
+      </div>
+    );
+  }
+
+  // DETAIL: één medewerker bekijken
+  if(sel) {
+    const m=TEAM_ATTESTEN.find(x=>x.id===sel)||{name:"?",attesten:[]};
+    const stats={ok:m.attesten.filter(a=>a.status==="ok").length,binnenkort:m.attesten.filter(a=>a.status==="binnenkort").length,verlopen:m.attesten.filter(a=>a.status==="verlopen").length};
+    const klrAv=stats.verlopen>0?AX.red:stats.binnenkort>0?AX.amber:AX.green;
+    return (
+      <div className="fu">
+        <button onClick={()=>setSel(null)} style={{background:"transparent",border:`1px solid ${AX.gray300}`,color:AX.gray700,padding:"7px 13px",borderRadius:7,cursor:"pointer",fontSize:13,fontFamily:"inherit",marginBottom:20}}>← Terug overzicht</button>
         <Card>
           <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:16,paddingBottom:14,borderBottom:`1px solid ${AX.gray100}`}}>
-            <Av i={m.avatar} s={46} c={m.attesten.some(a=>a.status==="verlopen")?AX.red:m.attesten.some(a=>a.status==="binnenkort")?AX.amber:AX.green}/>
+            <Av i={m.avatar} s={46} c={klrAv}/>
             <div>
               <div style={{fontSize:16,fontWeight:800,color:AX.gray900}}>{m.name}</div>
               <div style={{fontSize:12,color:AX.clay,fontWeight:600}}>{m.functie}</div>
@@ -1609,24 +1690,26 @@ function Opleidingen({ user }) {
           </div>
           <div style={{display:"flex",gap:8,marginBottom:16}}>
             {[["ok","Geldig"],["binnenkort","Binnenkort"],["verlopen","Verlopen"]].map(([s,l])=>(
-              <div key={s} style={{flex:1,textAlign:"center",padding:"8px 4px",borderRadius:8,background:klrStatus(s)+"15",border:`1px solid ${klrStatus(s)}33`}}>
-                <div style={{fontSize:22,fontWeight:900,color:klrStatus(s)}}>{stats[s]}</div>
+              <div key={s} style={{flex:1,textAlign:"center",padding:"8px 4px",borderRadius:8,background:klr(s)+"15",border:`1px solid ${klr(s)}33`}}>
+                <div style={{fontSize:22,fontWeight:900,color:klr(s)}}>{stats[s]}</div>
                 <div style={{fontSize:10,color:AX.gray500}}>{l}</div>
               </div>
             ))}
           </div>
           {m.attesten.length===0
             ? <div style={{textAlign:"center",color:AX.gray400,padding:16,fontSize:13}}>Geen attesten geregistreerd.</div>
-            : m.attesten.map((a,i)=><AttestatCard key={i} att={a}/>)
-          }
+            : m.attesten.map((a,i)=><AttCard key={i} att={a}/>)}
         </Card>
       </div>
     );
   }
 
-  // Statistieken globaal
-  const totVerlopen = TEAM_ATTESTEN.reduce((n,m)=>n+m.attesten.filter(a=>a.status==="verlopen").length,0);
-  const totBinnenkort = TEAM_ATTESTEN.reduce((n,m)=>n+m.attesten.filter(a=>a.status==="binnenkort").length,0);
+  // OVERZICHT: alle medewerkers voor leidinggevende/admin
+  const gefilterd=TEAM_ATTESTEN
+    .filter(m=>zoek===''||m.name.toLowerCase().includes(zoek.toLowerCase())||m.functie.toLowerCase().includes(zoek.toLowerCase()))
+    .filter(m=>filterStatus==='alles'||m.attesten.some(a=>a.status===filterStatus));
+  const totVerlopen=TEAM_ATTESTEN.reduce((n,m)=>n+m.attesten.filter(a=>a.status==="verlopen").length,0);
+  const totBinnenkort=TEAM_ATTESTEN.reduce((n,m)=>n+m.attesten.filter(a=>a.status==="binnenkort").length,0);
 
   return (
     <div className="fu">
@@ -1634,22 +1717,22 @@ function Opleidingen({ user }) {
       {totVerlopen>0&&<div style={{background:AX.redLight,border:`1px solid ${AX.red}33`,borderRadius:9,padding:"10px 14px",marginBottom:14,fontSize:13,color:AX.red,fontWeight:700}}>
         ⚠ {totVerlopen} verlopen attest(en) bij {TEAM_ATTESTEN.filter(m=>m.attesten.some(a=>a.status==="verlopen")).length} medewerkers
       </div>}
-      <div style={{display:"flex",gap:8,marginBottom:14}}>
+      <div style={{display:"flex",gap:8,marginBottom:12}}>
         <input value={zoek} onChange={e=>setZoek(e.target.value)} placeholder="Zoek naam of functie..." style={{flex:1,border:`1.5px solid ${AX.gray300}`,borderRadius:7,padding:"9px 12px",fontSize:13,fontFamily:"inherit",color:AX.gray900}}/>
-        <select value={filterStatus} onChange={e=>setFilterStatus(e.target.value)} style={{border:`1.5px solid ${AX.gray300}`,borderRadius:7,padding:"9px 10px",fontSize:12,fontFamily:"inherit",color:AX.gray700}}>
-          <option value="alles">Alle</option>
-          <option value="verlopen">Verlopen</option>
-          <option value="binnenkort">Binnenkort</option>
-          <option value="ok">Geldig</option>
+        <select value={filterStatus} onChange={e=>setFilterStatus(e.target.value)} style={{border:`1.5px solid ${AX.gray300}`,borderRadius:7,padding:"9px 10px",fontSize:12,fontFamily:"inherit",color:AX.gray700,background:AX.white}}>
+          <option value="alles">Alle statussen</option>
+          <option value="verlopen">⚠ Verlopen</option>
+          <option value="binnenkort">🕐 Binnenkort</option>
+          <option value="ok">✅ Geldig</option>
         </select>
       </div>
-      <div style={{fontSize:12,color:AX.gray400,marginBottom:10}}>{gefilterd.length} van {TEAM_ATTESTEN.length} medewerkers</div>
+      <div style={{fontSize:11,color:AX.gray400,marginBottom:10}}>{gefilterd.length} van {TEAM_ATTESTEN.length} medewerkers</div>
       {gefilterd.map(m=>{
-        const nVerlopen = m.attesten.filter(a=>a.status==="verlopen").length;
-        const nBinnenkort = m.attesten.filter(a=>a.status==="binnenkort").length;
-        const klrAv = nVerlopen>0?AX.red:nBinnenkort>0?AX.amber:AX.green;
-        return (
-          <Card key={m.id} className="rh" onClick={()=>setSel(m.id)} style={{marginBottom:7,display:"flex",justifyContent:"space-between",alignItems:"center",padding:"11px 14px"}}>
+        const nV=m.attesten.filter(a=>a.status==="verlopen").length;
+        const nB=m.attesten.filter(a=>a.status==="binnenkort").length;
+        const klrAv=nV>0?AX.red:nB>0?AX.amber:AX.green;
+        return(
+          <Card key={m.id} className="rh" onClick={()=>setSel(m.id)} style={{marginBottom:6,display:"flex",justifyContent:"space-between",alignItems:"center",padding:"11px 14px",cursor:"pointer"}}>
             <div style={{display:"flex",gap:10,alignItems:"center"}}>
               <Av i={m.avatar} s={36} c={klrAv}/>
               <div>
@@ -1658,9 +1741,10 @@ function Opleidingen({ user }) {
               </div>
             </div>
             <div style={{display:"flex",gap:5,alignItems:"center"}}>
-              {nVerlopen>0&&<Tag label={`${nVerlopen} verlopen`} color={AX.red}/>}
-              {nBinnenkort>0&&<Tag label={`${nBinnenkort} binnenkort`} color={AX.amber}/>}
-              {nVerlopen===0&&nBinnenkort===0&&m.attesten.length>0&&<Tag label="OK" color={AX.green}/>}
+              {nV>0&&<Tag label={`${nV} verlopen`} color={AX.red}/>}
+              {nB>0&&<Tag label={`${nB} binnenkort`} color={AX.amber}/>}
+              {nV===0&&nB===0&&m.attesten.length>0&&<Tag label="✓ OK" color={AX.green}/>}
+              {m.attesten.length===0&&<Tag label="Geen data" color={AX.gray400}/>}
               <span style={{color:AX.gray300,fontSize:13}}>→</span>
             </div>
           </Card>
@@ -1669,6 +1753,8 @@ function Opleidingen({ user }) {
     </div>
   );
 }
+
+
 
 // ─── NOODPLAN ─────────────────────────────────────────────────────────────────
 function Noodplan() {
