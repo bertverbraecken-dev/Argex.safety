@@ -701,94 +701,139 @@ const TOOLBOXEN_DATA = [
   },
 ];
 
-// ─── CERTIFICATEN ─────────────────────────────────────────────────────────────
-const MIJN_OPL = [
-  { naam:"VCA Basis",              datum:"15-03-2023", verval:"15-03-2026", status:"binnenkort" },
-  { naam:"Heftruck B+C",           datum:"10-01-2024", verval:"10-01-2027", status:"ok"         },
-  { naam:"EHBO Level 1",           datum:"05-06-2023", verval:"05-06-2026", status:"binnenkort" },
-  { naam:"Brandbestrijding BHV",   datum:"12-04-2023", verval:"12-04-2025", status:"verlopen"   },
-];
-
-const TEAM = [
-  { id:2, name:"Georgy Eggermont",  avatar:"GE", functie:"Ploegchef Productie",  afdeling:"Productie", opleidingen:[
-    { naam:"VCA VOL",             datum:"20-09-2023", verval:"20-09-2026", ok:true  },
-    { naam:"Heftruck B+C",        datum:"20-09-2023", verval:"20-09-2026", ok:true  },
-    { naam:"EHBO Level 2",        datum:"15-11-2023", verval:"15-11-2026", ok:true  },
-  ]},
-  { id:3, name:"Medewerker Productie (in te vullen)", avatar:"MP", functie:"Machine-operator", afdeling:"Productie", opleidingen:[
-    { naam:"VCA Basis",           datum:"10-05-2022", verval:"10-05-2025", ok:false },
-    { naam:"Heftruck B+C",        datum:"10-05-2022", verval:"10-05-2025", ok:false },
-    { naam:"EHBO Level 1",        datum:"10-05-2022", verval:"10-05-2025", ok:false },
-  ]},
-  { id:6, name:"Medewerker (in te vullen)", avatar:"??", functie:"Medewerker productie", afdeling:"Productie", opleidingen:[
-    { naam:"VCA Basis", datum:"In te vullen", verval:"In te vullen", ok:true },
-  ]},
-];
+// ─── CERTIFICATEN → zie TEAM_ATTESTEN hierboven ───────────────────────────────
+// Eigen attesten worden opgezocht in TEAM_ATTESTEN op basis van user.name
 
 // ─── CONTACTEN ────────────────────────────────────────────────────────────────
 const EHBO_LEDEN = [
-  { naam:"EHBO'er productie (in te vullen)", rol:"EHBO'er — Productie / Oven hal",  tel:"0497/51.50.95", email:"operator@argex.be", desc:"EHBO-lokaal in onderhoudsloods. AED aanwezig.", kleur:AX.clay, init:"E1" },
-  { naam:"EHBO'er expeditie (in te vullen)", rol:"EHBO'er — Expeditie / Kleivoorbereiding", tel:"03/250.15.15", email:"expeditie@argex.be", desc:"AED in sociaal gebouw (ingang).", kleur:AX.clay, init:"E2" },
-  { naam:"Dr. Brigitte Merkus", rol:"Arbeidsarts — Liantis EDPBW", tel:"+32 3 886 05 78", email:"charlotte.vanassche@liantis.be", desc:"Via Liantis (Rijksweg 9, Puurs). Contactpersoon: Charlotte Van Assche.", kleur:AX.green, init:"BM" },
+  // ── Productie ──
+  { naam:"Abdel-hak Charai",        rol:"EHBO'er — Productie",          tel:"in te vullen", email:"", desc:"", kleur:AX.clay, init:"AC" },
+  { naam:"Abid Bouzambou",          rol:"EHBO'er — Productie",          tel:"in te vullen", email:"", desc:"", kleur:AX.clay, init:"AB" },
+  { naam:"Dominique Audin",         rol:"EHBO'er — Productie",          tel:"in te vullen", email:"", desc:"", kleur:AX.clay, init:"DA" },
+  { naam:"Jean-Pierre De Keersmaeker", rol:"EHBO'er — Productie",      tel:"in te vullen", email:"", desc:"", kleur:AX.clay, init:"JK" },
+  { naam:"Kenny Vercauteren",       rol:"EHBO'er — Productie",          tel:"in te vullen", email:"", desc:"", kleur:AX.clay, init:"KV" },
+  { naam:"Kovan Tondeleir",         rol:"EHBO'er — Productie",          tel:"in te vullen", email:"", desc:"", kleur:AX.clay, init:"KT" },
+  // ── Zeefgebouw ──
+  { naam:"Guido De Keersmaeker",    rol:"EHBO'er — Zeefgebouw",         tel:"in te vullen", email:"", desc:"", kleur:AX.earth, init:"GK" },
+  { naam:"Lucien Smet",             rol:"EHBO'er — Zeefgebouw",         tel:"in te vullen", email:"", desc:"", kleur:AX.earth, init:"LS" },
+  { naam:"Mario De Wilde",          rol:"EHBO'er — Zeefgebouw",         tel:"in te vullen", email:"", desc:"", kleur:AX.earth, init:"MW" },
+  { naam:"Nickolay Brodelet",       rol:"EHBO'er — Zeefgebouw",         tel:"in te vullen", email:"", desc:"", kleur:AX.earth, init:"NB" },
+  // ── Hoofdbureau ──
+  { naam:"Bert Verbraeken",         rol:"EHBO'er — Hoofdbureau (Prev.adviseur)", tel:"in te vullen", email:"bert.verbraecken@argex.be", desc:"Ook preventieadviseur IDPBW.", kleur:AX.clayDark, init:"BV" },
+  { naam:"Dries Vernimmen",         rol:"EHBO'er — Hoofdbureau",        tel:"in te vullen", email:"", desc:"", kleur:AX.clayDark, init:"DV" },
+  { naam:"Gert Rotthier",           rol:"EHBO'er — Hoofdbureau",        tel:"in te vullen", email:"", desc:"", kleur:AX.clayDark, init:"GR" },
+  { naam:"Irmgart Hooftman",        rol:"EHBO'er — Hoofdbureau",        tel:"in te vullen", email:"", desc:"", kleur:AX.clayDark, init:"IH" },
+  // ── Atelier / Onderhoud ──
+  { naam:"Franky Vermeulen",        rol:"EHBO'er — Atelier/Onderhoud",  tel:"in te vullen", email:"", desc:"EHBO-lokaal in onderhoudsloods.", kleur:AX.green, init:"FV" },
+  { naam:"Jurgen De Grave",         rol:"EHBO'er — Atelier/Onderhoud",  tel:"in te vullen", email:"", desc:"", kleur:AX.green, init:"JG" },
+  // ── Labo ──
+  { naam:"Nele Vervynckt",          rol:"EHBO'er — Labo",               tel:"in te vullen", email:"", desc:"", kleur:AX.blue, init:"NV" },
+  // ── Opzak / Magazijn ──
+  { naam:"Stef Paternoster",        rol:"EHBO'er — Opzak/Oud magazijn", tel:"in te vullen", email:"", desc:"", kleur:AX.gray700, init:"SP" },
 ];
 // IDFC — Interne Dienst Fysische Controle (ioniserende straling)
 const IDFC_CONTACT = "Johny Bultheel (hoofd IDFC) · Nele Vervynckt · Bert Verbraecken";
 
 const VERTROUWENSPERSONEN = [
-  { naam:"Nicole Snoeck", rol:"Vertrouwenspersoon intern — HR", tel:"03/250.15.15", email:"hr@argex.be", desc:"Bereikbaar via HR. Strikt vertrouwelijk. Ook voor vragen rond welzijn en alcohol/drugbeleid.", kleur:AX.earth, init:"NS" },
-  { naam:"IDEWE — Externe vertrouwenspersoon",        rol:"Ext. vertrouwenspersoon (IDEWE)", tel:"0800 30 801", email:"preventie@idewe.be", desc:"Anoniem en gratis bereikbaar via IDEWE: 0800 30 801.", kleur:AX.earth, init:"VE" },
+  { naam:"Gert Rotthier",      rol:"Intern vertrouwenspersoon — Argex",       tel:"03/614.37.30", email:"gert.rotthier@argex.be",              desc:"Bereikbaar via Argex. Strikt vertrouwelijk en discreet.", kleur:AX.earth, init:"GR" },
+  { naam:"Jort Melis",         rol:"Intern vertrouwenspersoon — HYE",          tel:"03/250.13.95", email:"jort.melis@hye.be",                    desc:"Bereikbaar via HYE. Strikt vertrouwelijk en discreet.", kleur:AX.earth, init:"JM" },
+  { naam:"Liesbeth De Vylder", rol:"Intern vertrouwenspersoon — Navitec",      tel:"03/614.37.48", email:"liesbeth@navitec.be",                  desc:"Bereikbaar via Navitec. Strikt vertrouwelijk en discreet.", kleur:AX.earth, init:"LD" },
+  { naam:"Marc Van Laeken",    rol:"Intern vertrouwenspersoon — Pylonen De Kerf", tel:"03/614.37.83", email:"marc.vanlaeken@pylonendekerf.be",  desc:"Bereikbaar via Pylonen De Kerf. Strikt vertrouwelijk.", kleur:AX.earth, init:"MV" },
+  { naam:"Nikki Vande Voorde", rol:"Intern vertrouwenspersoon — HYE",          tel:"03/614.38.90", email:"nikki.vandevoorde@hye.be",             desc:"Bereikbaar via HYE. Strikt vertrouwelijk en discreet.", kleur:AX.earth, init:"NV" },
+  { naam:"Liantis — Externe vertrouwenspersoon", rol:"Ext. vertrouwenspersoon (Liantis)", tel:"078 150 200", email:"psy@liantis.be", desc:"Extern gesprek? Liantis is anoniem bereikbaar via 078 150 200 of psy@liantis.be.", kleur:AX.blue, init:"LI" },
 ];
 
 // ─── NOODPLAN ─────────────────────────────────────────────────────────────────
-const NOODPLAN_INTERN = "0497/51.50.95";
+const NOODPLAN_INTERN = "03/250.15.15";
 const VERZAMELPLAATS = "Parking bedienden (aangeduid op evacuatieplan op site)";
-const BHV_TEAM = ["Bert Verbraecken (Preventieadviseur)","Ploegverantwoordelijke productie","Magazijnier (zie affiche sociaal gebouw)"];
+const BHV_TEAM = ["Johny Bultheel (Plant Manager / Voorzitter CMT)","Bert Verbraecken (Preventieadviseur IDPBW)","Operations Manager (Noodplanleider)","HR Manager — Nicole Snoeck","Ploegbaas (buiten kantooruren): 0473/77.99.86"];
 const AED_LOCATIES = ["EHBO-lokaal onderhoudsloods","Sociaal gebouw (ingang)"];
+const CMT_CENTRUM = "Grote vergaderzaal Riverside (gelijkvloers kantoorgebouw)";
+const PLOEGBAAS_TEL = "0473/77.99.86";
+const FANC_TEL = "02/289.21.11";
+const CONTROLATOM_TEL = "02/674.51.20";
 
 const NOODSCENARIOS = [
-  { id:"brand",     ico:"🔥", label:"Brand",               kleur:"#C0392B", bg:"#FFF0EE", stappen:[
-    {nr:1,ico:"🔴",tit:"Alarm slaan",           txt:"Druk op het dichtstbijzijnde brandalarm of bel intern "+NOODPLAN_INTERN+"."},
-    {nr:2,ico:"📢",tit:"Collega's verwittigen",  txt:"Waarschuw iedereen in de buurt. Niemand mag achterblijven."},
-    {nr:3,ico:"🚪",tit:"Evacueer onmiddellijk",  txt:"Dichtstbijzijnde nooduitgang. NOOIT de lift."},
-    {nr:4,ico:"🚒",tit:"Bel 112",                txt:"Locatie, wat brandt, hoeveel personen."},
-    {nr:5,ico:"📍",tit:"Verzamelplaats",         txt:VERZAMELPLAATS},
-    {nr:6,ico:"🚫",tit:"Niet terugkeren",        txt:"NOOIT terug tot brandweer toestemming geeft."},
+  { id:"brand_kantoor", ico:"🔥", label:"Brand (kantooruren)",  kleur:"#C0392B", bg:"#FFF0EE", stappen:[
+    {nr:1,ico:"🔴",tit:"Meld onmiddellijk",         txt:"Bel meldpunt calamiteiten: 03/250.15.15 of 0497/51.50.95. Druk brandmeldknop in — verwittig ook receptie."},
+    {nr:2,ico:"👥",tit:"Kernfuncties verwittigen",  txt:"Receptie activeert waarschuwingssignaal. Interventieploeg, EHBO en evacuatieverantwoordelijken worden verwittigd."},
+    {nr:3,ico:"🧯",tit:"Eerste bluspoging",         txt:"Interventieploeg probeert brand te doven met kleine blusmiddelen — enkel indien veilig en met minstens 2 personen."},
+    {nr:4,ico:"🚒",tit:"Bel 112",                   txt:"Brandweer, politie, ambulance via 112. Aangeduide persoon wacht hulpdiensten op aan poort met interventiedossier."},
+    {nr:5,ico:"🚪",tit:"Evacueer",                  txt:"Via aangeduide vluchtroutes. Sluit ramen/deuren, laat verlichting aan. Evacueer haaks op de windrichting."},
+    {nr:6,ico:"📍",tit:"Verzamelplaats",             txt:"Parking bedienden (overzijde straat). Evacuatieverantwoordelijken controleren lokalen en rapporteren afwezigen."},
+    {nr:7,ico:"🚫",tit:"Niet terugkeren",           txt:"Enkel na veiligverklaring door hulpdiensten + goedkeuring directie. Alle werkvergunningen opnieuw uitgeven."},
   ]},
-  { id:"ovenincident", ico:"🌡️", label:"Oven incident",     kleur:"#E65100", bg:"#FFF3E0", stappen:[
-    {nr:1,ico:"🛑",tit:"STOP de installatie",   txt:"Noodstop activeren. Oven uitschakelen via bedieningspaneel."},
-    {nr:2,ico:"📢",tit:"Verwittig leidinggevende",txt:"Onmiddellijk ploegchef en veiligheidscoördinator verwittigen."},
-    {nr:3,ico:"🚫",tit:"Veilige afstand bewaren",txt:"Min. 5m afstand van de oven. Gebied afbakenen."},
-    {nr:4,ico:"📞",tit:"Bel hulpdiensten indien nodig",txt:"Bij brand: 112. Bij letsel: 112 + intern "+NOODPLAN_INTERN+"."},
-    {nr:5,ico:"🔍",tit:"Bewaar de situatie",     txt:"NIETS aanraken of wijzigen tot veiligheidscoördinator aanwezig is."},
-    {nr:6,ico:"📋",tit:"Meld als incident",      txt:"Registreer in de Argex Safety app."},
+  { id:"brand_nacht", ico:"🌙", label:"Brand (na kantooruren)", kleur:"#922B21", bg:"#FDEDEC", stappen:[
+    {nr:1,ico:"🔴",tit:"Meld aan ploegbaas",        txt:"Bel ploegbaas: 0473/77.99.86. Die verwittigt plantmanager en activeert noodplan."},
+    {nr:2,ico:"🚒",tit:"Bel 112",                   txt:"Direct 112 bellen bij brand. Niet wachten op interne bevestiging."},
+    {nr:3,ico:"🧯",tit:"Eerste bluspoging",         txt:"Interventieploeg — enkel indien veilig, altijd met 2 personen. Nooit alleen."},
+    {nr:4,ico:"🚪",tit:"Evacueer en verzamel",       txt:"Verzamelplaats parking bedienden. Afchecken aan- en afwezigen. Hou contact met plantmanager (crisisteam)."},
+    {nr:5,ico:"📢",tit:"Verwittig directie",         txt:"Na mislukte bluspoging: directie en preventieadviseur verwittigen. Naburige bedrijven bij risico op uitbreiding."},
+    {nr:6,ico:"🚫",tit:"Niet terugkeren",           txt:"Enkel na brandweerverklaring + goedkeuring crisiscentrum. Alle werkvergunningen opnieuw uitgeven."},
   ]},
-  { id:"machineincident",ico:"⚙️",label:"Machine-incident",  kleur:"#6D4C41", bg:"#EFEBE9", stappen:[
-    {nr:1,ico:"🛑",tit:"Machine onmiddellijk stoppen",txt:"Noodstopknop indrukken. LOTO toepassen."},
-    {nr:2,ico:"🩺",tit:"EHBO'er bellen",         txt:"Onmiddellijk EHBO'er ter plaatse roepen. Bij ernstig letsel: 112."},
-    {nr:3,ico:"🔒",tit:"Zone beveiligen",        txt:"Niemand in de buurt van de machine. Zone afbakenen."},
-    {nr:4,ico:"📢",tit:"Leidinggevende verwittig",txt:"Ploegchef + veiligheidscoördinator onmiddellijk informeren."},
-    {nr:5,ico:"🔍",tit:"Bewaar de situatie",     txt:"NIETS verplaatsen op de werkplek tot onderzoek klaar."},
-    {nr:6,ico:"📋",tit:"Registreer het incident", txt:"Meld zo snel mogelijk in de Argex Safety app."},
+  { id:"arbeidsongeval", ico:"🚑", label:"Ernstig arbeidsongeval", kleur:"#C0392B", bg:"#FFF0EE", stappen:[
+    {nr:1,ico:"🔒",tit:"Beveilig de omgeving",      txt:"Zone veiligstellen. Installaties stilleggen. Geen extra slachtoffers creëren."},
+    {nr:2,ico:"🩺",tit:"Eerste hulp verlenen",      txt:"EHBO'er ter plaatse roepen. Slachtoffer NIET bewegen. EHBO-post in onderhoudsloods."},
+    {nr:3,ico:"📞",tit:"Bel 112 en intern",         txt:"Bij ernstig letsel: 112 (MUG). Intern: 03/250.15.15 of 0497/51.50.95. Naam, locatie, toestand doorgeven."},
+    {nr:4,ico:"📢",tit:"Verwittig leidinggevende",  txt:"Ploegbaas + plantmanager + preventieadviseur onmiddellijk informeren. CMT wordt samengeroepen."},
+    {nr:5,ico:"🔍",tit:"Bewaar de situatie",        txt:"NIETS verplaatsen of wijzigen tot onderzoek klaar is (TWW vereist dit wettelijk bij ernstig AO)."},
+    {nr:6,ico:"📋",tit:"Meld en registreer",        txt:"Aangifte aan verzekeraar + TWW (onmiddellijk bij ernstig AO) + EDPB. Registratie in EHBO-logboek."},
   ]},
-  { id:"stofincident", ico:"💨", label:"Stofwolk / -explosie",kleur:"#78909C", bg:"#ECEFF1", stappen:[
-    {nr:1,ico:"🚫",tit:"Stop alle activiteiten", txt:"Alle machines uitschakelen. Elektriciteit uitschakelen."},
-    {nr:2,ico:"🫁",tit:"Verlaat de zone",        txt:"Onmiddellijk de stofwolk verlaten. Mond/neus bedekken."},
-    {nr:3,ico:"📵",tit:"Geen vonken of elektriciteit",txt:"Stofwolken zijn explosief. Geen schakelaar aanraken."},
-    {nr:4,ico:"📞",tit:"Bel 112 en intern",      txt:"Hulpdiensten verwittigen. Intern: "+NOODPLAN_INTERN+"."},
-    {nr:5,ico:"🌬️",tit:"Ventileer de ruimte",   txt:"Na veilige verklaring: ventilatie aanzetten voor stof te doen zakken."},
-    {nr:6,ico:"📋",tit:"Meld als incident",      txt:"Registreer in de Argex Safety app."},
+  { id:"diesellek", ico:"🛢", label:"Diesellek", kleur:"#784212", bg:"#FEF9E7", stappen:[
+    {nr:1,ico:"🔴",tit:"Meld onmiddellijk",         txt:"Bel receptie (kantooruren): 03/250.15.15 of ploegbaas buiten kantooruren. Bij geur ook meldkamer: 0497/51.50.95."},
+    {nr:2,ico:"🚫",tit:"Geen vonken of vuur",       txt:"Diesel is brandbaar. Geen elektrische apparatuur in- of uitschakelen. Geen open vuur. Roken verboden."},
+    {nr:3,ico:"🧹",tit:"Begrens het lek",           txt:"Gebruik absorptieworsten (socks) als barrière. Absorberende doeken/kussens op het lek. Spill-kit aanwezig op site."},
+    {nr:4,ico:"🌊",tit:"Voorkom milieupollutie",    txt:"Voorkomen dat diesel in riool of bodem loopt. Bij groot lek: riolering afsluiten met ballonafsluiters."},
+    {nr:5,ico:"📞",tit:"Bij groot lek: alarmeer",   txt:"Interventieleider beslist over evacuatie. Receptie verwittigt brandweer + omgevingsinspectie. CMT samengeroepen."},
+    {nr:6,ico:"🗑",tit:"Opruiming en nazorg",       txt:"Milieucoördinator registreert in milieuregister. Spill-kit aanvullen. Rapport aan brandweer, inspectie en IDPBW."},
   ]},
-  { id:"arbeidsongeval",ico:"🚑",label:"Arbeidsongeval",       kleur:"#C0392B", bg:"#FFF0EE", stappen:[
-    {nr:1,ico:"🔒",tit:"Beveilig de omgeving",   txt:"Zone veiligstellen. Geen extra slachtoffers."},
-    {nr:2,ico:"🩺",tit:"Eerste hulp verlenen",   txt:"EHBO'er bellen. Slachtoffer NIET bewegen."},
-    {nr:3,ico:"📞",tit:"Bel 112 bij ernstig letsel",txt:"Intern: "+NOODPLAN_INTERN+". Locatie doorgeven."},
-    {nr:4,ico:"📢",tit:"Verwittig leidinggevende",txt:"Ploegchef + veiligheidscoördinator direct informeren."},
-    {nr:5,ico:"🔍",tit:"Bewaar de situatie",     txt:"NIETS wijzigen tot onderzoek is afgerond."},
-    {nr:6,ico:"📋",tit:"Registreer in de app",   txt:"Zo snel mogelijk melden in Argex Safety."},
+  { id:"gaslek", ico:"💨", label:"Gasgeur / Gaslek", kleur:"#1A5276", bg:"#EBF5FB", stappen:[
+    {nr:1,ico:"🚫",tit:"Stop alle activiteiten",   txt:"Alle machines uitschakelen. GEEN elektrische schakelaars aanraken. Gaslekken zijn explosief."},
+    {nr:2,ico:"🫁",tit:"Verlaat de zone",          txt:"Onmiddellijk de zone verlaten. Mond/neus bedekken. Haaks op de windrichting evacueren."},
+    {nr:3,ico:"📵",tit:"Geen vonken",              txt:"Geen GSM gebruiken in de gevarenzone. Geen lichtschakelaars aanraken."},
+    {nr:4,ico:"📞",tit:"Meld en alarmeer",         txt:"Bel 03/250.15.15 of 0497/51.50.95. Plant Manager verwittigt directie + hulpdiensten (112)."},
+    {nr:5,ico:"🌬️",tit:"Ventileer na vrijgave",   txt:"Na veiligverklaring: ventilatie aanzetten. Zone pas herbetreden na meting en goedkeuring IDPBW."},
+    {nr:6,ico:"📋",tit:"Registreer incident",      txt:"Milieucoördinator registreert in milieuregister. Rapport aan omgevingsinspectie indien vereist."},
   ]},
-];
-
-// ─── COMITÉ VERSLAGEN ─────────────────────────────────────────────────────────
+  { id:"stofincident", ico:"🌫️", label:"Stofwolk / ATEX", kleur:"#78909C", bg:"#ECEFF1", stappen:[
+    {nr:1,ico:"🚫",tit:"Stop alle activiteiten",  txt:"Alle machines uitschakelen. Elektriciteit uitschakelen. Stofwolken zijn explosief (ATEX)."},
+    {nr:2,ico:"🫁",tit:"Verlaat de zone",         txt:"Onmiddellijk de stofwolk verlaten. Mond/neus bedekken. Haaks op de windrichting evacueren."},
+    {nr:3,ico:"📵",tit:"Geen vonken of elektriciteit", txt:"Stofwolken zijn explosief. Geen schakelaars aanraken. Geen GSM in de zone."},
+    {nr:4,ico:"📞",tit:"Bel 112 en intern",       txt:"Hulpdiensten verwittigen. Intern: 03/250.15.15 of 0497/51.50.95."},
+    {nr:5,ico:"🌬️",tit:"Ventileer de ruimte",    txt:"Na veilige verklaring: ventilatie aanzetten. Enkel ATEX-stofzuiger gebruiken voor opruiming."},
+    {nr:6,ico:"📋",tit:"Meld als incident",       txt:"Registreer in de Argex Safety app en bij preventieadviseur."},
+  ]},
+  { id:"ioniserende_straling", ico:"☢️", label:"Ioniserende straling", kleur:"#6C3483", bg:"#F5EEF8", stappen:[
+    {nr:1,ico:"🚫",tit:"Niet aanraken",           txt:"Geen contact met bron of toestel. Blijf op min. 1 meter afstand. Kettingafbakening NIET verplaatsen."},
+    {nr:2,ico:"📏",tit:"Bakenen zone af",         txt:"Zone van 20 meter afbakenen (ketting, lint, kegels). Toegang verbieden voor iedereen."},
+    {nr:3,ico:"📞",tit:"Bel IDFC onmiddellijk",  txt:"Johny Bultheel (hoofd IDFC) · Nele Vervynckt of Bert Verbraecken. AV Controlatom: 02/674 51 20."},
+    {nr:4,ico:"🏛",tit:"Verwittig FANC",         txt:"Bij risico op blootstelling boven wettelijke limieten: IDFC meldt aan FANC (02/289.21.11)."},
+    {nr:5,ico:"👷",tit:"Enkel opgeleid personeel", txt:"IDFC meet stralingsniveaus. Densiteitsmeter wordt afgeschermd of verwijderd door erkende dienst."},
+    {nr:6,ico:"📋",tit:"Registreer en rapporteer", txt:"IDFC registreert incident + blootstellingen. Definitief rapport aan FANC. Archivering stralingsregister."},
+  ]},
+  { id:"noodweer", ico:"⛈️", label:"Noodweer / Extreem weer", kleur:"#1F618D", bg:"#EBF5FB", stappen:[
+    {nr:1,ico:"📡",tit:"Volg weersalarmen op",    txt:"Via KMI, radio, nieuws. Receptie of ploegbaas meldt risico's aan Plant Manager en IDPBW."},
+    {nr:2,ico:"🏠",tit:"Preventieve maatregelen", txt:"Storm: ramen/deuren sluiten, personeel zoveel mogelijk binnen. Gladheid: strooiplan starten. Wateroverlast: zandzakken."},
+    {nr:3,ico:"🚗",tit:"Transport beperken",      txt:"Intern transport tijdelijk stilleggen. Snelheidsbeperkingen opleggen. Chauffeurs trager laten rijden."},
+    {nr:4,ico:"🔧",tit:"Schade beperken",         txt:"Onderhoudsdienst voert veilig opruimwerk uit. Brandweer contacteren bij wateroverlast. CMT beslist over inzet."},
+    {nr:5,ico:"✅",tit:"Herstel en heropstart",   txt:"Terrein en gebouwen pas herbetreden na controle en vrijgave IDPBW. Werkvergunningen opnieuw uitgeven."},
+  ]},
+  { id:"milieuincident", ico:"🌿", label:"Milieuincident", kleur:"#1E8449", bg:"#EAFAF1", stappen:[
+    {nr:1,ico:"🔴",tit:"Meld onmiddellijk",       txt:"Bel Plant Manager en ploegbaas/preventieadviseur. Interne communicatie via receptie of meldkamer."},
+    {nr:2,ico:"🧹",tit:"Begrens het lek",         txt:"Absorptieworsten plaatsen. Voorkomen dat vloeistof in riool of bodem terechtkomt. Absorbentiekorrels gebruiken."},
+    {nr:3,ico:"🌊",tit:"Bij groot lek: alarmeer", txt:"Riolering afsluiten met ballonafsluiters. Interventieteam via meldkamer. Omgevingsinspectie verwittigen."},
+    {nr:4,ico:"🗑",tit:"Opruiming",               txt:"Interventieploeg met PBM's. Afval in vloeistofdichte vaten als gevaarlijk afval. Erkende dienst indien nodig."},
+    {nr:5,ico:"📋",tit:"Registreer en rapporteer", txt:"Milieucoördinator registreert in milieuregister. Corrigerende maatregelen. Evaluatie in volgende CMT-vergadering."},
+  ]},
+  { id:"bommelding", ico:"⚠️", label:"Bommelding / Terreur", kleur:"#212121", bg:"#FAFAFA", stappen:[
+    {nr:1,ico:"📞",tit:"Hou melder aan de praat",  txt:"Zoveel mogelijk info verzamelen: locatie bom, tijdstip explosie, manier van ontsteken. Noteer tijdstip + kernwoorden."},
+    {nr:2,ico:"📝",tit:"Noteer alle info",          txt:"Schrijf zichtbaar nummer op (displaytoestel). Noteer: stem, accent, achtergrondgeluiden, geslacht, leeftijd melder."},
+    {nr:3,ico:"📢",tit:"Meld aan Operations Manager", txt:"Onmiddellijk doorgeven aan Operations Manager en/of Managing Director. CMT wordt samengeroepen."},
+    {nr:4,ico:"🚔",tit:"Verwittig politie",        txt:"CMT verwittigt altijd minimaal de politie. Zij beslissen over verdere acties."},
+    {nr:5,ico:"🚪",tit:"Evacueer indien beslist",  txt:"CMT beslist over activatie alarm en evacuatie. Bij verdacht pakket: NIET aanraken, zone afbakenen."},
+    {nr:6,ico:"🔍",tit:"Zoekactie",               txt:"Enkel op beslissing CMT. Elk verdacht pakket onmiddellijk melden aan CMT. Nooit zelf openen of verplaatsen."},
+  ]},
+];// ─── COMITÉ VERSLAGEN ─────────────────────────────────────────────────────────
 const COMITE = [
   { id:1, datum:"12 februari 2026", titel:"CPBW vergadering — 12/02/2026", punten:[
     "Goedkeuring verslag vorige vergadering",
@@ -1118,11 +1163,11 @@ function Onboarding({ user, onComplete }) {
                 ))}
               </div>
               <div style={{fontSize:12,color:AX.gray500,marginBottom:10}}>Argex heeft 5 noodscenario's — ook specifiek voor oven-incidenten en stofwolken. Bekijk ze in de Noodplan-module.</div>
-              <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6,marginBottom:14}}>
+              <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:5,marginBottom:14}}>
                 {NOODSCENARIOS.map(s=>(
-                  <div key={s.id} style={{padding:"8px 6px",borderRadius:8,background:s.bg,border:`1px solid ${s.kleur}33`,textAlign:"center"}}>
-                    <div style={{fontSize:18,marginBottom:2}}>{s.ico}</div>
-                    <div style={{fontSize:10,fontWeight:700,color:s.kleur}}>{s.label}</div>
+                  <div key={s.id} style={{padding:"7px 8px",borderRadius:8,background:s.bg,border:`1px solid ${s.kleur}33`,display:"flex",alignItems:"center",gap:7}}>
+                    <span style={{fontSize:16,flexShrink:0}}>{s.ico}</span>
+                    <span style={{fontSize:10,fontWeight:700,color:s.kleur,lineHeight:1.2}}>{s.label}</span>
                   </div>
                 ))}
               </div>
@@ -1210,7 +1255,8 @@ function Onboarding({ user, onComplete }) {
 function Dashboard({ user, setTab }) {
   const isLead = user.role==="leidinggevende"||user.role==="admin";
   const openToolboxen = TOOLBOXEN_DATA.filter(t=>t.verplicht&&!t.gevolgd).length;
-  const mijnVerlopen = MIJN_OPL.filter(o=>o.status!=="ok").length;
+  const eigenData = TEAM_ATTESTEN.find(m=>m.name===user.name)||{attesten:[]};
+  const mijnVerlopen = eigenData.attesten.filter(a=>a.status!=="ok").length;
   const snelLinks = [
     {ico:"🩺",lbl:"EHBO & Contacten",tab:"contacten"},
     {ico:"🚨",lbl:"Noodplan",tab:"noodplan"},
@@ -1237,8 +1283,8 @@ function Dashboard({ user, setTab }) {
       <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:10,marginBottom:22}}>
         {[
           {v:openToolboxen, l:"Toolboxen te doen",    c:openToolboxen>0?AX.red:AX.green, ico:"🎬"},
-          {v:MIJN_OPL.filter(o=>o.status==="ok").length, l:"Certs geldig",c:AX.green, ico:"✅"},
-          {v:mijnVerlopen,  l:"Certs vervallen",       c:mijnVerlopen>0?AX.amber:AX.green, ico:"⚠"},
+          {v:eigenData.attesten.filter(a=>a.status==="ok").length, l:"Certs geldig",c:AX.green, ico:"✅"},
+          {v:mijnVerlopen, l:"Certs vervallen", c:mijnVerlopen>0?AX.amber:AX.green, ico:"⚠"},
           {v:MOCK_MELDINGEN.filter(m=>m.status!=="afgehandeld").length, l:"Open incidenten", c:AX.clay, ico:"⚠️"},
         ].map(s=>(
           <Card key={s.l} style={{borderLeft:`4px solid ${s.c}`}}>
@@ -1277,12 +1323,12 @@ function Dashboard({ user, setTab }) {
           </Card>
           <div style={{fontSize:11,fontWeight:700,color:AX.gray500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:10}}>Team certificaten</div>
           <Card>
-            {TEAM.map(m=>{
-              const nok=m.opleidingen.filter(o=>!o.ok);
-              if(!nok.length) return null;
+            {TEAM_ATTESTEN.slice(0,8).map(m=>{
+              const nok=m.attesten.filter(a=>a.status==="verlopen");
+              if(!nok.length||!["leidinggevende","admin"].includes(user.role)) return null;
               return (<div key={m.id} style={{marginBottom:10,paddingBottom:10,borderBottom:`1px solid ${AX.gray100}`}}>
                 <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:5}}><Av i={m.avatar} s={26} c={AX.amber}/><span style={{fontSize:13,fontWeight:700,color:AX.gray900}}>{m.name}</span></div>
-                {nok.map(o=><div key={o.naam} style={{marginLeft:34,fontSize:12,color:AX.red,marginBottom:2}}>⚠ {o.naam} — verval: {o.verval}</div>)}
+                {nok.map((o,i)=><div key={i} style={{marginLeft:34,fontSize:12,color:AX.red,marginBottom:2}}>⚠ {o.naam} — {o.verval}</div>)}
               </div>);
             })}
           </Card>
@@ -1487,57 +1533,139 @@ function Toolboxen() {
 
 // ─── OPLEIDINGEN ──────────────────────────────────────────────────────────────
 function Opleidingen({ user }) {
-  const isLead=user.role==="leidinggevende"||user.role==="admin";
-  const [sel,setSel]=useState(null);
-  const klr=s=>({ok:AX.green,binnenkort:AX.amber,verlopen:AX.red}[s]);
-  const lbl=s=>({ok:"Geldig",binnenkort:"Binnenkort",verlopen:"Verlopen"}[s]);
-  return (
+  const isLead = user.role==="leidinggevende"||user.role==="admin";
+  const [zoek, setZoek] = useState("");
+  const [sel, setSel] = useState(null);
+  const [filterStatus, setFilterStatus] = useState("alles");
+
+  const klrStatus = s => ({ok:AX.green, binnenkort:AX.amber, verlopen:AX.red}[s]||AX.gray500);
+  const lblStatus = s => ({ok:"Geldig", binnenkort:"Vervalt binnenkort", verlopen:"Verlopen"}[s]||s);
+
+  // Eigen attesten (medewerker)
+  const eigen = TEAM_ATTESTEN.find(m => m.name === user.name) || 
+                {name:user.name, functie:user.functie, attesten:[]};
+
+  // Attesten kaartje
+  const AttestatCard = ({att}) => (
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"9px 0",borderBottom:`1px solid ${AX.gray100}`}}>
+      <div>
+        <div style={{fontSize:13,fontWeight:600,color:AX.gray800}}>{att.naam}</div>
+        <div style={{fontSize:11,color:AX.gray500}}>Geldig tot: <strong style={{color:klrStatus(att.status)}}>{att.verval}</strong></div>
+      </div>
+      <Tag label={lblStatus(att.status)} color={klrStatus(att.status)}/>
+    </div>
+  );
+
+  // Statistieken voor eigen attesten
+  const eigenStats = {
+    ok: eigen.attesten.filter(a=>a.status==="ok").length,
+    binnenkort: eigen.attesten.filter(a=>a.status==="binnenkort").length,
+    verlopen: eigen.attesten.filter(a=>a.status==="verlopen").length,
+  };
+
+  if(!isLead) return (
     <div className="fu">
-      <SectionHead>{isLead?"Opleidingen & Certificaten":"Mijn Opleidingen"}</SectionHead>
-      <div style={{display:"flex",gap:8,marginBottom:14}}>
-        {["ok","binnenkort","verlopen"].map(s=>(
-          <Card key={s} style={{flex:1,textAlign:"center",borderTop:`3px solid ${klr(s)}`}}>
-            <div style={{fontSize:22,fontWeight:900,color:klr(s),fontFamily:"'Work Sans',sans-serif"}}>{MIJN_OPL.filter(o=>o.status===s).length}</div>
-            <div style={{fontSize:11,color:AX.gray500}}>{lbl(s)}</div>
+      <SectionHead sub={`${user.functie}`}>Mijn Opleidingen & Attesten</SectionHead>
+      <div style={{display:"flex",gap:8,marginBottom:16}}>
+        {[["ok","Geldig"],["binnenkort","Binnenkort"],["verlopen","Verlopen"]].map(([s,l])=>(
+          <Card key={s} style={{flex:1,textAlign:"center",borderTop:`3px solid ${klrStatus(s)}`}}>
+            <div style={{fontSize:24,fontWeight:900,color:klrStatus(s),fontFamily:"'Work Sans',sans-serif"}}>{eigenStats[s]}</div>
+            <div style={{fontSize:11,color:AX.gray500}}>{l}</div>
           </Card>
         ))}
       </div>
-      {MIJN_OPL.map(o=>(
-        <Card key={o.naam} style={{marginBottom:7,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-          <div><div style={{fontSize:14,fontWeight:700,color:AX.gray900,marginBottom:3}}>{o.naam}</div><div style={{fontSize:12,color:AX.gray500}}>Behaald: {o.datum} · Geldig tot: <span style={{color:klr(o.status),fontWeight:700}}>{o.verval}</span></div></div>
-          <Tag label={lbl(o.status)} color={klr(o.status)}/>
-        </Card>
-      ))}
-      <Card style={{background:AX.clayLight,border:`1px solid ${AX.clay}33`,marginBottom:22}}>
-        <div style={{fontSize:12,color:AX.clayDark}}>💡 Verlopen certificaat? Meld dit aan je leidinggevende voor herinschrijving.</div>
-      </Card>
-      {isLead&&(
-        <>
-          <div style={{fontSize:11,fontWeight:700,color:AX.gray500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:10}}>Team certificaten</div>
-          {TEAM.map(m=>(
-            <Card key={m.id} className="rh" onClick={()=>setSel(sel===m.id?null:m.id)} style={{marginBottom:8}}>
-              <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:sel===m.id?10:0}}>
-                <div style={{display:"flex",gap:10,alignItems:"center"}}>
-                  <Av i={m.avatar} s={38} c={m.opleidingen.some(o=>!o.ok)?AX.amber:AX.green}/>
-                  <div><div style={{fontSize:14,fontWeight:700,color:AX.gray900}}>{m.name}</div><div style={{fontSize:12,color:AX.gray500}}>{m.functie} · {m.afdeling}</div></div>
-                </div>
-                <div style={{display:"flex",gap:8,alignItems:"center"}}>
-                  {m.opleidingen.some(o=>!o.ok)&&<Tag label={`${m.opleidingen.filter(o=>!o.ok).length} verlopen`} color={AX.red}/>}
-                  <span style={{color:AX.gray300,fontSize:13}}>{sel===m.id?"▲":"▼"}</span>
-                </div>
+      {eigen.attesten.length===0
+        ? <Card><div style={{textAlign:"center",color:AX.gray400,padding:20,fontSize:13}}>Geen attesten gevonden voor {user.name}.</div></Card>
+        : <Card>{eigen.attesten.map((a,i)=><AttestatCard key={i} att={a}/>)}</Card>
+      }
+      {eigenStats.verlopen>0&&<Card style={{background:AX.redLight,border:`1px solid ${AX.red}33`,marginTop:12}}>
+        <div style={{fontSize:13,color:AX.red,fontWeight:700}}>⚠ {eigenStats.verlopen} verlopen attest(en) — meld dit aan je leidinggevende voor herinschrijving.</div>
+      </Card>}
+    </div>
+  );
+
+  // LEIDINGGEVENDE / ADMIN — volledig teamoverzicht
+  const gefilterd = TEAM_ATTESTEN
+    .filter(m => zoek==='' || m.name.toLowerCase().includes(zoek.toLowerCase()) || m.functie.toLowerCase().includes(zoek.toLowerCase()))
+    .filter(m => filterStatus==='alles' || m.attesten.some(a=>a.status===filterStatus));
+
+  if(sel) {
+    const m = TEAM_ATTESTEN.find(x=>x.id===sel);
+    const stats = {
+      ok: m.attesten.filter(a=>a.status==="ok").length,
+      binnenkort: m.attesten.filter(a=>a.status==="binnenkort").length,
+      verlopen: m.attesten.filter(a=>a.status==="verlopen").length,
+    };
+    return (
+      <div className="fu">
+        <button onClick={()=>setSel(null)} style={{background:"transparent",border:`1px solid ${AX.gray300}`,color:AX.gray700,padding:"7px 13px",borderRadius:7,cursor:"pointer",fontSize:13,fontFamily:"inherit",marginBottom:20}}>← Terug</button>
+        <Card>
+          <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:16,paddingBottom:14,borderBottom:`1px solid ${AX.gray100}`}}>
+            <Av i={m.avatar} s={46} c={m.attesten.some(a=>a.status==="verlopen")?AX.red:m.attesten.some(a=>a.status==="binnenkort")?AX.amber:AX.green}/>
+            <div>
+              <div style={{fontSize:16,fontWeight:800,color:AX.gray900}}>{m.name}</div>
+              <div style={{fontSize:12,color:AX.clay,fontWeight:600}}>{m.functie}</div>
+            </div>
+          </div>
+          <div style={{display:"flex",gap:8,marginBottom:16}}>
+            {[["ok","Geldig"],["binnenkort","Binnenkort"],["verlopen","Verlopen"]].map(([s,l])=>(
+              <div key={s} style={{flex:1,textAlign:"center",padding:"8px 4px",borderRadius:8,background:klrStatus(s)+"15",border:`1px solid ${klrStatus(s)}33`}}>
+                <div style={{fontSize:22,fontWeight:900,color:klrStatus(s)}}>{stats[s]}</div>
+                <div style={{fontSize:10,color:AX.gray500}}>{l}</div>
               </div>
-              {sel===m.id&&<div style={{borderTop:`1px solid ${AX.gray100}`,paddingTop:10}}>
-                {m.opleidingen.map(o=>(
-                  <div key={o.naam} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"7px 0",borderBottom:`1px solid ${AX.gray100}`}}>
-                    <div><div style={{fontSize:13,color:AX.gray900}}>{o.naam}</div><div style={{fontSize:11,color:AX.gray500}}>Geldig tot {o.verval}</div></div>
-                    <Tag label={o.ok?"Geldig":"Verlopen"} color={o.ok?AX.green:AX.red}/>
-                  </div>
-                ))}
-              </div>}
-            </Card>
-          ))}
-        </>
-      )}
+            ))}
+          </div>
+          {m.attesten.length===0
+            ? <div style={{textAlign:"center",color:AX.gray400,padding:16,fontSize:13}}>Geen attesten geregistreerd.</div>
+            : m.attesten.map((a,i)=><AttestatCard key={i} att={a}/>)
+          }
+        </Card>
+      </div>
+    );
+  }
+
+  // Statistieken globaal
+  const totVerlopen = TEAM_ATTESTEN.reduce((n,m)=>n+m.attesten.filter(a=>a.status==="verlopen").length,0);
+  const totBinnenkort = TEAM_ATTESTEN.reduce((n,m)=>n+m.attesten.filter(a=>a.status==="binnenkort").length,0);
+
+  return (
+    <div className="fu">
+      <SectionHead sub={`${TEAM_ATTESTEN.length} medewerkers · ${totVerlopen} verlopen · ${totBinnenkort} binnenkort`}>Opleidingen & Attesten</SectionHead>
+      {totVerlopen>0&&<div style={{background:AX.redLight,border:`1px solid ${AX.red}33`,borderRadius:9,padding:"10px 14px",marginBottom:14,fontSize:13,color:AX.red,fontWeight:700}}>
+        ⚠ {totVerlopen} verlopen attest(en) bij {TEAM_ATTESTEN.filter(m=>m.attesten.some(a=>a.status==="verlopen")).length} medewerkers
+      </div>}
+      <div style={{display:"flex",gap:8,marginBottom:14}}>
+        <input value={zoek} onChange={e=>setZoek(e.target.value)} placeholder="Zoek naam of functie..." style={{flex:1,border:`1.5px solid ${AX.gray300}`,borderRadius:7,padding:"9px 12px",fontSize:13,fontFamily:"inherit",color:AX.gray900}}/>
+        <select value={filterStatus} onChange={e=>setFilterStatus(e.target.value)} style={{border:`1.5px solid ${AX.gray300}`,borderRadius:7,padding:"9px 10px",fontSize:12,fontFamily:"inherit",color:AX.gray700}}>
+          <option value="alles">Alle</option>
+          <option value="verlopen">Verlopen</option>
+          <option value="binnenkort">Binnenkort</option>
+          <option value="ok">Geldig</option>
+        </select>
+      </div>
+      <div style={{fontSize:12,color:AX.gray400,marginBottom:10}}>{gefilterd.length} van {TEAM_ATTESTEN.length} medewerkers</div>
+      {gefilterd.map(m=>{
+        const nVerlopen = m.attesten.filter(a=>a.status==="verlopen").length;
+        const nBinnenkort = m.attesten.filter(a=>a.status==="binnenkort").length;
+        const klrAv = nVerlopen>0?AX.red:nBinnenkort>0?AX.amber:AX.green;
+        return (
+          <Card key={m.id} className="rh" onClick={()=>setSel(m.id)} style={{marginBottom:7,display:"flex",justifyContent:"space-between",alignItems:"center",padding:"11px 14px"}}>
+            <div style={{display:"flex",gap:10,alignItems:"center"}}>
+              <Av i={m.avatar} s={36} c={klrAv}/>
+              <div>
+                <div style={{fontSize:13,fontWeight:700,color:AX.gray900}}>{m.name}</div>
+                <div style={{fontSize:11,color:AX.gray500}}>{m.functie} · {m.attesten.length} attest(en)</div>
+              </div>
+            </div>
+            <div style={{display:"flex",gap:5,alignItems:"center"}}>
+              {nVerlopen>0&&<Tag label={`${nVerlopen} verlopen`} color={AX.red}/>}
+              {nBinnenkort>0&&<Tag label={`${nBinnenkort} binnenkort`} color={AX.amber}/>}
+              {nVerlopen===0&&nBinnenkort===0&&m.attesten.length>0&&<Tag label="OK" color={AX.green}/>}
+              <span style={{color:AX.gray300,fontSize:13}}>→</span>
+            </div>
+          </Card>
+        );
+      })}
     </div>
   );
 }
@@ -1549,15 +1677,15 @@ function Noodplan() {
   if(sc) return (
     <div className="fu">
       <button onClick={()=>setActief(null)} style={{background:"transparent",border:`1px solid ${AX.gray300}`,color:AX.gray700,padding:"7px 13px",borderRadius:7,cursor:"pointer",fontSize:13,fontFamily:"inherit",marginBottom:20}}>← Terug</button>
-      <div style={{background:sc.bg,border:`1px solid ${sc.kleur}33`,borderRadius:12,padding:"16px 18px",marginBottom:18,display:"flex",alignItems:"center",gap:12}}>
+      <div style={{background:sc.bg,border:`1px solid ${sc.kleur}33`,borderRadius:12,padding:"16px 18px",marginBottom:14,display:"flex",alignItems:"center",gap:12}}>
         <div style={{fontSize:36}}>{sc.ico}</div>
-        <div><div style={{fontFamily:"'Work Sans',sans-serif",fontSize:20,fontWeight:800,color:AX.gray900}}>{sc.label}</div><div style={{fontSize:13,color:AX.gray500}}>Volg de stappen in volgorde op</div></div>
+        <div><div style={{fontFamily:"'Work Sans',sans-serif",fontSize:20,fontWeight:800,color:AX.gray900}}>{sc.label}</div><div style={{fontSize:13,color:AX.gray500}}>Volg de stappen in volgorde op · H2O-site Zwijndrecht</div></div>
       </div>
-      <div style={{display:"flex",gap:10,marginBottom:16}}>
-        {[["112","Hulpdiensten",AX.red],[NOODPLAN_INTERN,"Intern noodnum.",AX.clay]].map(([n,l,c])=>(
-          <div key={n} style={{flex:1,background:c+"12",border:`2px solid ${c}33`,borderRadius:10,padding:"10px 14px",textAlign:"center"}}>
-            <div style={{fontSize:11,fontWeight:700,color:c,textTransform:"uppercase"}}>{l}</div>
-            <div style={{fontSize:28,fontWeight:900,color:c,fontFamily:"'Work Sans',sans-serif"}}>{n}</div>
+      <div style={{display:"flex",gap:8,marginBottom:14,flexWrap:"wrap"}}>
+        {[["112","Hulpdiensten",AX.red],["03/250.15.15","Receptie/Meldpunt",AX.clay],["0497/51.50.95","Meldkamer",AX.clayDark],["0473/77.99.86","Ploegbaas (nacht)",AX.earth]].map(([n,l,c])=>(
+          <div key={n} style={{flex:1,minWidth:80,background:c+"12",border:`2px solid ${c}33`,borderRadius:9,padding:"8px 10px",textAlign:"center"}}>
+            <div style={{fontSize:9,fontWeight:700,color:c,textTransform:"uppercase",marginBottom:1}}>{l}</div>
+            <div style={{fontSize:14,fontWeight:900,color:c,fontFamily:"'Work Sans',sans-serif"}}>{n}</div>
           </div>
         ))}
       </div>
@@ -1655,9 +1783,44 @@ function Contacten() {
       </Card>
 
       {/* ── EHBO & Vertrouwenspersonen ── */}
-      {[["EHBO'ers",EHBO_LEDEN],["Vertrouwenspersonen",VERTROUWENSPERSONEN]].map(([tit,lijst])=>(
-        <div key={tit} style={{marginBottom:22}}>
-          <div style={{fontSize:11,fontWeight:700,color:AX.gray500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:10}}>{tit}</div>
+      {/* EHBO — gegroepeerd per zone */}
+      <div style={{fontSize:11,fontWeight:700,color:AX.gray500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:8}}>🩺 EHBO-Hulpverleners — 18 personen</div>
+      <div style={{background:AX.amberLight,border:`1px solid ${AX.amber}44`,borderRadius:8,padding:"8px 14px",marginBottom:14,fontSize:12,color:AX.amber,fontWeight:600}}>
+        ⚠ GSM-nummers nog aan te vullen via HR of leidinggevende (F-NP-011 v1 · 17/03/2025)
+      </div>
+      {[
+        {zone:"Productie",kleur:AX.clay},
+        {zone:"Zeefgebouw",kleur:AX.earth},
+        {zone:"Hoofdbureau",kleur:AX.clayDark},
+        {zone:"Atelier",kleur:AX.green},
+        {zone:"Labo",kleur:AX.blue},
+        {zone:"Opzak",kleur:AX.gray700},
+      ].map(({zone,kleur})=>{
+        const lijst=EHBO_LEDEN.filter(p=>p.rol.toLowerCase().includes(zone.toLowerCase()));
+        if(!lijst.length) return null;
+        return(
+          <div key={zone} style={{marginBottom:12}}>
+            <div style={{fontSize:10,fontWeight:700,color:kleur,letterSpacing:".07em",textTransform:"uppercase",marginBottom:5,paddingLeft:2}}>● {zone}</div>
+            {lijst.map(p=>(
+              <div key={p.naam} style={{display:"flex",gap:10,alignItems:"center",background:AX.white,borderRadius:7,padding:"8px 11px",marginBottom:4,border:`1px solid ${AX.gray100}`}}>
+                <div style={{width:32,height:32,borderRadius:"50%",background:kleur+"20",border:`2px solid ${kleur}44`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:10,fontWeight:700,color:kleur,flexShrink:0}}>{p.init}</div>
+                <div style={{flex:1}}>
+                  <div style={{fontSize:13,fontWeight:700,color:AX.gray900}}>{p.naam}</div>
+                  {p.desc&&<div style={{fontSize:11,color:AX.gray500}}>{p.desc}</div>}
+                </div>
+                <div style={{fontSize:11,color:p.tel==="in te vullen"?AX.gray300:AX.clay,fontWeight:600}}>
+                  {p.tel==="in te vullen"?"📞 —":"📞 "+p.tel}
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+      })}
+
+      {/* Vertrouwenspersonen */}
+      {[["Vertrouwenspersonen",VERTROUWENSPERSONEN]].map(([tit,lijst])=>(
+        <div key={tit} style={{marginBottom:22,marginTop:8}}>
+          <div style={{fontSize:11,fontWeight:700,color:AX.gray500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:10}}>🤝 {tit}</div>
           {lijst.map(p=>(
             <Card key={p.naam} style={{marginBottom:10}}>
               <div style={{display:"flex",gap:14,alignItems:"center"}}>
