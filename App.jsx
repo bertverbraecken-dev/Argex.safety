@@ -159,7 +159,18 @@ const PROCEDURES = [
     titel:"VIK-P-OD-01 — Kuiswerken omgeving massieven/oven",
     versie:"v1.0", datum:"Januari 2026", auteur:"Bert Verbraecken",
     tags:["Oven","Massieven","Kuiswerken","VIK","Warmte","Stof"],
+    locatie:"Omgeving massieven en oven", frequentie:"Dagelijks",
     beschrijving:"Orde en netheid in de omgeving van de massieven en oven. Dagelijkse kuiswerken conform VIK-P-OD-01.",
+    risicos:["Draaiende/bewegende delen","Warmtebronnen en hete oppervlakken","Stootgevaar","Stofvorming (kristallijn silica)","Struikelgevaar op en rond de trap"],
+    stappen:[
+      "Controleer de werkzone vóór de start — personen en obstakels verwijderen.",
+      "LMRA uitvoeren: zijn er draaiende delen, hittebronnen of stofrisico aanwezig?",
+      "Draag alle verplichte PBM's vóór je de zone betreedt.",
+      "Sorteer materiaalresten direct na het kuisen en leg ze apart.",
+      "Sprenkel water om stofwolken te voorkomen — geen perslucht gebruiken.",
+      "Meld beschadigingen aan installaties onmiddellijk aan de leidinggevende.",
+      "Ruim alle arbeidsmiddelen op en verlaat de zone netjes.",
+    ],
     kernpunten:[
       "Let op draaiende en bewegende delen — nooit aanraken zonder LOTOTO.",
       "Warmtebronnen zijn aanwezig — draag lange kledij en veiligheidsbril.",
@@ -176,7 +187,18 @@ const PROCEDURES = [
     titel:"VIK-P-OD-04 — Kuiswerken omgeving bruinkool (ATEX)",
     versie:"v1.0", datum:"Januari 2026", auteur:"Bert Verbraecken",
     tags:["Bruinkool","ATEX","Kuiswerken","Brand","Explosie","VIK"],
+    locatie:"Bruinkoolinstallatie", frequentie:"Dagelijks",
     beschrijving:"Kuisen van de omgeving van de bruinkoolinstallatie. ATEX-zone: rookverbod en speciale maatregelen verplicht.",
+    risicos:["Explosiegevaar (ATEX) — bruinkoolstof is brandbaar en explosief","Brandgevaar bij stofophoping op warme oppervlakken","Stootgevaar","Struikelgevaar"],
+    stappen:[
+      "⚠ ATEX-check vóór start: zijn er vonken, open vuur of warmtebronnen in de zone?",
+      "Leidinggevende verwittigen vóór de start van kuiswerken.",
+      "Enkel ATEX-stofzuiger of natte reiniging gebruiken — perslucht is strikt verboden.",
+      "Stof ophoping wegwerken: begin bij warme zones, rond silo's en in kelders.",
+      "Aanvoerleidingen controleren op lekken. Lekke leidingen onmiddellijk melden.",
+      "Las- of snijwerken in de buurt? Altijd werkvergunning + ATEX-check vóór aanvang.",
+      "Zone proper en stofvrij achterlaten. Incident melden via Argex Safety app.",
+    ],
     kernpunten:[
       "ATEX-zone: rookverbod strikt — bruinkoolstof is explosief.",
       "Bij incident onmiddellijk de rechtstreekse verantwoordelijke verwittigen.",
@@ -295,7 +317,19 @@ const PROCEDURES = [
     titel:"VIK-P-KO-01 — Vrijmaken densiteitsmeter (ioniserende bron)",
     versie:"v2.0", datum:"29/03/2017", auteur:"Bert Verbraecken",
     tags:["Densiteitsmeter","Ioniserende straling","Koelkelder","VIK","Radioactief"],
+    locatie:"Koelkelder — densiteitsmeter", frequentie:"Naar behoefte",
     beschrijving:"Veilig verwijderen van puin bij de ioniserende bron in de koelkelder. Enkel bevoegde personen.",
+    risicos:["Ioniserende straling (gammastraling)","Stootgevaar bij afdalen trap","Stofvorming","Val op gladde ondergrond"],
+    stappen:[
+      "Controleer bevoegdheid: enkel bevoegde personen mogen de densiteitsmeter benaderen.",
+      "Respecteer de afbakeningskettingen — nooit verplaatsen of overstappen.",
+      "Verblijftijd beperken: werk snel en doelgericht (max. 1000u/jaar op 30cm).",
+      "Gebruik een steker (steel met plaat) — handen nooit onder de meetopstelling.",
+      "Argex naast de trechter opkuisen en terugscheppen in de trechter.",
+      "Steker na het vrijmaken onmiddellijk op zijn plaats terugzetten.",
+      "Vergrendelingssleutel teruggeven aan de ploegverantwoordelijke.",
+      "Bij beschadiging: STOP — zone 20m afsluiten — leidinggevende + preventieadviseur bellen — AV Controlatom: 02/674 51 20.",
+    ],
     kernpunten:[
       "Enkel bevoegde personen mogen deze taak uitvoeren.",
       "Afscherming respecteren: kettingen die zone afbakenen laten hangen.",
@@ -403,7 +437,18 @@ const PROCEDURES = [
     titel:"VIK-P-OV-04 — Lossen houtstof (ATEX-docking)",
     versie:"v1.0", datum:"Januari 2026", auteur:"Bert Verbraecken / Max Goosens",
     tags:["Houtstof","ATEX","Lossen","Docking","VIK","Explosie"],
+    locatie:"Loszone houtstof — docking", frequentie:"Bij lossen",
     beschrijving:"Veilig werken met de docking voor lossen van houtstof. Enkel bevoegde personen. LOTOTO verplicht bij onderhoud.",
+    risicos:["Explosiegevaar (ATEX) — houtstof vormt ontplofbare atmosfeer","Automatisch startende machine — beknelling","Stofblootstelling","Stootgevaar"],
+    stappen:[
+      "⚠ ATEX-check: controleer of er geen vonken, open vuur of warmtebronnen aanwezig zijn.",
+      "Controleer of de machine in veilige toestand is vóór aanvang lossen.",
+      "Automatische start: zorg dat niemand in de gevaarzone staat.",
+      "Waarschuwingsstickers controleren op zichtbaarheid — vervangen bij slijtage.",
+      "Binnenkant machine: enkel betreden na LOTOTO — nooit tijdens werking.",
+      "Bij langdurige stilstand rolluik sluiten.",
+      "Na gebruik: zone proper achterlaten, schade onmiddellijk melden aan ploegbaas.",
+    ],
     kernpunten:[
       "Enkel bevoegden mogen de docking bedienen. Opgelet: automatisch startende machine.",
       "Waarschuwingsstickers steeds zichtbaar. Regelmatig reinigen en vervangen bij slijtage.",
@@ -418,7 +463,19 @@ const PROCEDURES = [
     titel:"VIK-P-ZG-02 — Brokstukken/IJzer uit silo halen",
     versie:"v2.0", datum:"29/03/2017", auteur:"Argex H&S",
     tags:["Silo","IJzer","Brokstukken","VIK","Hoogte","Besloten ruimte"],
-    beschrijving:"Brokstukken of ijzer uit silo voor correcte werking volumemeter. Bij voorkeur uitbesteed aan gespecialiseerde firma.",
+    locatie:"Zeefgebouw — silo's", frequentie:"Naar behoefte",
+    beschrijving:"Brokstukken of ijzer uit silo verwijderen voor correcte werking volumemeter. Bij voorkeur uitbesteed aan gespecialiseerde firma.",
+    risicos:["Valgevaar in silo (besloten ruimte)","Stootgevaar","Stofvorming (kristallijn silica)","Beklemming door bewegende delen"],
+    stappen:[
+      "⚠ Werken bij voorkeur uitbesteden aan gespecialiseerde firma.",
+      "Bij eigen uitvoering: grondig vooroverleg tussen alle betrokken diensten verplicht.",
+      "Altijd met minimum 3 personen. Geen toegang voor onbevoegden.",
+      "Alle noodstoppen vergrendelen. Waarschuwingsborden plaatsen.",
+      "Valharnas correct aandoen + buddy-check voor betreden silo.",
+      "Voldoende verlichting voorzien vóór de start.",
+      "IJzerresten en brokstukken apart leggen voor verwijdering.",
+      "Na werken: alle arbeidsmiddelen terugplaatsen, zone proper achterlaten.",
+    ],
     kernpunten:[
       "Bij voorkeur uitbesteden aan gespecialiseerde firma. Eigen personeel enkel bij extreme omstandigheden na grondig vooroverleg.",
       "Altijd met 3 personen. Geen toegang voor onbevoegden.",
@@ -448,7 +505,19 @@ const PROCEDURES = [
     titel:"VIK-P-KAD-03 — Bobcat/wiellader kaai",
     versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Bobcat","Wiellader","Kaai","VIK","Hijsen"],
+    locatie:"Kaai — buitenterrein", frequentie:"Bij gebruik",
     beschrijving:"Veilig bedienen van bobcat/wiellader op de kaai. Enkel gekwalificeerd personeel met opleiding en veiligheidsfunctie.",
+    risicos:["Omkantelen van de machine","Klemmen tussen machineonderdelen (hefarmen, schepbak)","Aanrijding van personen of constructies","Struikelen/vallen bij in- of uitstappen","Instorten van goederen"],
+    stappen:[
+      "Controleer bevoegdheid: opleiding + veiligheidsfunctie vereist.",
+      "Pre-use check: bedieningsfuncties, vergrendeling voorzetstuk, keuringsticker viersprong.",
+      "In- en uitstappen: altijd achterwaarts afstappen. 3 contactpunten (2 handen + 1 voet).",
+      "Bij vergrendelen/ontgrendelen voorzetstuk: steeds op de grond neerlaten.",
+      "Vertrek langzaam. Houd rekening met de omgeving — maak oogcontact.",
+      "Rijd enkel als er niemand in de werkzone achter de bobcat aanwezig is.",
+      "Max. 15 km/u op de kaai. Claxon gebruiken in bochten en bij deuropeningen.",
+      "Motor nooit achterlaten terwijl machine draait. Voorzetstuk op de grond.",
+    ],
     kernpunten:[
       "Enkel gekwalificeerd personeel. Nooit achterlaten met draaiende motor.",
       "In- en uitstappen: altijd achterwaarts afstappen. 3 contactpunten gebruiken.",
@@ -1253,13 +1322,53 @@ function Bibliotheek() {
               </div>
             </div>
           </div>
+          {/* Locatie + frequentie */}
+          {(d.locatie||d.frequentie)&&<div style={{display:"flex",gap:6,marginBottom:12,flexWrap:"wrap"}}>
+            {d.locatie&&<div style={{background:AX.clayLight,borderRadius:6,padding:"4px 10px",fontSize:11,fontWeight:700,color:AX.clayDark}}>📍 {d.locatie}</div>}
+            {d.frequentie&&<div style={{background:AX.greenLight,borderRadius:6,padding:"4px 10px",fontSize:11,fontWeight:700,color:AX.green}}>🔄 {d.frequentie}</div>}
+          </div>}
           <div style={{fontSize:14,color:AX.gray700,lineHeight:1.7,marginBottom:16}}>{d.beschrijving}</div>
           <div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:16}}>{d.tags.map(t=><Tag key={t} label={t} color={AX.earth}/>)}</div>
-          {d.kernpunten&&<div style={{marginBottom:16}}><div style={{fontSize:12,fontWeight:700,color:AX.gray500,textTransform:"uppercase",letterSpacing:".08em",marginBottom:10}}>Kernpunten</div>{d.kernpunten.map((k,i)=><div key={i} style={{display:"flex",gap:10,padding:"7px 0",borderBottom:`1px solid ${AX.gray100}`,fontSize:13,color:AX.gray700}}><span style={{color:AX.clay,fontWeight:700,flexShrink:0}}>✓</span>{k}</div>)}</div>}
-          {d.verboden&&<div style={{background:AX.redLight,borderRadius:9,padding:14,marginBottom:14,border:`1px solid ${AX.red}33`}}><div style={{fontSize:12,fontWeight:700,color:AX.red,textTransform:"uppercase",letterSpacing:".08em",marginBottom:8}}>🚫 Verboden handelingen</div>{d.verboden.map((v,i)=><div key={i} style={{fontSize:13,color:AX.red,padding:"4px 0"}}> ✗ {v}</div>)}</div>}
-          {d.pbm&&<div style={{background:AX.clayLight,borderRadius:9,padding:14,border:`1px solid ${AX.clay}33`}}><div style={{fontSize:12,fontWeight:700,color:AX.clayDark,textTransform:"uppercase",letterSpacing:".08em",marginBottom:8}}>🦺 Verplichte PBM's</div><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{d.pbm.map(p=><Tag key={p} label={p} color={AX.clayDark}/>)}</div></div>}
-          <div style={{marginTop:16,background:AX.sand,borderRadius:9,padding:"12px 16px",fontSize:12,color:AX.earth,border:`1px solid ${AX.earth}33`}}>
-            📋 Procedure opgesteld door Argex H&S — Bert Verbraecken, Preventieadviseur.
+
+          {/* Risico's */}
+          {d.risicos&&<div style={{background:"#FFF8EE",borderRadius:9,padding:14,marginBottom:14,border:`1px solid ${AX.amber}44`}}>
+            <div style={{fontSize:12,fontWeight:700,color:AX.amber,textTransform:"uppercase",letterSpacing:".08em",marginBottom:8}}>⚠️ Risico's</div>
+            {d.risicos.map((r,i)=><div key={i} style={{display:"flex",gap:8,fontSize:13,color:AX.gray700,padding:"5px 0",borderBottom:i<d.risicos.length-1?`1px solid ${AX.gray100}`:"none"}}>
+              <span style={{color:AX.amber,flexShrink:0,fontWeight:700}}>▲</span>{r}
+            </div>)}
+          </div>}
+
+          {/* Stap-voor-stap */}
+          {d.stappen&&<div style={{marginBottom:16}}>
+            <div style={{fontSize:12,fontWeight:700,color:AX.gray500,textTransform:"uppercase",letterSpacing:".08em",marginBottom:10}}>📋 Stap-voor-stap uitvoering</div>
+            {d.stappen.map((s,i)=>(
+              <div key={i} style={{display:"flex",gap:10,alignItems:"flex-start",marginBottom:8}}>
+                <div style={{width:24,height:24,borderRadius:"50%",background:AX.clay,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:800,color:"#fff",flexShrink:0,marginTop:2}}>{i+1}</div>
+                <div style={{fontSize:13,color:AX.gray700,lineHeight:1.6,paddingBottom:8,borderBottom:i<d.stappen.length-1?`1px solid ${AX.gray100}`:"none",flex:1}}>{s}</div>
+              </div>
+            ))}
+          </div>}
+
+          {/* Kernpunten */}
+          {d.kernpunten&&<div style={{marginBottom:16}}>
+            <div style={{fontSize:12,fontWeight:700,color:AX.gray500,textTransform:"uppercase",letterSpacing:".08em",marginBottom:10}}>✅ Kernpunten</div>
+            {d.kernpunten.map((k,i)=><div key={i} style={{display:"flex",gap:10,padding:"7px 0",borderBottom:`1px solid ${AX.gray100}`,fontSize:13,color:AX.gray700}}><span style={{color:AX.clay,fontWeight:700,flexShrink:0}}>✓</span>{k}</div>)}
+          </div>}
+
+          {/* Verboden */}
+          {d.verboden&&<div style={{background:AX.redLight,borderRadius:9,padding:14,marginBottom:14,border:`1px solid ${AX.red}33`}}>
+            <div style={{fontSize:12,fontWeight:700,color:AX.red,textTransform:"uppercase",letterSpacing:".08em",marginBottom:8}}>🚫 Verboden handelingen</div>
+            {d.verboden.map((v,i)=><div key={i} style={{fontSize:13,color:AX.red,padding:"5px 0",borderBottom:i<d.verboden.length-1?`1px solid #fdd`:""}}> ✗ {v}</div>)}
+          </div>}
+
+          {/* PBM's */}
+          {d.pbm&&<div style={{background:AX.clayLight,borderRadius:9,padding:14,border:`1px solid ${AX.clay}33`,marginBottom:14}}>
+            <div style={{fontSize:12,fontWeight:700,color:AX.clayDark,textTransform:"uppercase",letterSpacing:".08em",marginBottom:8}}>🦺 Verplichte PBM's</div>
+            <div style={{display:"flex",flexWrap:"wrap",gap:6}}>{d.pbm.map(p=><Tag key={p} label={p} color={AX.clayDark}/>)}</div>
+          </div>}
+
+          <div style={{background:AX.sand,borderRadius:9,padding:"10px 14px",fontSize:12,color:AX.earth,border:`1px solid ${AX.earth}33`}}>
+            📋 {d.auteur} · Argex NV · Burcht/Zwijndrecht
           </div>
         </Card>
       </div>
@@ -1504,10 +1613,48 @@ function Noodplan() {
 function Contacten() {
   return (
     <div className="fu">
-      <SectionHead sub="Jouw contactpersonen op de Argex site">EHBO & Vertrouwenspersonen</SectionHead>
-      <div style={{background:AX.sand,borderRadius:10,padding:"10px 16px",marginBottom:16,fontSize:12,color:AX.earth,border:`1px solid ${AX.earth}33`}}>
-        📋 EHBO-ers en vertrouwenspersonen Argex. EHBO-lokaal: onderhoudsloods.
+      <SectionHead sub="Jouw contactpersonen op de Argex site">EHBO & Contacten</SectionHead>
+
+      {/* ── Noodnummers balk ── */}
+      <div style={{display:"flex",gap:8,marginBottom:18}}>
+        {[["112","Hulpdiensten",AX.red],["0497/51.50.95","Operator Argex",AX.clay],["03/250.15.15","Expeditie Argex",AX.clayDark]].map(([nr,lbl,c])=>(
+          <div key={nr} style={{flex:1,background:c+"15",border:`2px solid ${c}33`,borderRadius:10,padding:"10px 8px",textAlign:"center"}}>
+            <div style={{fontSize:10,fontWeight:700,color:c,textTransform:"uppercase",marginBottom:2}}>{lbl}</div>
+            <div style={{fontSize:16,fontWeight:900,color:c,fontFamily:"'Work Sans',sans-serif"}}>{nr}</div>
+          </div>
+        ))}
       </div>
+
+      {/* ── Liantis — Externe Preventiedienst ── */}
+      <div style={{fontSize:11,fontWeight:700,color:AX.gray500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:8}}>🏥 Externe Preventiedienst — Liantis</div>
+      <Card style={{marginBottom:20,borderLeft:`4px solid ${AX.green}`}}>
+        <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:12,paddingBottom:12,borderBottom:`1px solid ${AX.gray100}`}}>
+          <div style={{width:44,height:44,borderRadius:10,background:AX.green+"20",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0}}>🏥</div>
+          <div>
+            <div style={{fontSize:14,fontWeight:800,color:AX.gray900}}>Liantis EDPBW</div>
+            <div style={{fontSize:12,color:AX.green,fontWeight:600}}>Externe Dienst voor Preventie en Bescherming op het Werk</div>
+            <div style={{fontSize:11,color:AX.gray500}}>Rijksweg 9, Puurs</div>
+          </div>
+        </div>
+        {[
+          {rol:"Contactpersoon", naam:"Charlotte Van Assche", tel:"+32 3 886 05 78", email:"charlotte.vanassche@liantis.be", init:"CV"},
+          {rol:"Arbeidsarts", naam:"Dr. Brigitte Merkus", tel:"+32 3 886 05 78", email:"charlotte.vanassche@liantis.be", init:"BM"},
+        ].map(p=>(
+          <div key={p.naam} style={{display:"flex",gap:10,alignItems:"center",marginBottom:10}}>
+            <div style={{width:36,height:36,borderRadius:"50%",background:AX.green+"22",border:`2px solid ${AX.green}44`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:700,color:AX.green,flexShrink:0}}>{p.init}</div>
+            <div style={{flex:1}}>
+              <div style={{fontSize:13,fontWeight:700,color:AX.gray900}}>{p.naam}</div>
+              <div style={{fontSize:11,color:AX.green,fontWeight:600}}>{p.rol}</div>
+              <div style={{fontSize:11,color:AX.gray500}}>📞 {p.tel} · ✉ {p.email}</div>
+            </div>
+          </div>
+        ))}
+        <div style={{background:AX.green+"12",borderRadius:7,padding:"8px 12px",fontSize:12,color:AX.green,fontWeight:600,marginTop:4}}>
+          🗓 Medisch toezicht, preventieadvies, welzijn op het werk
+        </div>
+      </Card>
+
+      {/* ── EHBO & Vertrouwenspersonen ── */}
       {[["EHBO'ers",EHBO_LEDEN],["Vertrouwenspersonen",VERTROUWENSPERSONEN]].map(([tit,lijst])=>(
         <div key={tit} style={{marginBottom:22}}>
           <div style={{fontSize:11,fontWeight:700,color:AX.gray500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:10}}>{tit}</div>
