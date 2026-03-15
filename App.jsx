@@ -780,9 +780,16 @@ function Onboarding({user, onComplete}){
 
 function Login({onLogin}){
   const [email,setEmail]=useState(""); const [pw,setPw]=useState(""); const [err,setErr]=useState("");
+  const [showExtern,setShowExtern]=useState(false);
+  const [extNaam,setExtNaam]=useState(""); const [extBedrijf,setExtBedrijf]=useState(""); const [extType,setExtType]=useState("aannemer");
   const go=()=>{
     const u=USERS[email.toLowerCase().trim()];
     if(u&&u.pw===pw){onLogin({...u,email})}else{setErr("E-mail of wachtwoord incorrect.")}
+  };
+  const goExtern=()=>{
+    if(extNaam.trim().length<3)return;
+    const av=extNaam.trim().split(" ").map(w=>w[0]||"").join("").slice(0,2).toUpperCase();
+    onLogin({nm:extNaam.trim(),fn:extBedrijf.trim()||"Extern",role:extType,av,email:"extern@argex.be"});
   };
   return(
     <div style={{minHeight:"100vh",background:`linear-gradient(135deg,${C.clayDp},${C.clay})`,display:"flex",alignItems:"center",justifyContent:"center",padding:20}}>
@@ -797,13 +804,37 @@ function Login({onLogin}){
           <Inp label="Wachtwoord" value={pw} onChange={setPw} placeholder="••••••••" type="password"/>
           {err&&<div style={{fontSize:13,color:C.red,marginBottom:12,padding:"9px 13px",background:C.redL,borderRadius:7}}>⚠ {err}</div>}
           <Btn onClick={go}>Aanmelden →</Btn>
-          <div style={{marginTop:18,borderTop:`1px solid ${C.g100}`,paddingTop:14}}>
+          <div style={{marginTop:14,borderTop:`1px solid ${C.g100}`,paddingTop:14}}>
             <div style={{fontSize:11,fontWeight:700,color:C.g500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:8}}>Demo logins</div>
             {[["admin@argex.be","admin2026","Admin"],["abdel-hak.charai@argex.be","abdel-hak2026","Leidinggevende"],["rachid.akdim@argex.be","rachid2026","Medewerker"],["beheer@argex.be","beheer2026","Beheer"]].map(([e,p,r])=>(
               <div key={e} onClick={()=>{setEmail(e);setPw(p);}} style={{display:"flex",justifyContent:"space-between",padding:"8px 10px",borderRadius:7,marginBottom:4,cursor:"pointer",border:`1px solid ${C.clay}22`,background:email===e?C.clayL:"#fafafa",fontSize:12,color:C.g700}}>
                 <span>{e}</span><Tag label={r} color={C.clay}/>
               </div>
             ))}
+          </div>
+          <div style={{marginTop:10,borderTop:`1px solid ${C.g100}`,paddingTop:12}}>
+            <div onClick={()=>setShowExtern(p=>!p)} style={{display:"flex",justifyContent:"space-between",alignItems:"center",cursor:"pointer",padding:"9px 11px",borderRadius:8,background:showExtern?C.clayL:C.g50,border:`1px solid ${showExtern?C.clay+"44":C.g300}`}}>
+              <div>
+                <div style={{fontSize:12,fontWeight:700,color:showExtern?C.clay:C.g700}}>🆕 Nieuw / Extern aanmelden</div>
+                <div style={{fontSize:11,color:C.g500}}>Geen argex.be-account? Klik hier.</div>
+              </div>
+              <span style={{color:C.clay,fontWeight:700,fontSize:14}}>{showExtern?"▲":"▼"}</span>
+            </div>
+            {showExtern&&(
+              <div style={{marginTop:10}}>
+                <Inp label="Volledige naam *" value={extNaam} onChange={setExtNaam} placeholder="Voornaam Achternaam"/>
+                <Inp label="Bedrijf / functie" value={extBedrijf} onChange={setExtBedrijf} placeholder="bv. Aannemer XYZ"/>
+                <div style={{marginBottom:14}}>
+                  <div style={{fontSize:12,fontWeight:700,color:C.g700,marginBottom:5}}>Type</div>
+                  <div style={{display:"flex",gap:6}}>
+                    {[["aannemer","🔧 Aannemer"],["medewerker","👤 Nieuwe mew."],["extern","🏷 Bezoeker"]].map(([val,lbl])=>(
+                      <button key={val} onClick={()=>setExtType(val)} style={{flex:1,padding:"8px 4px",borderRadius:7,border:`1.5px solid ${extType===val?C.clay:C.g300}`,background:extType===val?C.clayL:"transparent",color:extType===val?C.clay:C.g600,fontWeight:700,fontSize:11,cursor:"pointer",fontFamily:"inherit"}}>{lbl}</button>
+                    ))}
+                  </div>
+                </div>
+                <Btn onClick={goExtern} disabled={extNaam.trim().length<3}>🚪 Doorgaan + onboarding →</Btn>
+              </div>
+            )}
           </div>
         </Card>
       </div>
@@ -1595,18 +1626,249 @@ function Beheer(){
   );
 }
 
+// ─── WERKPLAATSINSPECTIE DATA ─────────────────────────────────────────────────
+const WPI_SECTIES=[
+  {id:"algemeen",tit:"Algemene veiligheid",ico:"🦺",vragen:[
+    {id:"hoogte",    v:"Zijn er werken op hoogte?"},
+    {id:"pbm",       v:"Draagt iedereen de vereiste PBM's?"},
+    {id:"machines",  v:"Zijn alle machines in orde?"},
+    {id:"hijsen",    v:"De hijsbanden en kettingen zijn in goede staat (kleurcode per kwartaal)?"},
+    {id:"keuringen", v:"De keuringen van het materiaal zijn nog in orde (zie keuringssticker)?"},
+    {id:"kabels",    v:"Zijn de verlengsnoeren en kabels in goede staat en volledig afgerold?"},
+  ]},
+  {id:"locatie",tit:"Locatie specifieke vragen",ico:"📍",vragen:[
+    {id:"type",          v:"Betreft het om een werf of de werkplaats?",opties:["Werkplaats","Werf","Extern"]},
+    {id:"nooduitgangen", v:"Zijn de nooduitgangen vrij en makkelijk te bereiken?"},
+    {id:"lasschermen",   v:"Zijn de lasschermen goed geplaatst?"},
+    {id:"lasrook",       v:"Is de hoeveelheid lasrook / dampen in de werkplaats beperkt?"},
+  ]},
+  {id:"ehbo",tit:"EHBO, brand en gevaarlijke stoffen",ico:"🧯",vragen:[
+    {id:"ehbokoffer",  v:"De EHBO koffer is aanwezig en voldoende gevuld?"},
+    {id:"blusser",     v:"De blussers zijn in de buurt en makkelijk te bereiken?"},
+    {id:"gasflessen",  v:"De gasflessen staan rechtop en zijn vastgemaakt?"},
+    {id:"gasslangen",  v:"Zijn de gasslangen in goede staat en nog niet vervallen (fabricatiedatum + 5 jaar)?"},
+    {id:"gevaarlijk",  v:"Zijn er producten met gevaarlijke eigenschappen?"},
+    {id:"lekbakken",   v:"Staan de producten met gevaarlijke eigenschappen op lekbakken?"},
+    {id:"veiligeplek", v:"Staan de producten op een veilige plek (afstand van warm-werk, stabiele ondergrond)?"},
+    {id:"afgesloten",  v:"Zijn de recipiënten afgesloten?"},
+  ]},
+  {id:"orde",tit:"Orde en netheid",ico:"🧹",vragen:[
+    {id:"proper",     v:"Is de werkplek ordelijk en voldoende proper?"},
+    {id:"doorgangen", v:"Zijn er vrije doorgangen voorzien naar alle werkplekken?"},
+    {id:"materiaal",  v:"Al het materiaal wordt op de voorziene plaats bewaard?"},
+    {id:"knoppen",    v:"Alle knoppen en instructies zijn duidelijk leesbaar?"},
+    {id:"afvalbakken",v:"Er zijn voldoende afvalbakken aanwezig en deze worden tijdig geledigd?"},
+    {id:"sortering",  v:"Het afval wordt goed gesorteerd?"},
+  ]},
+  {id:"communicatie",tit:"Communicatie",ico:"💬",vragen:[
+    {id:"comm1",v:"Onze medewerkers communiceren goed met elkaar?"},
+    {id:"comm2",v:"De communicatie tussen medewerkers en crew/derden verloopt vlot?"},
+    {id:"comm3",v:"De crew/derden zijn op de hoogte van de werken?"},
+  ]},
+  {id:"andere",tit:"Andere",ico:"📝",vragen:[
+    {id:"opm",     v:"Zijn er nog opmerkingen die niet in de vragenlijst voorkwamen?",isText:true},
+    {id:"positief",v:"Wat waren positieve punten?",isText:true},
+  ]},
+];
+
+// ─── WERKPLAATSINSPECTIE ───────────────────────────────────────────────────────
+function Werkplaatsinspectie({user}){
+  const today=new Date().toISOString().split("T")[0];
+  const [stap,setStap]=useState("nieuw");
+  const [meta,setMeta]=useState({datum:today,locatie:"Werkplaats",project:"Atelier",inspector:user.nm});
+  const [antw,setAntw]=useState({});
+  const [secIdx,setSecIdx]=useState(0);
+
+  const allTelVragen=WPI_SECTIES.flatMap(s=>s.vragen.filter(v=>!v.isText&&!v.opties));
+  const totV=allTelVragen.length;
+  const totGemarkeerd=Object.values(antw).filter(a=>a.a==="nee").length;
+  const totOk=Object.values(antw).filter(a=>a.a==="ja"||a.a==="nvt").length;
+
+  const sectieScore=s=>{
+    const vr=s.vragen.filter(v=>!v.isText&&!v.opties);
+    return{ok:vr.filter(v=>antw[v.id]?.a==="ja"||antw[v.id]?.a==="nvt").length,tot:vr.length};
+  };
+
+  const setA=(id,val)=>setAntw(p=>({...p,[id]:{...p[id]||{},a:val}}));
+  const setNote=(id,val)=>setAntw(p=>({...p,[id]:{...p[id]||{},opmerking:val}}));
+  const setFoto=(id,file)=>{
+    if(!file)return;
+    const r=new FileReader();
+    r.onload=e=>setAntw(p=>({...p,[id]:{...p[id]||{},foto:e.target.result}}));
+    r.readAsDataURL(file);
+  };
+
+  const genVerslag=()=>{
+    const d=new Date(meta.datum).toLocaleDateString("nl-BE",{day:"2-digit",month:"long",year:"numeric"});
+    let t=`WERKPLAATSINSPECTIE — ARGEX NV\n`;
+    t+=`Datum: ${d} | Locatie: ${meta.locatie} | Project: ${meta.project}\n`;
+    t+=`Uitgevoerd door: ${meta.inspector}\n`;
+    t+=`Score: ${totOk}/${totV} — Gemarkeerde items: ${totGemarkeerd}\n`;
+    t+=`${"─".repeat(50)}\n`;
+    WPI_SECTIES.forEach(s=>{
+      const sc=sectieScore(s);
+      t+=`\n${s.tit.toUpperCase()} (${sc.ok}/${sc.tot})\n`;
+      s.vragen.forEach(v=>{
+        const a=antw[v.id];
+        t+=`  • ${v.v}\n    → ${a?.a?a.a.toUpperCase():"—"}\n`;
+        if(a?.opmerking)t+=`    Opmerking: ${a.opmerking}\n`;
+      });
+    });
+    t+=`\nGEMARKEERDE ITEMS:\n`;
+    WPI_SECTIES.forEach(s=>s.vragen.forEach(v=>{
+      if(antw[v.id]?.a==="nee"){
+        t+=`  ⚠ [${s.tit}] ${v.v}\n`;
+        if(antw[v.id]?.opmerking)t+=`    → ${antw[v.id].opmerking}\n`;
+      }
+    }));
+    return t;
+  };
+
+  const curSec=WPI_SECTIES[secIdx];
+
+  if(stap==="nieuw")return(
+    <div className="fu">
+      <SH sub="Leidinggevende — nieuwe inspectie">🔍 Werkplaatsinspectie</SH>
+      <Card style={{marginBottom:14}}>
+        <div style={{fontSize:13,fontWeight:700,color:C.g900,marginBottom:12}}>Inspectie starten</div>
+        <Inp label="Datum" value={meta.datum} type="date" onChange={v=>setMeta(p=>({...p,datum:v}))}/>
+        <Inp label="Locatie / afdeling" value={meta.locatie} onChange={v=>setMeta(p=>({...p,locatie:v}))} placeholder="bv. Werkplaats, Zeefgebouw"/>
+        <Inp label="Project / werfnummer (optioneel)" value={meta.project} onChange={v=>setMeta(p=>({...p,project:v}))} placeholder="bv. Atelier, Werf X"/>
+        <Inp label="Uitgevoerd door" value={meta.inspector} onChange={v=>setMeta(p=>({...p,inspector:v}))}/>
+        <Btn onClick={()=>{setStap("invullen");setSecIdx(0);setAntw({});}}>🔍 Inspectie starten ({totV} vragen) →</Btn>
+      </Card>
+      <div style={{background:C.amberL,borderRadius:8,padding:"10px 14px",fontSize:12,color:C.amber,fontWeight:600}}>
+        ℹ Per vraag kan je een foto nemen en een opmerking toevoegen. Gemarkeerde items (Nee) worden in het verslag gebundeld.
+      </div>
+    </div>
+  );
+
+  if(stap==="invullen"){
+    const pct=Math.round(((secIdx)/WPI_SECTIES.length)*100);
+    return(
+      <div className="fu">
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
+          <div>
+            <div style={{fontSize:15,fontWeight:900,color:C.g900}}>{curSec.ico} {curSec.tit}</div>
+            <div style={{fontSize:11,color:C.g500}}>Sectie {secIdx+1} van {WPI_SECTIES.length} · {meta.locatie}</div>
+          </div>
+          <Tag label={`${secIdx+1}/${WPI_SECTIES.length}`} color={C.clay}/>
+        </div>
+        <div style={{height:5,background:C.g100,borderRadius:3,marginBottom:14,overflow:"hidden"}}>
+          <div style={{height:"100%",width:`${pct}%`,background:C.clay,borderRadius:3,transition:"width .3s"}}/>
+        </div>
+        {curSec.vragen.map(v=>{
+          const a=antw[v.id]||{};
+          const isNee=a.a==="nee";
+          return(
+            <Card key={v.id} style={{marginBottom:10,border:isNee?`1.5px solid ${C.red}`:undefined,background:isNee?C.redL:undefined}}>
+              <div style={{fontSize:13,fontWeight:700,color:C.g900,marginBottom:10,lineHeight:1.4}}>
+                {isNee&&<span style={{color:C.red,marginRight:5}}>⚠</span>}{v.v}
+              </div>
+              {v.opties?(
+                <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>
+                  {v.opties.map(opt=>(
+                    <button key={opt} onClick={()=>setA(v.id,opt.toLowerCase())} style={{padding:"8px 14px",borderRadius:7,border:`1.5px solid ${a.a===opt.toLowerCase()?C.clay:C.g300}`,background:a.a===opt.toLowerCase()?C.clayL:"transparent",color:a.a===opt.toLowerCase()?C.clayD:C.g700,fontWeight:700,fontSize:13,cursor:"pointer",fontFamily:"inherit"}}>{opt}</button>
+                  ))}
+                </div>
+              ):v.isText?(
+                <textarea value={a.a||""} onChange={e=>setA(v.id,e.target.value)} placeholder="Typ hier je opmerking..." style={{width:"100%",border:`1.5px solid ${C.g300}`,borderRadius:7,padding:"9px 12px",fontSize:13,fontFamily:"inherit",minHeight:70,resize:"vertical",color:C.g900}}/>
+              ):(
+                <>
+                  <div style={{display:"flex",gap:7,marginBottom:8}}>
+                    {[["ja","Ja",C.green],["nee","Nee",C.red],["nvt","N/B","#6B7280"]].map(([val,lbl,clr])=>(
+                      <button key={val} onClick={()=>setA(v.id,val)} style={{flex:1,padding:"10px 6px",borderRadius:8,border:`1.5px solid ${a.a===val?clr:C.g300}`,background:a.a===val?clr+"18":"transparent",color:a.a===val?clr:C.g500,fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:"inherit"}}>{lbl}</button>
+                    ))}
+                  </div>
+                  <div style={{display:"flex",gap:8,alignItems:"center"}}>
+                    <label style={{flexShrink:0,cursor:"pointer"}}>
+                      <input type="file" accept="image/*" capture="environment" style={{display:"none"}} onChange={e=>setFoto(v.id,e.target.files[0])}/>
+                      <div style={{width:38,height:38,borderRadius:8,border:`1.5px solid ${a.foto?C.clay:C.g300}`,background:a.foto?C.clayL:C.g50,display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,cursor:"pointer"}}>{a.foto?"📸":"📷"}</div>
+                    </label>
+                    {a.foto&&<img src={a.foto} alt="foto" style={{width:38,height:38,objectFit:"cover",borderRadius:8,border:`1.5px solid ${C.clay}`}}/>}
+                    <input value={a.opmerking||""} onChange={e=>setNote(v.id,e.target.value)} placeholder="Opmerking (optioneel)..." style={{flex:1,border:`1.5px solid ${C.g300}`,borderRadius:7,padding:"8px 11px",fontSize:12,fontFamily:"inherit",color:C.g900}}/>
+                  </div>
+                </>
+              )}
+            </Card>
+          );
+        })}
+        <div style={{display:"flex",gap:8,marginTop:6}}>
+          {secIdx>0&&(
+            <button onClick={()=>setSecIdx(s=>s-1)} className="bh" style={{flex:1,padding:"11px",background:"transparent",color:C.g700,border:`1.5px solid ${C.g300}`,borderRadius:8,fontFamily:"inherit",fontWeight:700,fontSize:14,cursor:"pointer"}}>← Vorige</button>
+          )}
+          <button onClick={()=>secIdx<WPI_SECTIES.length-1?setSecIdx(s=>s+1):setStap("verslag")} className="bh" style={{flex:2,padding:"11px",background:C.clay,color:C.white,border:"none",borderRadius:8,fontFamily:"inherit",fontWeight:800,fontSize:14,cursor:"pointer"}}>
+            {secIdx<WPI_SECTIES.length-1?"Volgende →":"📋 Verslag bekijken"}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const gemarkeerd=WPI_SECTIES.flatMap(s=>s.vragen.filter(v=>antw[v.id]?.a==="nee").map(v=>({sec:s.tit,v,a:antw[v.id]})));
+  return(
+    <div className="fu">
+      <SH sub={`${meta.inspector} · ${new Date(meta.datum).toLocaleDateString("nl-BE")}`}>📋 Verslag Werkplaatsinspectie</SH>
+      <Card style={{background:`linear-gradient(135deg,${C.clayDp},${C.clay})`,marginBottom:14}}>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:10,textAlign:"center"}}>
+          {[[`${totOk}/${totV}`,"Score",C.white],[`${totGemarkeerd}`,totGemarkeerd>0?"⚠ Gemarkeerd":"✅ Gemarkeerd",totGemarkeerd>0?"#FFD580":C.white],[meta.locatie,"Locatie",C.white]].map(([v,l,c])=>(
+            <div key={l}><div style={{fontSize:20,fontWeight:900,color:c,fontFamily:"'Work Sans',sans-serif"}}>{v}</div><div style={{fontSize:10,color:"rgba(255,255,255,.6)",marginTop:2}}>{l}</div></div>
+          ))}
+        </div>
+      </Card>
+      {gemarkeerd.length>0&&(
+        <>
+          <div style={{fontSize:11,fontWeight:700,color:C.red,letterSpacing:".08em",textTransform:"uppercase",marginBottom:8}}>⚠ Gemarkeerde items ({gemarkeerd.length})</div>
+          {gemarkeerd.map(({sec,v,a},i)=>(
+            <Card key={i} style={{marginBottom:8,borderLeft:`4px solid ${C.red}`,background:C.redL}}>
+              <div style={{fontSize:10,color:C.red,fontWeight:700,marginBottom:3}}>{sec}</div>
+              <div style={{fontSize:13,fontWeight:700,color:C.g900}}>{v.v}</div>
+              {a.opmerking&&<div style={{fontSize:12,color:C.g700,marginTop:5}}>→ {a.opmerking}</div>}
+              {a.foto&&<img src={a.foto} alt="" style={{width:80,height:60,objectFit:"cover",borderRadius:7,marginTop:8}}/>}
+            </Card>
+          ))}
+        </>
+      )}
+      <div style={{fontSize:11,fontWeight:700,color:C.g500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:8,marginTop:16}}>Resultaat per sectie</div>
+      {WPI_SECTIES.map(s=>{
+        const sc=sectieScore(s);
+        const pct=sc.tot?Math.round((sc.ok/sc.tot)*100):100;
+        return(
+          <Card key={s.id} style={{marginBottom:6}}>
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+              <span style={{fontSize:13,fontWeight:700,color:C.g900}}>{s.ico} {s.tit}</span>
+              <Tag label={sc.tot===0?"—":`${sc.ok}/${sc.tot}`} color={pct>=80?C.green:pct>=50?C.amber:C.red}/>
+            </div>
+          </Card>
+        );
+      })}
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginTop:14}}>
+        <button onClick={()=>{try{navigator.clipboard.writeText(genVerslag());}catch(e){}}} className="bh" style={{padding:"11px 10px",background:C.blueL,color:C.blue,border:`1.5px solid ${C.blue}33`,borderRadius:8,fontFamily:"inherit",fontWeight:700,fontSize:12,cursor:"pointer"}}>📋 Kopiëren</button>
+        <button onClick={()=>{const b=new Blob([genVerslag()],{type:"text/plain"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`WPI_Argex_${meta.datum}.txt`;a.click();}} className="bh" style={{padding:"11px 10px",background:C.greenL,color:C.green,border:`1.5px solid ${C.green}33`,borderRadius:8,fontFamily:"inherit",fontWeight:700,fontSize:12,cursor:"pointer"}}>⬇ Downloaden</button>
+      </div>
+      <div style={{marginTop:8}}>
+        <button onClick={()=>{setStap("nieuw");setAntw({});setSecIdx(0);}} className="bh" style={{width:"100%",padding:"11px",background:C.clayL,color:C.clay,border:`1.5px solid ${C.clay}33`,borderRadius:8,fontFamily:"inherit",fontWeight:700,fontSize:13,cursor:"pointer"}}>🔄 Nieuwe inspectie starten</button>
+      </div>
+      <div style={{background:C.amberL,borderRadius:8,padding:"10px 14px",fontSize:12,color:C.amber,marginTop:10}}>
+        📧 Stuur het gedownloade verslag naar <strong>bert.verbraecken@argex.be</strong>
+      </div>
+    </div>
+  );
+}
+
 // ─── NAVIGATIE ────────────────────────────────────────────────────────────────
 const ALLE_ROLES=["admin","leidinggevende","medewerker","aannemer"];
 const NAV=[
-  {id:"dashboard",  ico:"⊞", lbl:"Home",     roles:ALLE_ROLES},
-  {id:"toolboxen",  ico:"🎬", lbl:"Toolbox",  roles:ALLE_ROLES},
-  {id:"opleidingen",ico:"🎓", lbl:"Opleiding",roles:["admin","leidinggevende","medewerker"]},
-  {id:"bibliotheek",ico:"📚", lbl:"Procedure",roles:ALLE_ROLES},
-  {id:"contacten",  ico:"🩺", lbl:"EHBO",     roles:ALLE_ROLES},
-  {id:"noodplan",   ico:"🚨", lbl:"Noodplan", roles:ALLE_ROLES},
-  {id:"incidenten", ico:"⚠️", lbl:"Incident", roles:ALLE_ROLES},
-  {id:"comite",     ico:"📋", lbl:"CPBW",     roles:["admin","leidinggevende"]},
-  {id:"beheer",     ico:"🔧", lbl:"Beheer",   roles:["admin"]},
+  {id:"dashboard",    ico:"⊞", lbl:"Home",      roles:ALLE_ROLES},
+  {id:"toolboxen",    ico:"🎬", lbl:"Toolbox",   roles:ALLE_ROLES},
+  {id:"opleidingen",  ico:"🎓", lbl:"Opleiding", roles:["admin","leidinggevende","medewerker"]},
+  {id:"bibliotheek",  ico:"📚", lbl:"Procedure", roles:ALLE_ROLES},
+  {id:"contacten",    ico:"🩺", lbl:"EHBO",      roles:ALLE_ROLES},
+  {id:"noodplan",     ico:"🚨", lbl:"Noodplan",  roles:ALLE_ROLES},
+  {id:"incidenten",   ico:"⚠️", lbl:"Incident",  roles:ALLE_ROLES},
+  {id:"inspectie",    ico:"🔍", lbl:"Inspectie", roles:["admin","leidinggevende"]},
+  {id:"comite",       ico:"📋", lbl:"CPBW",      roles:["admin","leidinggevende"]},
+  {id:"beheer",       ico:"🔧", lbl:"Beheer",    roles:["admin"]},
 ];
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
@@ -1622,6 +1884,7 @@ function MainApp({user,onLogout}){
       case "contacten":   return <Contacten/>;
       case "noodplan":    return <Noodplan/>;
       case "incidenten":  return <Incidenten user={user}/>;
+      case "inspectie":   return <Werkplaatsinspectie user={user}/>;
       case "comite":      return <Comite/>;
       case "beheer":      return <Beheer/>;
       default:            return <Dashboard user={user} setTab={setTab}/>;
