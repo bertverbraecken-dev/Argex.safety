@@ -34,9 +34,9 @@ const SITE_SHORT = "Argex";
 
 // ─── GEBRUIKERS ───────────────────────────────────────────────────────────────
 const USERS = {
-  "admin@argex.be":         { pw:"admin2026",    id:1, name:"Jonas Willems",      role:"admin",          avatar:"JW", functie:"Veiligheidscoördinator", afdeling:"H&S",        onboardingDone:true  },
-  "chef@argex.be":          { pw:"chef2026",     id:2, name:"Raf Bogaert",        role:"leidinggevende", avatar:"RB", functie:"Ploegchef Productie",    afdeling:"Productie",  onboardingDone:true  },
-  "werknemer@argex.be":     { pw:"werk2026",     id:3, name:"Jan Pieters",        role:"medewerker",     avatar:"JP", functie:"Machine-operator",       afdeling:"Productie",  onboardingDone:true  },
+  "admin@argex.be":         { pw:"admin2026",    id:1, name:"Bert Verbraecken",   role:"admin",          avatar:"BV", functie:"Preventieadviseur IDPBW", afdeling:"H&S",       onboardingDone:true  },
+  "chef@argex.be":          { pw:"chef2026",     id:2, name:"Georgy Eggermont",   role:"leidinggevende", avatar:"GE", functie:"Ploegchef Productie",    afdeling:"Productie",  onboardingDone:true  },
+  "werknemer@argex.be":     { pw:"werk2026",     id:3, name:"Medewerker Demo",    role:"medewerker",     avatar:"MD", functie:"Machine-operator",       afdeling:"Productie",  onboardingDone:true  },
   "aannemer@argex.be":      { pw:"aan2026",      id:4, name:"Externe Aannemer",   role:"aannemer",       avatar:"EA", functie:"Externe aannemer",       afdeling:"Extern",     onboardingDone:true  },
   "nieuw@argex.be":         { pw:"nieuw2026",    id:5, name:"Nieuwe Medewerker",  role:"medewerker",     avatar:"NM", functie:"Medewerker",             afdeling:"Productie",  onboardingDone:false },
 };
@@ -46,200 +46,635 @@ const PROCEDURES = [
   {
     id:1, cat:"Procedures",
     titel:"Werken in en rondom de groeve",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Groeve","Grondverzet","Val","Instorting","Talud"],
     beschrijving:"Veiligheidsregels voor werkzaamheden in en rondom de groeve voor kleiwinning op de site Burcht.",
     kernpunten:[
-      "INVULLEN — kernpunt 1",
-      "INVULLEN — kernpunt 2",
-      "INVULLEN — kernpunt 3",
-      "INVULLEN — kernpunt 4",
-      "INVULLEN — kernpunt 5",
+      "Voer altijd een LMRA uit vóór de start van werkzaamheden in de groeve.",
+      "Bewaar voldoende afstand tot het talud en de grondkant — risico op instorting.",
+      "Gebruik enkel goedgekeurde rijroutes voor voertuigen (wielladers, dumpers).",
+      "Valharnas verplicht bij werken nabij hoogteverschillen of kanten van de groeve.",
+      "Meld onveilige situaties (verzakking, instabiliteit, scheuren) onmiddellijk aan de leidinggevende.",
     ],
-    verboden:["INVULLEN — verboden handeling 1","INVULLEN — verboden handeling 2"],
-    pbm:["INVULLEN — PBM 1","INVULLEN — PBM 2","INVULLEN — PBM 3"],
+    verboden:["Werken in de groeve zonder LMRA en toestemming leidinggevende","Roken in of rondom de groeve (explosiegevaar door stof)"],
+    pbm:["Veiligheidshelm","Veiligheidsschoenen (S3)","Fluovest","Werkhandschoenen","FFP3-stofmasker bij stofvorming"],
   },
   {
     id:2, cat:"Procedures",
     titel:"Ovens & droogtrommels — hoge temperaturen",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Oven","Droogtrommel","Warmte","Brand","Verbrandingsrisico"],
     beschrijving:"Procedure voor veilig werken rond de draaiovens en droogtrommels voor het bakken van klei-granulaten.",
     kernpunten:[
-      "INVULLEN — kernpunt 1",
-      "INVULLEN — kernpunt 2",
-      "INVULLEN — kernpunt 3",
+      "LOTO verplicht bij elk onderhoud aan oven of droogtrommel — nooit werken aan een draaiende installatie.",
+      "Bord 'werken aan machine' plaatsen en zone afbakenen vóór de start.",
+      "Minimum veilige afstand bewaren tot hete oppervlakken — aanraking verboden zonder hittebestendige PBM's.",
+      "Noodstopknop kennen en kunnen bereiken vóór start van werkzaamheden.",
     ],
-    verboden:["INVULLEN — verboden handeling 1"],
-    pbm:["INVULLEN — PBM 1","INVULLEN — PBM 2"],
+    verboden:["Werken aan oven of droogtrommel zonder LOTO toegepast te hebben","Oven betreden of aanraken zonder hittebestendige PBM's"],
+    pbm:["Hittebestendige handschoenen","Veiligheidsbril of gelaatsscherm","Veiligheidsschoenen (S3)","Veiligheidshelm","Katoen/vlam vertragende werkkledij"],
   },
   {
     id:3, cat:"Procedures",
     titel:"Transportbanden & zeefinstallaties",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Transportband","Zeef","Beknelling","Machine","LOTO"],
     beschrijving:"Procedure voor veilig werken bij en rond transportbanden, zeefinstallaties en sorteerlijnen.",
     kernpunten:[
-      "INVULLEN — kernpunt 1",
-      "INVULLEN — kernpunt 2",
+      "LOTOTO verplicht bij elk onderhoud of interventie aan transportbanden en zeefinstallaties.",
+      "Bord 'werken aan machine' zichtbaar plaatsen en werkzone afbakenen met kegels of lint.",
     ],
-    verboden:["INVULLEN — verboden handeling 1"],
-    pbm:["INVULLEN — PBM 1"],
+    verboden:["Een rijdende transportband aanraken of er overheen stappen","Werken aan transportband zonder LOTOTO te hebben toegepast"],
+    pbm:["Veiligheidsschoenen (S3)","Werkhandschoenen","Gehoorbescherming (≥85 dB zone)","Veiligheidshelm","FFP3-stofmasker"],
   },
   {
     id:4, cat:"Procedures",
     titel:"Heftruck & intern transport op de site",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Heftruck","Transport","Rijveiligheid","Voetgangers"],
     beschrijving:"Veiligheidsregels voor intern transport met heftrucks en andere voertuigen op de Argex-site.",
     kernpunten:[
-      "INVULLEN — kernpunt 1",
-      "INVULLEN — kernpunt 2",
+      "Vorken 10–15 cm boven de grond tijdens rijden. Maximumsnelheid op de site: 15 km/u.",
+      "Oogcontact maken met voetgangers vóór doorrijden. Voetgangers hebben altijd voorrang.",
     ],
-    verboden:["INVULLEN — verboden handeling 1"],
-    pbm:["INVULLEN — PBM 1"],
+    verboden:["Personen vervoeren op vorken, paletten of voorzetstukken","GSM of oortjes gebruiken tijdens het rijden met heftruck"],
+    pbm:["Veiligheidsschoenen (S3)","Fluovest","Veiligheidshelm","Veiligheidsgordel (indien aanwezig)"],
   },
   {
     id:5, cat:"Procedures",
     titel:"Silovrachtwagen — pneumatisch lossen",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Silo","Vrachtwagen","Stof","Pneumatisch","Lossen"],
     beschrijving:"Veiligheid bij het pneumatisch lossen van kleikorrels via silovrachtwagens op klantensites.",
     kernpunten:[
-      "INVULLEN — kernpunt 1",
-      "INVULLEN — kernpunt 2",
+      "Externe chauffeurs verplicht aanmelden bij receptie of expeditie (03/250.15.15) vóór lossen.",
+      "Productiezone enkel betreden onder begeleiding van Argex-medewerker. FFP3-masker verplicht bij stofvorming.",
     ],
-    verboden:["INVULLEN — verboden handeling 1"],
-    pbm:["INVULLEN — PBM 1"],
+    verboden:["Productiezone betreden zonder begeleiding van Argex-personeel","Lossen zonder aanmelding of goedkeuring van expeditie"],
+    pbm:["Veiligheidsschoenen (S3)","Veiligheidshelm","Fluovest","FFP3-stofmasker (kleikorrelstof bevat kristallijn silica)"],
   },
   {
     id:6, cat:"Procedures",
     titel:"Veiligheid bezoekers en aannemers",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Bezoekers","Aannemers","Inductie","Toegang"],
     beschrijving:"Procedure voor veilig onthaal van bezoekers en externe aannemers op de Argex site Burcht.",
     kernpunten:[
-      "INVULLEN — kernpunt 1",
-      "INVULLEN — kernpunt 2",
+      "Aanmelden verplicht bij receptie (hoofdbureel) of expeditie (03/250.15.15) vóór betreden van de site.",
+      "Dagelijkse registratie verplicht bij werken langer dan één dag. Register beschikbaar bij onderhoudsdienst, receptie en expeditie.",
     ],
-    verboden:["INVULLEN — verboden handeling 1"],
-    pbm:["INVULLEN — PBM 1"],
+    verboden:["Betreden van de site zonder registratie en begeleiding","Productiezone betreden zonder de verplichte PBM's"],
+    pbm:["Veiligheidsschoenen (S3)","Veiligheidshelm","Fluovest"],
   },
   {
     id:7, cat:"Handleidingen",
     titel:"Handleiding PBM's — overzicht per zone",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["PBM","Zones","Helm","Handschoenen","Bril"],
     beschrijving:"Overzicht van alle verplichte en aanbevolen PBM's per werkzone op de Argex site.",
-    kernpunten:["INVULLEN — kernpunt 1"],
-    pbm:["INVULLEN — PBM 1"],
+    kernpunten:[
+      "Productiezone (alle zones): veiligheidshelm + veiligheidsschoenen S3 verplicht voor iedereen.",
+      "Zones rijdend verkeer (heftrucks, wielladers, vrachtwagens): fluovest altijd verplicht.",
+      "Stofzones (silo's, zeeflijnen, transportbanden, kleivoorbereiding): FFP3/P3-stofmasker verplicht — kleikorrelstof bevat kristallijn silica.",
+      "Waterzone (kaaimuur, kanaal): zwemvest/reddingsvest verplicht.",
+      "Lassen/slijpen/snijden: veiligheidsbril of gelaatsscherm + werkhandschoenen + lasschort.",
+      "Werken op hoogte >2 m: valharnas met gekeurd ankerpunt verplicht.",
+    ],
+    pbm:["Veiligheidshelm","Veiligheidsschoenen S3","Fluovest","FFP3-stofmasker","Werkhandschoenen","Gehoorbescherming","Veiligheidsbril","Valharnas","Zwemvest"],
   },
   {
     id:8, cat:"Handleidingen",
     titel:"Handleiding brandblussers — gebruik & locaties",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Brand","Blusser","BHV","Locaties"],
     beschrijving:"Praktische handleiding voor gebruik van brandblusser en overzicht van alle locaties op de site.",
-    kernpunten:["INVULLEN — kernpunt 1"],
+    kernpunten:[
+      "Brandblussers zijn jaarlijks gekeurd — controleer de keuringssticker vóór gebruik.",
+      "Locaties: oven hal, kleivoorbereiding, expeditie, sociaal gebouw, atelier en EHBO-lokaal onderhoudsloods.",
+      "Nooduitgangen en blusmiddelen altijd vrijhouden — nooit blokkeren met materiaal.",
+    ],
   },
   {
     id:9, cat:"VIK",
-    titel:"VIK — Heftruck bedienen",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
-    tags:["Heftruck","VIK","PBM","Rijveiligheid"],
-    beschrijving:"Veiligheidsinstructiekaart voor het rijden met een heftruck op de Argex-site.",
-    kernpunten:["INVULLEN — kernpunt 1"],
-    verboden:["INVULLEN — verboden handeling 1"],
-    pbm:["INVULLEN — PBM 1"],
+    titel:"VIK-P-OD-01 — Kuiswerken omgeving massieven/oven",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Bert Verbraecken",
+    tags:["Oven","Massieven","Kuiswerken","VIK","Warmte","Stof"],
+    beschrijving:"Orde en netheid in de omgeving van de massieven en oven. Dagelijkse kuiswerken conform VIK-P-OD-01.",
+    kernpunten:[
+      "Let op draaiende en bewegende delen — nooit aanraken zonder LOTOTO.",
+      "Warmtebronnen zijn aanwezig — draag lange kledij en veiligheidsbril.",
+      "Niet overhaast op- en aftrappen lopen. Stootgevaar aanwezig.",
+      "Rekening houden met andere personen in de nabije omgeving.",
+      "Gebruik de juiste arbeidsmiddelen. Materiaalresten sorteren en apart leggen.",
+      "Stofwolken voorkomen door sproeien. Geen perslucht in stofzones.",
+    ],
+    verboden:["Werken aan draaiende installaties zonder LOTOTO","Perslucht gebruiken om stof te verwijderen (explosiegevaar)"],
+    pbm:["Veiligheidshelm","Veiligheidsschoenen S3","Veiligheidsbril","Lange kledij (vlam vertraging)","FFP3-stofmasker"],
   },
   {
     id:10, cat:"VIK",
-    titel:"VIK — Werken rondom de oven",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
-    tags:["Oven","VIK","Warmte","PBM"],
-    beschrijving:"Veiligheidsinstructiekaart voor werkzaamheden in de nabijheid van de draaiovens.",
-    kernpunten:["INVULLEN — kernpunt 1"],
-    verboden:["INVULLEN — verboden handeling 1"],
-    pbm:["INVULLEN — PBM 1"],
+    titel:"VIK-P-OD-04 — Kuiswerken omgeving bruinkool (ATEX)",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Bert Verbraecken",
+    tags:["Bruinkool","ATEX","Kuiswerken","Brand","Explosie","VIK"],
+    beschrijving:"Kuisen van de omgeving van de bruinkoolinstallatie. ATEX-zone: rookverbod en speciale maatregelen verplicht.",
+    kernpunten:[
+      "ATEX-zone: rookverbod strikt — bruinkoolstof is explosief.",
+      "Bij incident onmiddellijk de rechtstreekse verantwoordelijke verwittigen.",
+      "Aandachtig voor stootgevaar en struikelgevaar.",
+      "Geen ontvlambare vloeistoffen gebruiken voor reiniging.",
+      "Stofwolken vermijden: sproeien, enkel ATEX-stofzuiger of natte reiniging gebruiken.",
+      "Ophoping bruinkoolstof vermijden, zeker in warme zones en rond silo's.",
+    ],
+    verboden:["Roken in of rondom de bruinkoolzone","Perslucht gebruiken om bruinkoolstof weg te blazen","Las- of snijwerken zonder werkvergunning en ATEX-check"],
+    pbm:["Veiligheidshelm","Veiligheidsschoenen S3","Veiligheidsbril","FFP3-stofmasker","ATEX-geschikte kledij"],
   },
   {
     id:11, cat:"VIK",
-    titel:"VIK — Transportband onderhoud (LOTO)",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
-    tags:["Transportband","LOTO","Onderhoud","VIK"],
-    beschrijving:"Veiligheidsinstructiekaart voor onderhoud aan transportbanden met LOTO-procedure.",
-    kernpunten:["INVULLEN — kernpunt 1"],
-    verboden:["INVULLEN — verboden handeling 1"],
-    pbm:["INVULLEN — PBM 1"],
+    titel:"VIK-P-OD-05 — Kuiswerken brandersplatform",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Bert Verbraecken",
+    tags:["Brander","Platform","Oven","Kuiswerken","Hoogte","VIK"],
+    beschrijving:"Dagelijkse kuiswerken rond de brander op het brandersplatform buiten (VIK-P-OD-05).",
+    kernpunten:[
+      "Let op draaiende en bewegende delen — warmtebronnen aanwezig.",
+      "Niet overhaast op- en aftrappen lopen. Stootgevaar.",
+      "Rekening houden met andere personen die eventueel onder het platform lopen.",
+      "Beschadigingen onmiddellijk melden aan de leidinggevende.",
+      "Gebruikte materialen opruimen. Stofwolken vermijden door sproeien.",
+    ],
+    verboden:["Werken op platform zonder fluovest en veiligheidshelm","Materiaal rondslingeren dat kan vallen op personen onder het platform"],
+    pbm:["Veiligheidshelm","Veiligheidsschoenen S3","Veiligheidsbril","Fluovest","Lange kledij","FFP3-stofmasker"],
+  },
+  {
+    id:12, cat:"VIK",
+    titel:"VIK-P-OD-06 — Kuiswerken koelkelder",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Bert Verbraecken",
+    tags:["Koelkelder","Kuiswerken","Besloten ruimte","VIK","Stof"],
+    beschrijving:"Kuiswerken in de koelkelder. Helmdracht verplicht bij betreden. P3-stofmasker vereist (VIK-P-OD-06).",
+    kernpunten:[
+      "Helm verplicht bij betreden van de koelkelder — ook tijdens kuiswerken.",
+      "Niet overhaast op- en aftrappen lopen. Stootgevaar en struikelgevaar.",
+      "Pas op voor draaiende of bewegende delen.",
+      "P3-stofmasker verplicht (kleikorrelstof bevat kristallijn silica).",
+      "Correcte arbeidsmiddelen gebruiken. Stofwolken vermijden door sproeien.",
+    ],
+    verboden:["Koelkelder betreden zonder veiligheidshelm","Werken aan draaiende of bewegende delen zonder LOTOTO"],
+    pbm:["Veiligheidshelm (verplicht)","Veiligheidsschoenen S3","FFP3/P3-stofmasker","Werkhandschoenen"],
+  },
+  {
+    id:13, cat:"VIK",
+    titel:"VIK-P-OV-01 — Gebruik steenzaagmachine",
+    versie:"v2.0", datum:"29/06/2016", auteur:"Argex H&S",
+    tags:["Steenzaag","Labo","Oven","Zaagmachine","VIK","Elektrisch"],
+    beschrijving:"Veiligheidsinstructiekaart voor het verzagen van refractaire stenen voor de oveninstallatie en labo-onderzoeken.",
+    kernpunten:[
+      "Bedieningspositie mag enkel verlaten worden als het zaagblad volledig stilstaat.",
+      "Bij inzetten zaagblad: steeds draairichting controleren en scherpe kanten beschermen.",
+      "Machine minstens 1x per ploegendienst controleren op zichtbare schade.",
+      "Gebreken onmiddellijk melden — machine stilzetten en beveiligen tegen herinschakeling.",
+      "Enkel voor nat doorzagen van mineraal materiaal. Geen hout, kunststof of metaal zagen.",
+      "Aardlekschakelaar (FI) verplicht aanwezig in stroomtoevoer.",
+    ],
+    verboden:["Machine verlaten met nog draaiend zaagblad","Zagen van hout, kunststof of metaal met steenzaagmachine","Elektrische werken door onbevoegden"],
+    pbm:["Veiligheidsbril of gelaatsscherm","Werkhandschoenen","Veiligheidsschoenen S3","Gehoorbescherming","Kledij met lange mouwen"],
+  },
+  {
+    id:14, cat:"VIK",
+    titel:"VIK-P-LA-01 — Chemische analyse labo",
+    versie:"v1.0", datum:"08/05/2013", auteur:"Argex H&S",
+    tags:["Labo","Chemie","Zuur","Analyse","VIK"],
+    beschrijving:"Chemische analyse: bepaling van zuuroplosbaar sulfaat, totaal zwavel- en chloridegehalte van korrels conform Europese normering.",
+    kernpunten:[
+      "Lees eerst de veiligheidsinformatieblad (SDS) van alle gebruikte chemische producten.",
+      "Werk altijd in de trekkast bij gebruik van zuren.",
+      "Flessen steeds goed afsluiten en onmiddellijk terugplaatsen in de voorziene kast.",
+      "Draag kledij met lange mouwen om huidcontact te voorkomen.",
+      "Bij twijfel: werken met gevaarlijke producten conform WI MM 5.3 (map labo).",
+    ],
+    verboden:["Zuren gebruiken buiten de trekkast","Chemische producten laten staan zonder afsluiting"],
+    pbm:["Veiligheidsbril","Zuurbestendige werkhandschoenen","Kledij met lange mouwen","Veiligheidsschoenen S3"],
   },
   {
     id:12, cat:"WIK",
     titel:"WIK — Dagelijkse voertuigcontrole heftruck",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Heftruck","WIK","Dagelijkse controle","Onderhoud"],
     beschrijving:"Werkinstructiekaart voor de dagelijkse pre-use controle van de heftruck.",
-    kernpunten:["INVULLEN — kernpunt 1"],
+    kernpunten:[
+      "Dagelijkse pre-use controle: remmen, stuurbekrachtiging, vloeistofniveaus, bandenspanning, vorken en mast, verlichting, claxon, veiligheidsgordel. Defect → niet gebruiken, melden.",
+    ],
   },
   {
     id:13, cat:"WIK",
     titel:"WIK — Oven opstarten procedure",
-    versie:"v1.0", datum:"INVULLEN", auteur:"Argex H&S",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
     tags:["Oven","WIK","Opstarten","Procedure"],
     beschrijving:"Stap-voor-stap werkinstructie voor het veilig opstarten van de draaiovens.",
-    kernpunten:["INVULLEN — kernpunt 1"],
+    kernpunten:[
+      "Controleer vóór opstarten: afschermingen intact, zone vrij van personen, LOTOTO vrijgegeven, brandblussers bereikbaar, noodstop ontgrendeld. Start pas na goedkeuring leidinggevende.",
+    ],
+  {
+    id:14, cat:"Procedures",
+    titel:"LMRA — Laatste Minuut Risico Analyse",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
+    tags:["LMRA","Risico","STOP","THINK","GO","Vóór de start"],
+    beschrijving:"Voer een LMRA uit vóór elke taak met risico. STOP – THINK – GO. 'Als het niet veilig kan, dan doen we het niet!'",
+    kernpunten:[
+      "STOP: Ken je taak en de aanwezige risico's vóór de start.",
+      "THINK: Controleer werkvergunning, PBM's, nooduitgangen, brandblussers en verzamelplaats.",
+      "THINK: Zijn maatregelen getroffen tegen brand, gevaarlijke stoffen en valgevaar?",
+      "THINK: Is LOTOTO toegepast op alle machines en installaties waaraan gewerkt wordt?",
+      "THINK: Is de werkplek netjes, veilig en zijn struikel-/glijrisico's gekend?",
+      "GO: Kan ik de werkzaamheden veilig uitvoeren? JA → starten. NEEN → stop en meld aan leidinggevende.",
+      "Bij gewijzigde omstandigheden tijdens het werk: opnieuw LMRA uitvoeren.",
+    ],
+    verboden:["Starten met risicovolle werkzaamheden zonder LMRA","Doorgaan bij twijfel over veiligheid — altijd stoppen en melden"],
+    pbm:["Afhankelijk van taak en risico — zie procedure of VIK"],
+  },,
+  {
+    id:18, cat:"VIK",
+    titel:"VIK-P-KO-01 — Vrijmaken densiteitsmeter (ioniserende bron)",
+    versie:"v2.0", datum:"29/03/2017", auteur:"Bert Verbraecken",
+    tags:["Densiteitsmeter","Ioniserende straling","Koelkelder","VIK","Radioactief"],
+    beschrijving:"Veilig verwijderen van puin bij de ioniserende bron in de koelkelder. Enkel bevoegde personen.",
+    kernpunten:[
+      "Enkel bevoegde personen mogen deze taak uitvoeren.",
+      "Afscherming respecteren: kettingen die zone afbakenen laten hangen.",
+      "Verblijftijd minimaliseren. Afstand maximaliseren.",
+      "Steker na vrijmaken onmiddellijk opnieuw op zijn plaats zetten.",
+      "Argex naast de trechter opkuisen en in trechter scheppen.",
+      "Vergrendelingssleutel steeds bij de ploegverantwoordelijke bewaren.",
+      "Bij beschadiging: leidinggevende + preventieadviseur verwittigen, zone 20m afsluiten. AV Controlatom: 02/674 51 20.",
+    ],
+    verboden:["Handen onder de meetopstelling brengen","Bron openen of demonteren zonder toestemming"],
+    pbm:["Veiligheidshelm","Veiligheidsschoenen S3","Werkhandschoenen","FFP3-stofmasker"],
   },
-];
+  {
+    id:19, cat:"VIK",
+    titel:"VIK-P-KO-02 — Koeling kuisen zonder stop",
+    versie:"v1.0", datum:"06/05/2013", auteur:"Argex H&S",
+    tags:["Koeling","Kuiswerken","Brokkenval","VIK","Lopende installatie"],
+    beschrijving:"Na een brokkenval de koeling kuisen om continue materiaalstroom te verzekeren en verstoppingen te voorkomen.",
+    kernpunten:[
+      "Let op pieklawaai — gehoorbescherming verplicht.",
+      "Niet overhaast op- en aftrappen lopen. Stootgevaar.",
+      "Oppassen voor bewegende delen — nooit aanraken.",
+      "Veiligheidsbril en stofmasker dragen.",
+      "Alle arbeidsmiddelen na de werken terugplaatsen.",
+    ],
+    verboden:["Bewegende delen aanraken tijdens werking","Werken zonder stofmasker in koelzone"],
+    pbm:["Veiligheidshelm","Veiligheidsbril","Gehoorbescherming","FFP3-stofmasker","Veiligheidsschoenen S3"],
+  },
+  {
+    id:20, cat:"VIK",
+    titel:"VIK-P-KO-03 — Koeling kuisen met stop (stilstand)",
+    versie:"v1.0", datum:"06/05/2013", auteur:"Argex H&S",
+    tags:["Koeling","Kuiswerken","Stilstand","VIK","Roosters"],
+    beschrijving:"Tijdens stilstand de koeling kuisen voor goede werking bij opstart. Roosters binnenin kunnen gecontroleerd worden.",
+    kernpunten:[
+      "Installatie volledig stilleggen. LOTOTO toepassen vóór start.",
+      "Let op pieklawaai en bewegende delen bij herstart.",
+      "Niet overhaast op- en aftrappen lopen.",
+      "Veiligheidsbril en stofmasker dragen. Arbeidsmiddelen nadien terugplaatsen.",
+    ],
+    verboden:["Werken aan koeling zonder LOTOTO","Roosters controleren bij draaiende installatie"],
+    pbm:["Veiligheidshelm","Veiligheidsbril","Gehoorbescherming","FFP3-stofmasker","Veiligheidsschoenen S3"],
+  },
+  {
+    id:21, cat:"VIK",
+    titel:"VIK-P-KO-04 — Brokkenval ledigen (wiellader)",
+    versie:"v2.0", datum:"29/03/2017", auteur:"Argex H&S",
+    tags:["Brokkenval","Wiellader","Kuiswerken","VIK","Warmte"],
+    beschrijving:"Brokkenval vrijmaken voor continue materiaalstroom. Enkel voor personen met geldig wielladerattest.",
+    kernpunten:[
+      "Enkel personen met geldig wielladerattest.",
+      "Kijk uit voor andere voertuigen en personen. Warmtebronnen aanwezig.",
+      "Ramen en deuren dicht houden. Stofmasker dragen.",
+      "Niet roken in voertuigen. Max. 15 km/u.",
+    ],
+    verboden:["Wiellader bedienen zonder wielladerattest","Roken in of rondom de brokkenvalzone"],
+    pbm:["Veiligheidshelm","Veiligheidsbril","FFP3-stofmasker","Werkhandschoenen","Veiligheidsschoenen S3","Fluovest"],
+  },
+  {
+    id:22, cat:"VIK",
+    titel:"VIK-P-KV-01 — Kuisen korven en voorplaten",
+    versie:"v1.0", datum:"02/05/2013", auteur:"Argex H&S",
+    tags:["Korven","Voorplaten","Kuiswerken","VIK","Tonstars"],
+    beschrijving:"Gebruikte korven en voorplaten reinigen om als reserve te stockeren. Grondig reinigen voor efficiënte productie.",
+    kernpunten:[
+      "Juiste arbeidsmiddelen gebruiken. Correcte houding bij tillen zware materialen.",
+      "Niet alleen tillen of heffen aan zware onderdelen.",
+      "Let op pieklawaai. Orde en netheid voorkomt struikelgevaar.",
+      "Alles proper achterlaten na de werken.",
+    ],
+    verboden:["Zwaar materiaal alleen tillen zonder hulp of hijsgereedschap"],
+    pbm:["Veiligheidsbril","Werkhandschoenen","Gehoorbescherming","Veiligheidsschoenen S3"],
+  },
+  {
+    id:23, cat:"VIK",
+    titel:"VIK-P-KV-02 — Korven en voorplaten vervangen (tonstars)",
+    versie:"v1.0", datum:"02/05/2013", auteur:"Argex H&S",
+    tags:["Korven","Voorplaten","Tonstars","LOTO","VIK"],
+    beschrijving:"Korven en voorplaten van tonstars vervangen voor continue toevoer naar de oven. Altijd met 2 personen.",
+    kernpunten:[
+      "Gehele lijn stilleggen. Zekeringen vergrendelen. Noodstoppen induwen.",
+      "Waarschuwingsborden plaatsen. Altijd met 2 personen werken.",
+      "Alle afschermingen terugplaatsen na de werken. IJzer apart leggen. Niets rondslingeren.",
+    ],
+    verboden:["Werken met 1 persoon aan tonstars","Noodstop verwijderen zonder vrijgave leidinggevende"],
+    pbm:["Veiligheidsbril","Werkhandschoenen","Gehoorbescherming","Veiligheidsschoenen S3"],
+  },
+  {
+    id:24, cat:"VIK",
+    titel:"VIK-P-KV-03 — IJzer uit kollergang halen",
+    versie:"v1.0", datum:"30/04/2013", auteur:"Argex H&S",
+    tags:["Kollergang","IJzer","LOTO","VIK","Kleivoorbereiding"],
+    beschrijving:"IJzer in de kollergang verwijderen om slijtage op alle machines te voorkomen. Volledige lijn stilleggen.",
+    kernpunten:[
+      "Volledige lijn stilleggen. Vergrendelsleutel goed bijhouden.",
+      "Noodstoppen vergrendelen. Waarschuwingsbord plaatsen.",
+      "Niet overhaast op- en aftrappen lopen. Stootgevaar aanwezig.",
+      "Juiste arbeidsmiddelen gebruiken. Niets rondslingeren.",
+    ],
+    verboden:["Werken aan kollergang zonder volledige lijn stil te leggen","Sleutels achterlaten op of in de machine"],
+    pbm:["Veiligheidsbril","Werkhandschoenen","Gehoorbescherming","Veiligheidsschoenen S3"],
+  },
+  {
+    id:25, cat:"VIK",
+    titel:"VIK-P-OV-04 — Lossen houtstof (ATEX-docking)",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Bert Verbraecken / Max Goosens",
+    tags:["Houtstof","ATEX","Lossen","Docking","VIK","Explosie"],
+    beschrijving:"Veilig werken met de docking voor lossen van houtstof. Enkel bevoegde personen. LOTOTO verplicht bij onderhoud.",
+    kernpunten:[
+      "Enkel bevoegden mogen de docking bedienen. Opgelet: automatisch startende machine.",
+      "Waarschuwingsstickers steeds zichtbaar. Regelmatig reinigen en vervangen bij slijtage.",
+      "Verboden toegang tot binnenkant machine tenzij beveiligd met LOTOTO.",
+      "Bij langdurige stilstand: rolluik sluiten. Schade onmiddellijk melden aan leidinggevende.",
+    ],
+    verboden:["Binnenkant machine betreden zonder LOTOTO","Roken in houtstofzone (ATEX)","Perslucht gebruiken om houtstof te verwijderen"],
+    pbm:["Veiligheidshelm","Veiligheidsschoenen S3","FFP3-stofmasker","Werkhandschoenen","ATEX-kledij","Fluovest"],
+  },
+  {
+    id:26, cat:"VIK",
+    titel:"VIK-P-ZG-02 — Brokstukken/IJzer uit silo halen",
+    versie:"v2.0", datum:"29/03/2017", auteur:"Argex H&S",
+    tags:["Silo","IJzer","Brokstukken","VIK","Hoogte","Besloten ruimte"],
+    beschrijving:"Brokstukken of ijzer uit silo voor correcte werking volumemeter. Bij voorkeur uitbesteed aan gespecialiseerde firma.",
+    kernpunten:[
+      "Bij voorkeur uitbesteden aan gespecialiseerde firma. Eigen personeel enkel bij extreme omstandigheden na grondig vooroverleg.",
+      "Altijd met 3 personen. Geen toegang voor onbevoegden.",
+      "Alle noodstoppen vergrendelen. Valbeveiliging verplicht. Voldoende verlichting.",
+      "Na werken alle arbeidsmiddelen terugplaatsen. IJzerresten apart leggen.",
+    ],
+    verboden:["Werken in silo met minder dan 3 personen","Silo betreden zonder valbeveiliging","Onbevoegden toegang geven"],
+    pbm:["Veiligheidshelm","Werkhandschoenen","FFP3-stofmasker","Valharnas met vanglijn","Veiligheidsschoenen S3"],
+  },
+  {
+    id:27, cat:"VIK",
+    titel:"VIK-P-ZG-04 — Algemene kuiswerken zifter",
+    versie:"v1.0", datum:"07/05/2013", auteur:"Argex H&S",
+    tags:["Zifter","Zeefgebouw","Kuiswerken","VIK","LOTO"],
+    beschrijving:"Rein houden van de arbeidsplaatsen in het zeefgebouw. Alle lijnen stilleggen en collega's verwittigen.",
+    kernpunten:[
+      "Alle lijnen stilleggen. Collega's verwittigen vóór start.",
+      "Noodstoppen vergrendelen. Waarschuwingsbord plaatsen.",
+      "Let op stootgevaar. Niet overhaast op- en aftrappen lopen.",
+      "Afschermingen steeds terugplaatsen na de werken.",
+    ],
+    verboden:["Kuiswerken starten zonder lijnen stil te leggen","Afschermingen weglaten na de werken"],
+    pbm:["Veiligheidshelm","Werkhandschoenen","FFP3-stofmasker","Gehoorbescherming","Veiligheidsschoenen S3"],
+  },
+  {
+    id:28, cat:"VIK",
+    titel:"VIK-P-KAD-03 — Bobcat/wiellader kaai",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Argex H&S",
+    tags:["Bobcat","Wiellader","Kaai","VIK","Hijsen"],
+    beschrijving:"Veilig bedienen van bobcat/wiellader op de kaai. Enkel gekwalificeerd personeel met opleiding en veiligheidsfunctie.",
+    kernpunten:[
+      "Enkel gekwalificeerd personeel. Nooit achterlaten met draaiende motor.",
+      "In- en uitstappen: altijd achterwaarts afstappen. 3 contactpunten gebruiken.",
+      "Vóór start: bedieningsfuncties en keuringsticker (label viersprong) controleren.",
+      "Max. 15 km/u op de kaai. Oogcontact met personen vóór rijden. Langzaam vertrekken.",
+      "Niet rijden als er personen achter de bobcat aanwezig zijn.",
+    ],
+    verboden:["Bobcat bedienen zonder opleiding en veiligheidsfunctie","Bedieningspositie verlaten met draaiende motor"],
+    pbm:["Veiligheidshelm","Veiligheidsschoenen S3","Fluovest","Werkhandschoenen"],
+  },
+  {
+    id:29, cat:"WIK",
+    titel:"VIK-W — Batterijlader veilig gebruik",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Max Goossens",
+    tags:["Batterijlader","Elektrisch","Werf","VIK","Brand"],
+    beschrijving:"Veilig gebruik en onderhoud van de batterijlader op de werf. Voorkomen van brand en elektrisering.",
+    kernpunten:[
+      "Controleer vóór gebruik: geen beschadigingen, stekker intact, LED NIET geel of rood.",
+      "Nooit werken in een vochtige ruimte. Enkel gebruiken waarvoor bedoeld.",
+      "Na gebruik steeds opruimen. Beschadigingen melden aan leidinggevende.",
+      "Onderhoud: altijd stekker uittrekken én accu verwijderen vóór onderhoud.",
+    ],
+    verboden:["Batterijlader gebruiken bij beschadiging of gele/rode LED","Werken met batterijlader in vochtige omgeving"],
+    pbm:["Veiligheidsschoenen S3","Werkhandschoenen","Veiligheidsbril"],
+  },
+  {
+    id:30, cat:"WIK",
+    titel:"VIK-W — Cirkelzaag veilig gebruik",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Max Goossens",
+    tags:["Cirkelzaag","Zaag","Werf","VIK","Elektrisch"],
+    beschrijving:"Veilig werken met de cirkelzaag. Enkel ervaren werknemers. Afscherming en zaagblad controleren vóór gebruik.",
+    kernpunten:[
+      "Enkel ervaren werknemers. Controleer: geen schade, afscherming aanwezig, zaagblad intact.",
+      "Nooit werken in vochtige ruimte. Beide handen gebruiken. Goede verlichting.",
+      "Na gebruik opruimen. Accu verwijderen vóór onderhoud. Beschadigingen melden.",
+    ],
+    verboden:["Cirkelzaag gebruiken zonder afscherming","Werken in vochtige omgeving","Onervaren personen laten werken met cirkelzaag"],
+    pbm:["Gelaatsscherm","Werkhandschoenen","Gehoorbescherming","Veiligheidsschoenen S3","Kledij met lange mouwen"],
+  },
+  {
+    id:31, cat:"WIK",
+    titel:"VIK-W — Decoupeerzaag veilig gebruik",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Max Goossens",
+    tags:["Decoupeerzaag","Zaag","Werf","VIK","Elektrisch"],
+    beschrijving:"Veilig werken met de decoupeerzaag. Enkel ervaren werknemers. Accu en afscherming controleren.",
+    kernpunten:[
+      "Enkel ervaren werknemers. Controleer: geen schade, afscherming aanwezig, zaagblad en accu intact.",
+      "Nooit werken in vochtige ruimte. Beide handen gebruiken. Goede verlichting.",
+      "Accu verwijderen vóór onderhoud. Beschadigingen melden.",
+    ],
+    verboden:["Decoupeerzaag gebruiken bij beschadiging","Werken in vochtige omgeving"],
+    pbm:["Veiligheidsbril","Werkhandschoenen","Gehoorbescherming","Veiligheidsschoenen S3","Kledij met lange mouwen"],
+  },
+  {
+    id:32, cat:"WIK",
+    titel:"VIK-W — Haakse slijper veilig gebruik",
+    versie:"v1.0", datum:"Januari 2026", auteur:"Max Goossens",
+    tags:["Haakse slijper","Slijpen","Werf","VIK","Elektrisch","Snijden"],
+    beschrijving:"Veilig werken met de haakse slijper. Enkel ervaren werknemers. Afscherming verplicht.",
+    kernpunten:[
+      "Enkel ervaren werknemers. Controleer: geen schade, afscherming aanwezig, accu/stekker intact.",
+      "Nooit werken in vochtige ruimte. Beide handen gebruiken. Goede verlichting.",
+      "Accu of stekker verwijderen vóór onderhoud. Beschadigingen melden.",
+    ],
+    verboden:["Haakse slijper gebruiken zonder afscherming","Werken in vochtige omgeving","Onervaren personen laten werken met haakse slijper"],
+    pbm:["Gelaatsscherm (slijpwerk)","Werkhandschoenen","Gehoorbescherming","Veiligheidsschoenen S3","Kledij met lange mouwen","Lasschort bij nabijheid laswerk"],
+  },
+]
 
 // ─── TOOLBOXEN ────────────────────────────────────────────────────────────────
 const TOOLBOXEN_DATA = [
-  { id:1, titel:"Veiligheid op de Argex site — introductie",     duur:"20 min", cat:"Algemeen",           verplicht:true,  gevolgd:false, datum:null },
-  { id:2, titel:"Werken in en rondom de groeve",                  duur:"25 min", cat:"Groeve",             verplicht:true,  gevolgd:false, datum:null },
-  { id:3, titel:"Ovens & hoge temperaturen — gevaren",            duur:"20 min", cat:"Procesinstallaties", verplicht:true,  gevolgd:false, datum:null },
-  { id:4, titel:"Transportbanden — LOTO & beknellingsgevaar",     duur:"20 min", cat:"Machines",           verplicht:true,  gevolgd:false, datum:null },
-  { id:5, titel:"Heftruck & intern transport — rijveiligheid",    duur:"15 min", cat:"Transport",          verplicht:true,  gevolgd:false, datum:null },
-  { id:6, titel:"Stofblootstelling & ademhalingsbescherming",     duur:"15 min", cat:"Gezondheid",         verplicht:true,  gevolgd:false, datum:null },
-  { id:7, titel:"Bezoekers & aannemers op de site ontvangen",     duur:"15 min", cat:"Aannemers",          verplicht:false, gevolgd:false, datum:null },
+  {
+    id:1, titel:"Veiligheid op de Argex site — introductie", duur:"20 min", cat:"Algemeen", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "Argex-site overzicht: gevaarlijke zones en signalisatie",
+      "PBM's verplicht per zone op onze site",
+      "Groeve, ovens en machines — de 3 grote risico's",
+      "LMRA: STOP – THINK – GO vóór elke risicovolle taak",
+      "Stofblootstelling: gevaren en bescherming",
+      "Melden van incidenten via Argex Safety app",
+    ],
+  },
+  {
+    id:2, titel:"Kwartsstof & ademhalingsbescherming", duur:"20 min", cat:"Gezondheid", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "Kwarts = siliciumdioxide. Deeltjes < 0,0007 mm dringen diep in de longen.",
+      "Silicose: chronisch (20j+), versneld (5-15j) of acuut — onomkeerbare longschade.",
+      "Grenswaarde kwartsstof inadembaar: 0,1 mg/m³. Zagen/frezen/slijpen = 200x teveel!",
+      "P3/FFP3-stofmasker verplicht in alle stofzones (silo's, zeeflijnen, transportbanden, kleivoorbereiding).",
+      "Collectieve aanpak: ontstoffingsinstallaties, afzuiging, sproeien. Individuele aanpak: P3-masker.",
+    ],
+  },
+  {
+    id:3, titel:"Valbescherming — werken op hoogte", duur:"20 min", cat:"Veiligheid", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "Valbeveiliging verplicht vanaf 2 meter vrije valhoogte. Eerst collectieve bescherming (leuning, platform).",
+      "Valbeveiliging bestaat uit: ankerpunt, vanglijn, schokdemper en valharnas.",
+      "Visuele controle harnas vóór gebruik: geen gebreken, gekeurd (kleur van de tag controleren).",
+      "Correct dragen: beenbanden, schouderbanden aanspannen — ring moet mooi in het midden hangen.",
+      "Harnas jaarlijks en na elke val keuren door externe dienst. Bewaren op koele, droge plaats.",
+    ],
+  },
+  {
+    id:4, titel:"Heffen en aanslaan van lasten — hijsveiligheid", duur:"20 min", cat:"Machines", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "Lasten aanslaan = bevoegd persoon (opgeleid, ≥18 jaar, medisch geschikt).",
+      "Hijsgereedschappen 3-maandelijks gekeurd via kleurencodering colsonbandjes: Lente=GROEN, Zomer=GEEL, Herfst=BLAUW, Winter=WIT.",
+      "Nooit beschadigd toebehoren gebruiken: geen vervormd, gescheurd, verroest, geknoopt of zelfgemaakt materiaal.",
+      "Hoek α tussen lengen max. 60° (absoluut nooit >120°). Gebruik lengen lang genoeg.",
+      "Nooit onder een opgehangen last lopen. Ga uit de buurt bij het optillen. Draag fluovest.",
+    ],
+  },
+  {
+    id:5, titel:"Gehoorbescherming — werken in lawaaiige zones", duur:"15 min", cat:"Gezondheid", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "Gehoorverlies is NIET herstelbaar. Vanaf 80 dB aanbevolen, vanaf 85 dB verplicht.",
+      "Bij 85 dB gedurende 8u/dag bereik je de veiligheidslimiet. Elke +3 dB halveert de toegelaten tijd.",
+      "Zones met verplichte gehoorbescherming: brekers, zeefinstallaties, dieselmotoren, compressoren, ventilatoren.",
+      "Beschikbare PBM's: wegwerp oordoppen, herbruikbare oordoppen, otoplastieken (persoonlijk gevormd).",
+      "Oordoppen correct inbrengen: nat maken, oprollen, oor omhoog trekken, prop volledig inbrengen.",
+    ],
+  },
+  {
+    id:6, titel:"Veilig gebruik van handgereedschappen", duur:"15 min", cat:"Machines", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "Gebruik gereedschap enkel waarvoor het bestemd is. Controleer vóór gebruik op slijtage en defecten.",
+      "Hamers: gave gladde steel, stevig geborgd in hamerkop, geen bramen op de kop.",
+      "Moersleutels: sleutel moet correct passen op de moer — nooit vulplaatjes gebruiken, nooit steel verlengen.",
+      "Schroevendraaiers: nooit als beitel gebruiken. Werkstuk nooit vasthouden als schroef wordt aangedraaid.",
+      "Vijlen: altijd voorzien van stevig heft. Beitels: koppen regelmatig ontbramen en vlak slijpen.",
+    ],
+  },
+  {
+    id:7, titel:"Ioniserende straling — densiteitsmeter", duur:"15 min", cat:"Procesinstallaties", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "Densiteitsmeter = gammastraling (ioniserende straling). Dosistempo: 15 µSv/u op contact, <0,5 µSv/u op 1m.",
+      "Drie basisprincipes: Afscherming (loodkasteel respecteren), Verblijftijd minimaliseren, Afstand maximaliseren.",
+      "Op 30 cm van de bron: max. 1000 uur/jaar. Op 10 cm: max. 25 uur/jaar. Dosismeter niet verplicht.",
+      "Nooit handen onder de meetopstelling brengen. Gebruik steeds een steker. Sleutel bronhouder bij ploegbaas.",
+      "Bij schade of incident: zone 20m afsluiten, IDFC bellen (Johny Bultheel/Bert Verbraecken), niemand toegang.",
+    ],
+  },
+  {
+    id:8, titel:"LMRA — STOP THINK GO vóór elke risicovolle taak", duur:"15 min", cat:"Preventie", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "STOP: Ken je taak en de aanwezige risico's vóór de start.",
+      "THINK: Controleer werkvergunning, PBM's, nooduitgangen, brandblussers en verzamelplaats.",
+      "THINK: LOTOTO toegepast op alle machines? Risico's van struikelen/uitglijden gekend?",
+      "GO: Kan ik veilig werken? JA → starten. NEEN → stop en meld aan leidinggevende.",
+      "'Als het niet veilig kan, dan doen we het niet!'",
+    ],
+  },
+  {
+    id:9, titel:"Evacuatie & brandblussers — noodprocedure", duur:"15 min", cat:"Noodplan", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "Evacuatiesignaal: gastoeters op de site. Ken de locatie van de dichtstbijzijnde toeter.",
+      "Bij evacuatie: onmiddellijk naar de verzamelplaats (parking bedienden) — nooit terugkeren.",
+      "Brandblussers: poederblussers (vaste stoffen/vloeistoffen/gassen) en CO₂-blussers (vloeistoffen/gassen).",
+      "Bluspoging enkel bij kleine brand en altijd met twee personen. Hulpdiensten ALTIJD verwittigen (112).",
+      "Gebruikte brandblusser onmiddellijk melden zodat die hervuld of vervangen wordt.",
+    ],
+  },
+  {
+    id:10, titel:"Heftruck & intern transport — rijveiligheid", duur:"15 min", cat:"Transport", verplicht:true, gevolgd:false, datum:null,
+    inhoud:[
+      "Vorken 10–15 cm boven de grond tijdens rijden. Maximumsnelheid op de site: 15 km/u.",
+      "Claxon gebruiken bij bochten, blinde zones en deuropeningen.",
+      "Oogcontact met voetgangers vóór doorrijden. Voetgangers hebben altijd voorrang.",
+      "Nooit personen vervoeren op vorken, paletten of voorzetstukken.",
+      "GSM of oortjes tijdens het rijden: verboden. Gordel dragen indien aanwezig.",
+    ],
+  },
+  {
+    id:11, titel:"Bezoekers & aannemers op de site ontvangen", duur:"15 min", cat:"Aannemers", verplicht:false, gevolgd:false, datum:null,
+    inhoud:[
+      "Aanmelden verplicht bij receptie of expeditie (03/250.15.15) vóór betreden van de site.",
+      "Bezoekers enkel onder begeleiding. Productiezone: helm + veiligheidsschoenen + fluovest verplicht.",
+      "Aannemers: dagelijkse registratie bij werken >1 dag. Register bij onderhoudsdienst en expeditie.",
+      "Externe chauffeurs: aanmelden bij aankomst, geen toegang productiezone zonder begeleiding.",
+    ],
+  },
 ];
 
 // ─── CERTIFICATEN ─────────────────────────────────────────────────────────────
 const MIJN_OPL = [
-  { naam:"VCA Basis",              datum:"INVULLEN", verval:"INVULLEN", status:"ok"         },
-  { naam:"Heftruck B+C",           datum:"INVULLEN", verval:"INVULLEN", status:"ok"         },
-  { naam:"EHBO Level 1",           datum:"INVULLEN", verval:"INVULLEN", status:"binnenkort" },
-  { naam:"Brandbestrijding BHV",   datum:"INVULLEN", verval:"INVULLEN", status:"verlopen"   },
+  { naam:"VCA Basis",              datum:"15-03-2023", verval:"15-03-2026", status:"binnenkort" },
+  { naam:"Heftruck B+C",           datum:"10-01-2024", verval:"10-01-2027", status:"ok"         },
+  { naam:"EHBO Level 1",           datum:"05-06-2023", verval:"05-06-2026", status:"binnenkort" },
+  { naam:"Brandbestrijding BHV",   datum:"12-04-2023", verval:"12-04-2025", status:"verlopen"   },
 ];
 
 const TEAM = [
-  { id:2, name:"Raf Bogaert",       avatar:"RB", functie:"Ploegchef Productie",  afdeling:"Productie", opleidingen:[
-    { naam:"VCA VOL",             datum:"INVULLEN", verval:"INVULLEN", ok:true  },
-    { naam:"Heftruck B+C",        datum:"INVULLEN", verval:"INVULLEN", ok:true  },
-    { naam:"EHBO Level 2",        datum:"INVULLEN", verval:"INVULLEN", ok:true  },
+  { id:2, name:"Georgy Eggermont",  avatar:"GE", functie:"Ploegchef Productie",  afdeling:"Productie", opleidingen:[
+    { naam:"VCA VOL",             datum:"20-09-2023", verval:"20-09-2026", ok:true  },
+    { naam:"Heftruck B+C",        datum:"20-09-2023", verval:"20-09-2026", ok:true  },
+    { naam:"EHBO Level 2",        datum:"15-11-2023", verval:"15-11-2026", ok:true  },
   ]},
-  { id:3, name:"Jan Pieters",       avatar:"JP", functie:"Machine-operator",     afdeling:"Productie", opleidingen:[
-    { naam:"VCA Basis",           datum:"INVULLEN", verval:"INVULLEN", ok:true  },
-    { naam:"Heftruck B+C",        datum:"INVULLEN", verval:"INVULLEN", ok:false },
-    { naam:"EHBO Level 1",        datum:"INVULLEN", verval:"INVULLEN", ok:false },
+  { id:3, name:"Medewerker Productie (in te vullen)", avatar:"MP", functie:"Machine-operator", afdeling:"Productie", opleidingen:[
+    { naam:"VCA Basis",           datum:"10-05-2022", verval:"10-05-2025", ok:false },
+    { naam:"Heftruck B+C",        datum:"10-05-2022", verval:"10-05-2025", ok:false },
+    { naam:"EHBO Level 1",        datum:"10-05-2022", verval:"10-05-2025", ok:false },
   ]},
-  { id:6, name:"INVULLEN Naam",     avatar:"??", functie:"INVULLEN functie",     afdeling:"INVULLEN",  opleidingen:[
-    { naam:"INVULLEN opleiding",  datum:"INVULLEN", verval:"INVULLEN", ok:true  },
+  { id:6, name:"Medewerker (in te vullen)", avatar:"??", functie:"Medewerker productie", afdeling:"Productie", opleidingen:[
+    { naam:"VCA Basis", datum:"In te vullen", verval:"In te vullen", ok:true },
   ]},
 ];
 
 // ─── CONTACTEN ────────────────────────────────────────────────────────────────
 const EHBO_LEDEN = [
-  { naam:"INVULLEN Naam EHBO",     rol:"EHBO'er — INVULLEN zone",    tel:"INVULLEN gsm",  email:"INVULLEN@argex.be", desc:"INVULLEN beschrijving / AED locatie.", kleur:AX.clay, init:"EH" },
-  { naam:"INVULLEN Naam EHBO 2",   rol:"EHBO'er — INVULLEN zone",    tel:"INVULLEN gsm",  email:"INVULLEN@argex.be", desc:"INVULLEN beschrijving / AED locatie.", kleur:AX.clay, init:"E2" },
+  { naam:"EHBO'er productie (in te vullen)", rol:"EHBO'er — Productie / Oven hal",  tel:"0497/51.50.95", email:"operator@argex.be", desc:"EHBO-lokaal in onderhoudsloods. AED aanwezig.", kleur:AX.clay, init:"E1" },
+  { naam:"EHBO'er expeditie (in te vullen)", rol:"EHBO'er — Expeditie / Kleivoorbereiding", tel:"03/250.15.15", email:"expeditie@argex.be", desc:"AED in sociaal gebouw (ingang).", kleur:AX.clay, init:"E2" },
+  { naam:"Dr. Brigitte Merkus", rol:"Arbeidsarts — Liantis EDPBW", tel:"+32 3 886 05 78", email:"charlotte.vanassche@liantis.be", desc:"Via Liantis (Rijksweg 9, Puurs). Contactpersoon: Charlotte Van Assche.", kleur:AX.green, init:"BM" },
 ];
+// IDFC — Interne Dienst Fysische Controle (ioniserende straling)
+const IDFC_CONTACT = "Johny Bultheel (hoofd IDFC) · Nele Vervynckt · Bert Verbraecken";
+
 const VERTROUWENSPERSONEN = [
-  { naam:"INVULLEN Naam VP",       rol:"Vertrouwenspersoon intern",  tel:"INVULLEN gsm",  email:"INVULLEN@argex.be",  desc:"INVULLEN beschrijving bereikbaarheid.", kleur:AX.earth, init:"VP" },
-  { naam:"INVULLEN Naam Extern",   rol:"Ext. vertrouwenspersoon",    tel:"0800 30 801",   email:"INVULLEN@idewe.be",  desc:"Via IDEWE. Anoniem: 0800 30 801 (gratis).", kleur:AX.earth, init:"VE" },
+  { naam:"Nicole Snoeck", rol:"Vertrouwenspersoon intern — HR", tel:"03/250.15.15", email:"hr@argex.be", desc:"Bereikbaar via HR. Strikt vertrouwelijk. Ook voor vragen rond welzijn en alcohol/drugbeleid.", kleur:AX.earth, init:"NS" },
+  { naam:"IDEWE — Externe vertrouwenspersoon",        rol:"Ext. vertrouwenspersoon (IDEWE)", tel:"0800 30 801", email:"preventie@idewe.be", desc:"Anoniem en gratis bereikbaar via IDEWE: 0800 30 801.", kleur:AX.earth, init:"VE" },
 ];
 
 // ─── NOODPLAN ─────────────────────────────────────────────────────────────────
-const NOODPLAN_INTERN = "INVULLEN";
-const VERZAMELPLAATS = "INVULLEN — locatie verzamelplaats Argex site";
-const BHV_TEAM = ["INVULLEN BHV naam 1","INVULLEN BHV naam 2","INVULLEN BHV naam 3"];
-const AED_LOCATIES = ["INVULLEN AED locatie 1","INVULLEN AED locatie 2"];
+const NOODPLAN_INTERN = "0497/51.50.95";
+const VERZAMELPLAATS = "Parking bedienden (aangeduid op evacuatieplan op site)";
+const BHV_TEAM = ["Bert Verbraecken (Preventieadviseur)","Ploegverantwoordelijke productie","Magazijnier (zie affiche sociaal gebouw)"];
+const AED_LOCATIES = ["EHBO-lokaal onderhoudsloods","Sociaal gebouw (ingang)"];
 
 const NOODSCENARIOS = [
   { id:"brand",     ico:"🔥", label:"Brand",               kleur:"#C0392B", bg:"#FFF0EE", stappen:[
@@ -286,8 +721,28 @@ const NOODSCENARIOS = [
 
 // ─── COMITÉ VERSLAGEN ─────────────────────────────────────────────────────────
 const COMITE = [
-  { id:1, datum:"INVULLEN datum", titel:"CPBW vergadering — INVULLEN kwartaal", punten:["INVULLEN agendapunt 1","INVULLEN agendapunt 2","INVULLEN agendapunt 3"] },
-  { id:2, datum:"INVULLEN datum", titel:"CPBW vergadering — INVULLEN kwartaal", punten:["INVULLEN agendapunt 1","INVULLEN agendapunt 2"] },
+  { id:1, datum:"12 februari 2026", titel:"CPBW vergadering — 12/02/2026", punten:[
+    "Goedkeuring verslag vorige vergadering",
+    "GPP en JAP 2026 — herziening na overname door Heidelberg",
+    "Maandverslagen IDPBW: veiligheidsverslagen, sitebezoeken, CE-audit, Kiwa-audit",
+    "Veiligheidsincidenten jan: kraan sociaal gebouw (29/01), weggeroeste schuif Dano (03/02), trap (05/02), arbeidsongeval Dano knie (07/02)",
+    "Statistieken 2026: frequentiegraad 0, ernstgraad 0, doelstelling fg 28,5",
+    "Uitgevoerde acties: hoogspanning (03/02), densiteitsmeting (21/01), metaaldetector band 41 (20/01)",
+    "Geplande acties feb: kleivoorbereiding, oveninstallatie trap, koolinstallatie houtstof",
+    "Toolbox januari: veilig werken met perslucht en hydraulische leidingen",
+    "STAVAZA verhuis atelier: risicoanalyse opgesteld, offertes aangevraagd (dak, trap, bureaus, poort)",
+  ]},
+  { id:2, datum:"22 januari 2026", titel:"CPBW vergadering — 22/01/2026", punten:[
+    "Goedkeuring verslag vorige vergadering",
+    "GPP en JAP 2026 — herziening door overname Heidelberg",
+    "Maandverslagen IDPBW: onthaal nieuwe medewerkers, veiligheidsoverleg, interne audit, JAP-GPP",
+    "Veiligheidsincidenten: Dano trap (20/11), Kade kraanbak bouten losgedraaid (15/12)",
+    "Statistieken 2025: frequentiegraad 22,57, ernstgraad 0,34, 30 verloren kalenderdagen",
+    "Uitgevoerde acties: dagelijkse controle HS-cabines, hitteschild, keertrommel afscherming, trapleuning",
+    "Toolbox dec: lassen & lasogen — toolbox jan: melden van ongevallen",
+    "Nieuwe punten: verhuis atelier (asbest, veiligheid, planning), kleistock fase 1 en 2",
+    "Waterprobleem site: hoofdleiding afgesloten door ondergrondse kruising Sterhoek",
+  ]},
 ];
 
 // ─── INCIDENTEN ───────────────────────────────────────────────────────────────
@@ -298,7 +753,9 @@ const INCIDENT_TYPES = [
 ];
 const OORZAKEN = ["Menselijke fout","Onvoldoende instructie","Defect materieel","Onveilige omstandigheid","Ontbrekende PBM's","Procedure niet gevolgd","Tijdsdruk","Communicatiefout","Andere"];
 const MOCK_MELDINGEN = [
-  { id:1, type:"gevaarlijk", titel:"Voorbeeld — Losse plaat bij oven sectie B", ernst:"matig", status:"afgehandeld", datum:"INVULLEN", melder:"Jonas Willems", locatie:"Argex — oven sectie B", beschrijving:"Voorbeeld melding. Vervang door echte meldingen.", oorzaak:"Defect materieel", directeActie:"Zone afgezet", actie:"Plaat vervangen", verantwoordelijke:"Raf Bogaert", deadline:"INVULLEN" },
+  { id:1, type:"gevaarlijk", titel:"Weggeroeste schuif in plafond — Kelder Dano", ernst:"matig", status:"in behandeling", datum:"03-02-2026", melder:"Georgy Eggermont", locatie:"Kelder Dano", beschrijving:"Weggeroeste schuif vastgesteld in plafond Kelder Dano. Risico op losraken en val.", oorzaak:"Slijtage / corrosie", directeActie:"Zone afgebakend", actie:"Herstel voorzien met beton", verantwoordelijke:"Bert Verbraecken", deadline:"15-03-2026" },
+  { id:2, type:"materieel", titel:"Kraan voorover geheld bij sociaal gebouw", ernst:"hoog", status:"afgehandeld", datum:"29-01-2026", melder:"Georgy Eggermont", locatie:"Sociaal gebouw", beschrijving:"Tijdens verplaatsen van een grijper begon de kraan voorover te hellen. Douchecontainer aan sociaal gebouw geraakt.", oorzaak:"Menselijke fout — stempels niet gebruikt", directeActie:"Operaties gestopt", actie:"Procedure: stempels verplicht bij verplaatsen lasten", verantwoordelijke:"Bert Verbraecken", deadline:"12-02-2026" },
+  { id:3, type:"ongeval", titel:"Arbeidsongeval met werkverlet — Kelder Dano", ernst:"hoog", status:"in behandeling", datum:"07-02-2026", melder:"Georgy Eggermont", locatie:"Kelder Dano — B81 richting nieuwe tunnel", beschrijving:"Werknemer kniestoot tegen steen bij passeren onder band B81. Letsels: linkerknie en linkerschouder.", oorzaak:"Onveilige doorgang onder transportband", directeActie:"EHBO verleend, werknemer naar arts", actie:"Onderzoeken hoe doorgang onder band kan vermeden worden", verantwoordelijke:"Bert Verbraecken", deadline:"12-03-2026" },
 ];
 
 // ─── ONBOARDING ───────────────────────────────────────────────────────────────
@@ -771,7 +1228,7 @@ function Bibliotheek() {
   const [actieveCat,setActieveCat]=useState("Alles");
   const [zoek,setZoek]=useState("");
   const [geselecteerd,setGeselecteerd]=useState(null);
-  const CATS=["Alles","Procedures","Handleidingen","VIK","WIK"];
+  const CATS=["Alles","Procedures","VIK","WIK","Handleidingen"];
   const CAT_ICONS={"Procedures":"📋","Handleidingen":"📖","VIK":"🛡","WIK":"🔧"};
 
   const gefilterd=PROCEDURES.filter(d=>{
@@ -802,7 +1259,7 @@ function Bibliotheek() {
           {d.verboden&&<div style={{background:AX.redLight,borderRadius:9,padding:14,marginBottom:14,border:`1px solid ${AX.red}33`}}><div style={{fontSize:12,fontWeight:700,color:AX.red,textTransform:"uppercase",letterSpacing:".08em",marginBottom:8}}>🚫 Verboden handelingen</div>{d.verboden.map((v,i)=><div key={i} style={{fontSize:13,color:AX.red,padding:"4px 0"}}> ✗ {v}</div>)}</div>}
           {d.pbm&&<div style={{background:AX.clayLight,borderRadius:9,padding:14,border:`1px solid ${AX.clay}33`}}><div style={{fontSize:12,fontWeight:700,color:AX.clayDark,textTransform:"uppercase",letterSpacing:".08em",marginBottom:8}}>🦺 Verplichte PBM's</div><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{d.pbm.map(p=><Tag key={p} label={p} color={AX.clayDark}/>)}</div></div>}
           <div style={{marginTop:16,background:AX.sand,borderRadius:9,padding:"12px 16px",fontSize:12,color:AX.earth,border:`1px solid ${AX.earth}33`}}>
-            📝 <strong>Nog in te vullen:</strong> Vervang alle "INVULLEN" teksten door de echte inhoud van jouw procedure.
+            📋 Procedure opgesteld door Argex H&S — Bert Verbraecken, Preventieadviseur.
           </div>
         </Card>
       </div>
@@ -811,9 +1268,9 @@ function Bibliotheek() {
 
   return (
     <div className="fu">
-      <SectionHead sub={`${PROCEDURES.length} documenten — vul inhoud in waar 'INVULLEN' staat`}>Documentenbibliotheek</SectionHead>
+      <SectionHead sub={`${PROCEDURES.length} documenten — procedures, VIK's en handleidingen`}>Documentenbibliotheek</SectionHead>
       <div style={{background:AX.sand,borderRadius:10,padding:"12px 16px",marginBottom:18,border:`1px solid ${AX.earth}33`,fontSize:13,color:AX.earth}}>
-        📝 <strong>Hoe invullen?</strong> Klik op een document → vervang de "INVULLEN" teksten door de echte inhoud. Stuur daarna de aangepaste bestanden door en ik verwerk ze in de app.
+        📋 Klik op een document voor de volledige procedure, verboden handelingen en verplichte PBM's. Stuur daarna de aangepaste bestanden door en ik verwerk ze in de app.
       </div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8,marginBottom:18}}>
         {CATS.filter(c=>c!=="Alles").map(c=>(
@@ -871,12 +1328,14 @@ function Toolboxen() {
             <Tag label={t.cat}/><Tag label={t.duur} color={AX.gray500}/>{t.verplicht&&<Tag label="Verplicht" color={AX.red}/>}
           </div>
           <div style={{background:AX.gray50,borderRadius:9,padding:14,marginBottom:14,border:`1px solid ${AX.gray100}`}}>
-            <div style={{fontWeight:800,color:AX.gray900,marginBottom:8}}>🎬 {t.titel} ({t.duur})</div>
-            <div style={{background:AX.clayLight,borderRadius:7,padding:"9px 12px",fontSize:12,color:AX.clayDark,marginBottom:8}}>
-              Inhoud van deze toolbox wordt ingevuld met de echte procedures en video's.
-            </div>
-            <div style={{background:AX.sand,borderRadius:7,padding:"9px 12px",fontSize:12,color:AX.earth}}>
-              ✅ Echte app: video + voortgang bijhouden + digitale handtekening vereist.
+            <div style={{fontWeight:800,color:AX.gray900,marginBottom:10}}>🎬 {t.titel} ({t.duur})</div>
+            {(t.inhoud||[]).map((p,i)=>(
+              <div key={i} style={{display:"flex",gap:10,fontSize:13,color:AX.gray700,paddingBottom:7,paddingTop:i>0?7:0,borderBottom:i<(t.inhoud.length-1)?`1px solid ${AX.gray100}`:"none"}}>
+                <span style={{color:AX.clay,fontWeight:700,flexShrink:0}}>{i+1}.</span>{p}
+              </div>
+            ))}
+            <div style={{background:AX.clayLight,borderRadius:7,padding:"9px 12px",fontSize:12,color:AX.clayDark,marginTop:12}}>
+              ✅ Echte app: voortgang bijhouden + digitale handtekening vereist.
             </div>
           </div>
           {!t.gevolgd&&!signing&&<Btn onClick={()=>setSigning(true)}>✍ Toolbox ondertekenen</Btn>}
@@ -1022,7 +1481,7 @@ function Noodplan() {
         📍 Verzamelplaats: {VERZAMELPLAATS}
       </div>
       <div style={{background:AX.sand,borderRadius:10,padding:"10px 16px",marginBottom:16,fontSize:12,color:AX.earth,border:`1px solid ${AX.earth}33`}}>
-        📝 Vul het interne noodnummer, verzamelplaats en BHV-team in via de INVULLEN-velden hierboven.
+        📋 Noodplan Argex — Burcht/Zwijndrecht · Preventieadviseur: Bert Verbraecken
       </div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:10,marginBottom:20}}>
         {NOODSCENARIOS.map(s=>(
@@ -1047,7 +1506,7 @@ function Contacten() {
     <div className="fu">
       <SectionHead sub="Jouw contactpersonen op de Argex site">EHBO & Vertrouwenspersonen</SectionHead>
       <div style={{background:AX.sand,borderRadius:10,padding:"10px 16px",marginBottom:16,fontSize:12,color:AX.earth,border:`1px solid ${AX.earth}33`}}>
-        📝 Vul de namen, telefoonnummers en beschrijvingen in door de "INVULLEN" teksten te vervangen.
+        📋 EHBO-ers en vertrouwenspersonen Argex. EHBO-lokaal: onderhoudsloods.
       </div>
       {[["EHBO'ers",EHBO_LEDEN],["Vertrouwenspersonen",VERTROUWENSPERSONEN]].map(([tit,lijst])=>(
         <div key={tit} style={{marginBottom:22}}>
@@ -1239,7 +1698,7 @@ function Comite() {
     <div className="fu">
       <SectionHead sub="Openbaar voor alle medewerkers — CPBW verslagen Argex">CPBW Vergadering</SectionHead>
       <div style={{background:AX.sand,borderRadius:10,padding:"10px 16px",marginBottom:16,fontSize:12,color:AX.earth,border:`1px solid ${AX.earth}33`}}>
-        📝 Vul de verslagen in door "INVULLEN" te vervangen door de echte datum, titel en agendapunten.
+        📋 Verslagen CPBW Argex NV — Voorzitter: Dhr. Johny Bultheel · IDPBW: Bert Verbraecken
       </div>
       {COMITE.map(v=>(
         <Card key={v.id} className="rh" onClick={()=>setOpen(open===v.id?null:v.id)} style={{marginBottom:8}}>
