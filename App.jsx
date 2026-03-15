@@ -1866,7 +1866,7 @@ const NAV=[
   {id:"contacten",    ico:"🩺", lbl:"EHBO",      roles:ALLE_ROLES},
   {id:"noodplan",     ico:"🚨", lbl:"Noodplan",  roles:ALLE_ROLES},
   {id:"incidenten",   ico:"⚠️", lbl:"Incident",  roles:ALLE_ROLES},
-  {id:"inspectie",    ico:"🔍", lbl:"Inspectie", roles:["admin","leidinggevende"]},
+  {id:"inspectie",    ico:"🔍", lbl:"Inspectie", roles:ALLE_ROLES},
   {id:"comite",       ico:"📋", lbl:"CPBW",      roles:["admin","leidinggevende"]},
   {id:"beheer",       ico:"🔧", lbl:"Beheer",    roles:["admin"]},
 ];
