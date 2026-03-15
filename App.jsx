@@ -574,7 +574,7 @@ const ONBOARDING_QUIZ = [
 ];
 
 function Onboarding({user, onComplete}){
-  const type = user.role === "aannemer" ? "extern" : "medewerker";
+  const type = (user.role === "aannemer" || user.role === "extern") ? "extern" : "medewerker";
   const stappen = ONBOARDING_STAPPEN[type];
   const [stap, setStap] = useState(0);
   const [gedaan, setGedaan] = useState({});
@@ -806,7 +806,7 @@ function Login({onLogin}){
           <Btn onClick={go}>Aanmelden →</Btn>
           <div style={{marginTop:14,borderTop:`1px solid ${C.g100}`,paddingTop:14}}>
             <div style={{fontSize:11,fontWeight:700,color:C.g500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:8}}>Demo logins</div>
-            {[["admin@argex.be","admin2026","Admin"],["abdel-hak.charai@argex.be","abdel-hak2026","Leidinggevende"],["rachid.akdim@argex.be","rachid2026","Medewerker"],["beheer@argex.be","beheer2026","Beheer"]].map(([e,p,r])=>(
+            {[["admin@argex.be","admin2026","Admin"],["abdelhak.charai@argex.be","abdel-hak2026","Leidinggevende"],["rachid.akdim@argex.be","rachid2026","Medewerker"],["beheer@argex.be","beheer2026","Beheer"]].map(([e,p,r])=>(
               <div key={e} onClick={()=>{setEmail(e);setPw(p);}} style={{display:"flex",justifyContent:"space-between",padding:"8px 10px",borderRadius:7,marginBottom:4,cursor:"pointer",border:`1px solid ${C.clay}22`,background:email===e?C.clayL:"#fafafa",fontSize:12,color:C.g700}}>
                 <span>{e}</span><Tag label={r} color={C.clay}/>
               </div>
