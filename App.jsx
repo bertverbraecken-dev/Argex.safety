@@ -319,6 +319,70 @@ const PR = [
    stappen:["Enkel gekwalificeerd personeel (opleiding + veiligheidsfunctie)","Pre-use check: bedieningsfuncties + keuringsticker viersprong","In-/uitstappen: altijd achterwaarts — 3 contactpunten","Max 15 km/u — oogcontact met personen — langzaam vertrekken","Niet rijden als er personen achter de bobcat zijn"],
    vb:["Bobcat bedienen zonder opleiding","Bedieningspositie verlaten met draaiende motor"],
    pb:["Veiligheidshelm","Veiligheidsschoenen S3","Fluovest","Werkhandschoenen"]},
+  // ── QHSE PROCEDURES ──────────────────────────────────────────────────────────
+  {id:10,ca:"QHSE",ti:"P-QHSE-1 — Alcohol- en drugsbeleid",tg:["Alcohol","Drugs","CAO100","Preventie"],
+   desc:"Richtlijnen voor alcohol- en druggebruik bij Argex NV conform Codex Welzijn, CAO nr.100 en privacywetgeving.",
+   kp:["Drugs: meebrengen, gebruiken of verhandelen is VERBODEN","Alcohol: enkel bij vooraf toegestane gelegenheden — max. 0,2 promille tijdens werkuren",
+       "Vaststelling door leidinggevende + syndicaal afgevaardigde of preventieadviseur",
+       "Medische testen enkel via arbeidsarts/EDPBW — nooit door werkgever zelf",
+       "Fase 1-4 opvolgingsprocedure bij herhaaldelijke vaststellingen",
+       "Focus op preventie en hulpverlening — vertrouwenspersoon beschikbaar"],
+   vb:["Illegale drugs meebrengen of gebruiken op het werk","Werken onder invloed van alcohol of drugs"],
+   pb:[]},
+  {id:11,ca:"QHSE",ti:"P-QHSE-2 — LOTOTO (Lock Out Tag Out Try Out)",tg:["LOTOTO","LOTO","Onderhoud","Energie","Veiligheid"],
+   desc:"Gestandaardiseerde LOTOTO-procedure bij onderhouds- en herstellingswerken aan installaties om onverwachte energievrijgave te vermijden.",
+   kp:["Lock Out: vergrendelen energiebronnen · Tag Out: visuele waarschuwing · Try Out: controle nul-energietoestand",
+       "7 stappen: communicatie → controle procedure → stilleggen → isoleren → vergrendelen+taggen → neutraliseren → try out",
+       "Kleurencode sloten: Rood=operator, Blauw=werkverantwoordelijke, Geel=elektrisch, Groen=mechanisch",
+       "Bevoegde werknemers: theorie + praktijkopleiding vereist vóór effectief vergrendelen",
+       "Groeps-LOTOTO bij complexe installaties: lockbox met één groepssleutel",
+       "Ploegenwissel: directe overdracht of overgangsslot van werkverantwoordelijke"],
+   vb:["Slot of tag van een andere persoon verwijderen","Werken zonder volledige try-out uitgevoerd te hebben","Starten zonder LOTOTO te hebben toegepast"],
+   pb:["Geïsoleerde handschoenen (elektrisch)","Veiligheidsschoenen S3","Veiligheidshelm"]},
+  {id:12,ca:"QHSE",ti:"P-QHSE-3 — Alleenwerk (ROMBIT)",tg:["Alleenwerk","ROMBIT","Lone worker","Alarm","ARAB"],
+   desc:"Procedure voor veilig alleenwerk bij Argex NV met ROMBIT-alarmsysteem. Verboden bij gevaarlijke werkzaamheden.",
+   kp:["ROMBIT-badge verplicht bij alleenwerk — correct gedragen en opgeladen",
+       "Automatisch SMS-alarm bij SOS, val of geen beweging — van nummer 0460 20 28 15",
+       "Eerste contactpersoon steeds de meldkamer (brander)",
+       "Cascadesysteem: stap 1 = telefonisch contact → stap 2 = ROMBIT-portaal locatie → stap 3 = ter plaatse gaan",
+       "VERBODEN alleenwerk bij: elektrische werken BA4/BA5, hoogte >2m, silo's/besloten ruimten, ATEX-zones, hijswerk"],
+   vb:["Alleenwerk zonder ROMBIT-badge","Gevaarlijke werkzaamheden alleen uitvoeren (elektrisch, hoogte, besloten ruimte, ATEX)"],
+   pb:["ROMBIT lone-worker badge (altijd dragen en opladen)"]},
+  {id:13,ca:"QHSE",ti:"P-QHSE-4 — Keuringen en inspecties",tg:["Keuring","Inspectie","Colsonbandje","Sticker","Wettelijk"],
+   desc:"Procedure voor reglementaire verplichte keuringen van machines, arbeidsmiddelen en veiligheidsuitrusting bij Argex NV.",
+   kp:["3-maandelijkse keuringen: hijsmiddelen (kleurcode colsonbandje), ladders, valbeveiliging",
+       "Jaarlijkse keuringen: elektrische installaties, brandblussers, noodverlichting, EHBO-koffers, valharnas",
+       "Keuringsregistratie met datum, locatie, keurder, resultaten en volgende datum — 5 jaar bewaren",
+       "Geen geldige keuring of sticker → arbeidsmiddel NIET gebruiken, onmiddellijk melden",
+       "Verantwoordelijke: magazijnier bijhoudt keuringen, verwittigt tijdig bij vervaldatum"],
+   vb:["Arbeidsmiddel gebruiken met vervallen keuring of ontbrekende sticker"],
+   pb:[]},
+  {id:14,ca:"QHSE",ti:"P-QHSE-6 — Hitteplan (WBGT)",tg:["Hitte","WBGT","Warmte","Zomer","PBM"],
+   desc:"Maatregelen ter bescherming van werknemers tegen hitte op basis van de WBGT-index (Wet Bulb Globe Temperature).",
+   kp:["WBGT-index bepaalt of 8u werken mogelijk is — NIET te verwarren met gewone luchttemperatuur",
+       "Functie-indeling Argex: bureauwerk=zeer licht, chauffeur/labo=licht, onderhoud productie=halfzwaar, schepwerk=zwaar",
+       "Bij overschrijding WBGT: werkrooster aanpassen, rustpauzes invoeren, nekkoelers voorzien",
+       "Verfrissende dranken gratis beschikbaar — geen koolzuurhoudende of te koude dranken"],
+   vb:[],
+   pb:["Nekkoeler (bij hitte)","Lichte en luchtige werkkledij"]},
+  {id:15,ca:"QHSE",ti:"P-QHSE-7 — Legionellapreventie",tg:["Legionella","Water","Douches","Temperatuur","Hygiëne"],
+   desc:"Preventie van legionellabacteriën in water- en sanitaire installaties bij Argex NV. Periodieke controles verplicht.",
+   kp:["Koud water < 25°C houden · Warm water > 60°C aan bron en > 55°C bij tappunt",
+       "Geen stilstaand water — regelmatig spoelen van weinig gebruikte tappunten en haspels",
+       "Maandelijkse temperatuurmeting bij representatieve tappunten — registratie in logboek (3 jaar bewaren)",
+       "Jaarlijkse reiniging/ontkalking van douchesproeiers en aerosolvormers",
+       "Bij positieve legionellatest: thermische of chemische desinfectie + hermeting binnen 24 uur"],
+   vb:[],
+   pb:[]},
+  {id:16,ca:"QHSE",ti:"P-QHSE-9 — Medisch toezicht",tg:["Medisch","Liantis","Arbeidsgeneesheer","Gezondheid"],
+   desc:"Organisatie van wettelijk verplicht periodiek medisch toezicht bij Argex NV via Liantis EDPBW.",
+   kp:["Aanwervingsonderzoek: vóór indiensttreding of binnen 1 maand na start — via Liantis",
+       "Periodiek onderzoek: frequentie volgens Codex en functierisico (jaarlijks of tweejaarlijks)",
+       "Onderzoek bij werkhervatting: na ziekte of ongeval >4 weken",
+       "Werknemer ontvangt attest — werkgever krijgt enkel beslissing (geschikt/ongeschikt/beperking)",
+       "Arbeidsgeneesheer: Dr. Brigitte Merkus via Liantis — contact Charlotte Van Assche +32 3 886 05 78"],
+   vb:[],
+   pb:[]},
 ];
 
 // ─── CSS ─────────────────────────────────────────────────────────────────────
@@ -379,12 +443,340 @@ const Inp=({label,value,onChange,placeholder,type="text"})=>(
 );
 
 // ─── LOGIN ────────────────────────────────────────────────────────────────────
-const USERS={
-  "admin@argex.be":     {pw:"admin2026",  nm:"Bert Verbraecken", role:"admin",         av:"BV", fn:"Preventieadviseur IDPBW", ob:true},
-  "chef@argex.be":      {pw:"chef2026",   nm:"Abdel-hak Charai", role:"leidinggevende",av:"AC", fn:"Ploegbaas Productie",     ob:true},
-  "werk@argex.be":      {pw:"werk2026",   nm:"Rachid Akdim",     role:"medewerker",    av:"RA", fn:"Zifter",                  ob:true},
-  "beheer@argex.be":    {pw:"beheer2026", nm:"Beheerder",        role:"admin",         av:"BE", fn:"Beheerder",               ob:true},
+const ALL_USERS = {
+  "admin@argex.be":  {pw:"admin2026", nm:"Bert Verbraecken", fn:"Preventieadviseur IDPBW", role:"admin",         av:"BV"},
+  "beheer@argex.be": {pw:"beheer2026",nm:"Beheerder",         fn:"Beheerder",               role:"admin",         av:"BE"},
+  "rachid.akdim@argex.be": {pw:"rachid2026", nm:"Rachid Akdim", fn:"Zifter", role:"medewerker", av:"RA"},
+  "ceyhan.arbil@argex.be": {pw:"ceyhan2026", nm:"Ceyhan Arbil", fn:"Onderhoudselectricien", role:"medewerker", av:"CA"},
+  "dominique.audin@argex.be": {pw:"dominique2026", nm:"Dominique Audin", fn:"Operator allround", role:"medewerker", av:"DA"},
+  "kris.augusteyns@argex.be": {pw:"kris2026", nm:"Kris Augusteyns", fn:"Sterhoek", role:"medewerker", av:"KA"},
+  "bart.blijweert@argex.be": {pw:"bart2026", nm:"Bart Blijweert", fn:"Operator allround", role:"medewerker", av:"BB"},
+  "abdelhak.charai@argex.be": {pw:"abdel-hak2026", nm:"Abdel-hak Charai", fn:"Ploegbaas productie", role:"leidinggevende", av:"AC"},
+  "abid.bouzambou@argex.be": {pw:"abid2026", nm:"Abid Bouzambou", fn:"Fieldcoach operations", role:"leidinggevende", av:"AB"},
+  "alejandro.compas@argex.be": {pw:"alejandro2026", nm:"Alejandro Compas", fn:"Zifter", role:"medewerker", av:"AC"},
+  "marc.caluwe@argex.be": {pw:"marc2026", nm:"Marc Caluwe", fn:"Medewerker cleaning", role:"medewerker", av:"MC"},
+  "walter.cant@argex.be": {pw:"walter2026", nm:"Walter Cant", fn:"Medewerker cleaning", role:"medewerker", av:"WC"},
+  "andy.osselaer@argex.be": {pw:"andy2026", nm:"Andy Van Osselaer", fn:"Operator allround", role:"medewerker", av:"AV"},
+  "ayad.aziz@argex.be": {pw:"ayad2026", nm:"Ayad Tatar Aziz", fn:"Operator allround", role:"medewerker", av:"AT"},
+  "bert.verbraeken@argex.be": {pw:"bert2026", nm:"Bert Verbraeken", fn:"Fieldcoach operations", role:"leidinggevende", av:"BV"},
+  "frederic.colman@argex.be": {pw:"frederic2026", nm:"Frederic Colman", fn:"", role:"medewerker", av:"FC"},
+  "billal.rajib@argex.be": {pw:"billal2026", nm:"Billal Rajib", fn:"Zifter", role:"medewerker", av:"BR"},
+  "franck.connor@argex.be": {pw:"franck2026", nm:"Franck connor", fn:"", role:"medewerker", av:"FC"},
+  "romario.backer@argex.be": {pw:"romario2026", nm:"Romario De Backer", fn:"Sterhoek", role:"medewerker", av:"RD"},
+  "petrus.block@argex.be": {pw:"petrus2026", nm:"Petrus De Block", fn:"Onderhoudsmecanicien", role:"medewerker", av:"PD"},
+  "dany.smet@argex.be": {pw:"dany2026", nm:"Dany Smet", fn:"Onderhoudsmecanicien", role:"medewerker", av:"DS"},
+  "david.boeckling@argex.be": {pw:"david2026", nm:"David Boeckling", fn:"Operator allround", role:"medewerker", av:"DB"},
+  "kenny.groot@argex.be": {pw:"kenny2026", nm:"Kenny De Groot", fn:"Operator allround", role:"medewerker", av:"KD"},
+  "mario.jonghe@argex.be": {pw:"mario2026", nm:"Mario De Jonghe", fn:"Medewerker Groeve", role:"medewerker", av:"MD"},
+  "guido.keersmaeker@argex.be": {pw:"guido2026", nm:"Guido De Keersmaeker", fn:"Medewerker belading", role:"medewerker", av:"GD"},
+  "franky.vermeulen@argex.be": {pw:"franky2026", nm:"Franky Vermeulen", fn:"Onderhoudsmecanicien", role:"medewerker", av:"FV"},
+  "johny.maeyer@argex.be": {pw:"johny2026", nm:"Johny De Maeyer", fn:"Medewerker belading", role:"medewerker", av:"JD"},
+  "mario.wilde@argex.be": {pw:"mario2026", nm:"Mario De Wilde", fn:"Medewerker belading", role:"medewerker", av:"MD"},
+  "geert.cleys@argex.be": {pw:"geert2026", nm:"Geert Cleys", fn:"Onderhoudsmecanicien", role:"medewerker", av:"GC"},
+  "hamid.diba@argex.be": {pw:"hamid2026", nm:"Hamid Diba", fn:"Zifter", role:"medewerker", av:"HD"},
+  "jeanpierre.keersmaeker@argex.be": {pw:"jean-pierre2026", nm:"Jean-Pierre De Keersmaeker", fn:"Operator allround", role:"medewerker", av:"JD"},
+  "johan.vercruyssen@argex.be": {pw:"johan2026", nm:"Johan Vercruyssen", fn:"Onderhoudsmecanicien", role:"medewerker", av:"JV"},
+  "johnny.felix@argex.be": {pw:"johnny2026", nm:"Johnny Felix", fn:"Ploegbaas productie", role:"leidinggevende", av:"JF"},
+  "yousef.assaf@argex.be": {pw:"yousef2026", nm:"Yousef Haij Assaf", fn:"Operator allround", role:"medewerker", av:"YH"},
+  "arthur.henkie@argex.be": {pw:"arthur2026", nm:"Arthur Henkie", fn:"Sterhoek_allround", role:"medewerker", av:"AH"},
+  "glenn.hens@argex.be": {pw:"glenn2026", nm:"Glenn Hens", fn:"Sterhoek_allround", role:"medewerker", av:"GH"},
+  "kenny.hens@argex.be": {pw:"kenny2026", nm:"Kenny Hens", fn:"Operator allround", role:"medewerker", av:"KH"},
+  "jurgen.grave@argex.be": {pw:"jurgen2026", nm:"Jurgen De Grave", fn:"Onderhoudselectricien", role:"medewerker", av:"JD"},
+  "irmgart.hooftman@argex.be": {pw:"irmgart2026", nm:"Irmgart Hooftman", fn:"Expeditie", role:"medewerker", av:"IH"},
+  "kjel.ivens@argex.be": {pw:"kjel2026", nm:"Kjel Ivens", fn:"Onderhoudsmecanicien", role:"medewerker", av:"KI"},
+  "abdelouahhab.jerroudi@argex.be": {pw:"abdelouahhab2026", nm:"Abdelouahhab Jerroudi", fn:"Medewerker Groeve", role:"medewerker", av:"AJ"},
+  "mehdi.jerroudi@argex.be": {pw:"mehdi2026", nm:"Mehdi Jerroudi", fn:"Medewerker Groeve", role:"medewerker", av:"MJ"},
+  "tom.marcelis@argex.be": {pw:"tom2026", nm:"Tom Marcelis", fn:"Medewerker rollend materieel", role:"medewerker", av:"TM"},
+  "kawar.ali@argex.be": {pw:"kawar2026", nm:"Kawar Musa Ali", fn:"Operator allround", role:"medewerker", av:"KM"},
+  "stefan.onghena@argex.be": {pw:"stefan2026", nm:"Stefan Onghena", fn:"Medewerker Belading", role:"medewerker", av:"SO"},
+  "kayne.capon@argex.be": {pw:"kayne2026", nm:"Kayne Capon", fn:"Zifter", role:"medewerker", av:"KC"},
+  "jarno.paternoster@argex.be": {pw:"jarno2026", nm:"Jarno Paternoster", fn:"Opzak", role:"medewerker", av:"JP"},
+  "kenny.vercauteren@argex.be": {pw:"kenny2026", nm:"Kenny Vercauteren", fn:"Ploegbaas productie", role:"leidinggevende", av:"KV"},
+  "mario.pelgrims@argex.be": {pw:"mario2026", nm:"Mario Pelgrims", fn:"Sterhoek", role:"medewerker", av:"MP"},
+  "johan.praet@argex.be": {pw:"johan2026", nm:"Johan Praet", fn:"Sterhoek", role:"medewerker", av:"JP"},
+  "khalil.shekri@argex.be": {pw:"khalil2026", nm:"Khalil Shekri", fn:"Operator allround", role:"medewerker", av:"KS"},
+  "gert.rotthier@argex.be": {pw:"gert2026", nm:"Gert Rotthier", fn:"Verantwoordelijke rollend materieel", role:"medewerker", av:"GR"},
+  "boris.saman@argex.be": {pw:"boris2026", nm:"Boris Saman", fn:"Medewerker Labo", role:"medewerker", av:"BS"},
+  "joost.schillemans@argex.be": {pw:"joost2026", nm:"Joost Schillemans", fn:"Sterhoek", role:"medewerker", av:"JS"},
+  "martine.schols@argex.be": {pw:"martine2026", nm:"Martine Schols", fn:"Medewerker cleaning", role:"medewerker", av:"MS"},
+  "guy.seghers@argex.be": {pw:"guy2026", nm:"Guy Seghers", fn:"Operator allround", role:"medewerker", av:"GS"},
+  "kovan.tondeleir@argex.be": {pw:"kovan2026", nm:"Kovan Tondeleir", fn:"Ploegbaas productie", role:"leidinggevende", av:"KT"},
+  "kristof.desmedt@argex.be": {pw:"kristof2026", nm:"Kristof Desmedt", fn:"Onderhoudselectricien", role:"medewerker", av:"KD"},
+  "jonathan.smeets@argex.be": {pw:"jonathan2026", nm:"Jonathan Smeets", fn:"Medewerker belading", role:"medewerker", av:"JS"},
+  "luis.gonzalez@argex.be": {pw:"luis2026", nm:"Luis Gonzalez", fn:"Onderhoudsmecanicien", role:"medewerker", av:"LG"},
+  "lucien.smet@argex.be": {pw:"lucien2026", nm:"Lucien Smet", fn:"Medewerker belading", role:"medewerker", av:"LS"},
+  "yves.spillemaeckers@argex.be": {pw:"yves2026", nm:"Yves Spillemaeckers", fn:"Fieldcoach groeve", role:"leidinggevende", av:"YS"},
+  "kasper.tassent@argex.be": {pw:"kasper2026", nm:"Kasper Tassent", fn:"Medewerker Labo", role:"medewerker", av:"KT"},
+  "malakzai.ziaullah@argex.be": {pw:"malakzai2026", nm:"Malakzai Ziaullah", fn:"Operator allround", role:"medewerker", av:"MZ"},
+  "maneebut.thanechot@argex.be": {pw:"maneebut2026", nm:"Maneebut Thanechot", fn:"Operator allround", role:"medewerker", av:"MT"},
+  "mohamed.fattah@argex.be": {pw:"mohamed2026", nm:"Mohamed Fattah", fn:"Operator allround", role:"medewerker", av:"MF"},
+  "zahir.topcu@argex.be": {pw:"zahir2026", nm:"Zahir Topcu", fn:"Operator allround", role:"medewerker", av:"ZT"},
+  "sandra.grootel@argex.be": {pw:"sandra2026", nm:"Sandra Van Grootel", fn:"Adm. Bediende Sterhoek", role:"medewerker", av:"SV"},
+  "nicholas.hermans@argex.be": {pw:"nicholas2026", nm:"Nicholas Hermans", fn:"Operator allround", role:"medewerker", av:"NH"},
+  "nickolay.brodelet@argex.be": {pw:"nickolay2026", nm:"Nickolay Brodelet", fn:"Operator allround", role:"medewerker", av:"NB"},
+  "filip.landeghem@argex.be": {pw:"filip2026", nm:"Filip Van Landeghem", fn:"Medewerker Groeve", role:"medewerker", av:"FV"},
+  "jasper.meiren@argex.be": {pw:"jasper2026", nm:"Jasper Van der Meiren", fn:"", role:"medewerker", av:"JV"},
+  "pascal.roeyen@argex.be": {pw:"pascal2026", nm:"Pascal Van Roeyen", fn:"Operator allround", role:"medewerker", av:"PV"},
+  "alain.raemdonck@argex.be": {pw:"alain2026", nm:"Alain Van Raemdonck", fn:"Medewerker belading", role:"medewerker", av:"AV"},
+  "kurt.raemdonck@argex.be": {pw:"kurt2026", nm:"Kurt Van Raemdonck", fn:"Sterhoek_allround", role:"medewerker", av:"KV"},
+  "peter.raemdonck@argex.be": {pw:"peter2026", nm:"Peter Van Raemdonck", fn:"Sterhoek", role:"medewerker", av:"PV"},
+  "hans.vanuytsel@argex.be": {pw:"hans2026", nm:"Hans Vanuytsel", fn:"Sterhoek_allround", role:"medewerker", av:"HV"},
+  "senne.penneman@argex.be": {pw:"senne2026", nm:"Senne Penneman", fn:"Onderhoudsmecanicien", role:"medewerker", av:"SP"},
+  "sonny.pagnon@argex.be": {pw:"sonny2026", nm:"Sonny Pagnon", fn:"Operator allround", role:"medewerker", av:"SP"},
+  "stef.paternoster@argex.be": {pw:"stef2026", nm:"Stef Paternoster", fn:"Opzak", role:"medewerker", av:"SP"},
+  "steven.kersschaver@argex.be": {pw:"steven2026", nm:"Steven Van Kersschaver", fn:"Verantwoordelijke onderhoud", role:"medewerker", av:"SV"},
+  "pauwel.vergauwen@argex.be": {pw:"pauwel2026", nm:"Pauwel Vergauwen", fn:"Ploegbaas Belading", role:"leidinggevende", av:"PV"},
+  "tom.vercauteren@argex.be": {pw:"tom2026", nm:"Tom Vercauteren", fn:"Onderhoudselectricien", role:"medewerker", av:"TV"},
+  "dries.vernimmen@argex.be": {pw:"dries2026", nm:"Dries Vernimmen", fn:"Project Ingenieur Sterhoek", role:"medewerker", av:"DV"},
+  "nele.vervynckt@argex.be": {pw:"nele2026", nm:"Nele Vervynckt", fn:"Verantwoordelijke Labo", role:"medewerker", av:"NV"},
+  "tony.heue@argex.be": {pw:"tony2026", nm:"Tony Van Heue", fn:"Zifter", role:"medewerker", av:"TV"},
+  "wesley.cock@argex.be": {pw:"wesley2026", nm:"Wesley De Cock", fn:"Onderhoudsmecanicien", role:"medewerker", av:"WD"},
+  "zirivan.shukri@argex.be": {pw:"zirivan2026", nm:"Zirivan Shukri", fn:"Operator allround", role:"medewerker", av:"ZS"},
+  "legende@argex.be": {pw:"legende2026", nm:"Legende", fn:"Vrij dringend opleiding inplannen", role:"medewerker", av:"L"},
+  "opleidingen.hebben.@argex.be": {pw:"opleidingen2026", nm:"Opleidingen inplannen: Op 02/01/2024 zal ik via het sectorfonds een opleiding BA4 inplannen voor diegene die dit nog niet hebben.", fn:"", role:"medewerker", av:"OI"},
+  "david,.mentoropleiding:@argex.be": {pw:"david,2026", nm:"David, Pascal, Abdel en Kenny Vercauteren Mentoropleiding:", fn:"1 en 28/09, telkens vanaf 8u op het hoofdkantoor", role:"medewerker", av:"DP"},
+  "die.04/01/2024@argex.be": {pw:"die2026", nm:"Die van eenvoudige asbesthandelingen staat ingepland op donderdag 04/01/2024", fn:"", role:"medewerker", av:"DV"},
+  "logistieke.13/10.@argex.be": {pw:"logistieke2026", nm:"logistieke opleidingen starten op 21/08 en de laatste dag is 13/10.", fn:"", role:"medewerker", av:"LO"},
+  "ehbo:.heeft.@argex.be": {pw:"ehbo:2026", nm:"EHBO: maart 2024 gaat iedereen nog een opfrissingscursus krijgen, zodat iedereen dezelfde geldigheidsdatum heeft.", fn:"", role:"medewerker", av:"EM"},
+  "in.worden.@argex.be": {pw:"in2026", nm:"In elke ploeg moet een nijverheidshelper zitten - dit moet nog bekeken worden.", fn:"", role:"medewerker", av:"IE"},
 };
+
+// Backwards compat login-check
+const USERS = ALL_USERS;
+
+
+// ─── ONBOARDING ───────────────────────────────────────────────────────────────
+const ONBOARDING_STAPPEN = {
+  medewerker: [
+    {id:"welkom",   ico:"🏭",tit:"Welkom bij Argex",        desc:"Maak kennis met Argex en het veiligheidsbeleid."},
+    {id:"regels",   ico:"📜",tit:"Huisregels & PBM's",      desc:"Verplichte regels en persoonlijke beschermingsmiddelen."},
+    {id:"gevaren",  ico:"⚠️",tit:"Gevaren op de site",       desc:"De 3 grote risico's: groeve, ovens en machines."},
+    {id:"noodplan", ico:"🚨",tit:"Noodplan & evacuatie",     desc:"Noodnummers, verzamelplaats en scenario's."},
+    {id:"lmra",     ico:"🧠",tit:"LMRA — STOP THINK GO",    desc:"Vóór elke risicovolle taak een LMRA uitvoeren."},
+    {id:"toolbox",  ico:"🎬",tit:"Introductietoolbox",       desc:"Verplichte toolbox volgen en ondertekenen."},
+    {id:"quiz",     ico:"✅",tit:"Kennisquiz",               desc:"5 vragen om de onboarding af te ronden."},
+  ],
+  extern: [
+    {id:"welkom",   ico:"🏭",tit:"Welkom bij Argex (extern)",desc:"Veiligheidsregels voor externen en bezoekers."},
+    {id:"regels",   ico:"📜",tit:"Toegangsregels & PBM's",  desc:"Verplichte PBM's en registratie bij aankomst."},
+    {id:"gevaren",  ico:"⚠️",tit:"Gevaren op de site",       desc:"Gevaarlijke zones — niet alleen betreden."},
+    {id:"noodplan", ico:"🚨",tit:"Noodplan & nummers",       desc:"Noodnummers en verzamelplaats parking bedienden."},
+    {id:"quiz",     ico:"✅",tit:"Bevestiging",              desc:"Regels bevestigen met digitale handtekening."},
+  ],
+};
+
+const ONBOARDING_QUIZ = [
+  {v:"Wat doe je EERST bij een incident met de oven?",       opts:["Doorwerken","Noodstop activeren","Foto nemen","Wachten"],                   juist:1},
+  {v:"Welk stofmasker is verplicht in de stofzones?",        opts:["Gewoon mondmasker","FFP1","FFP3 of P3","Geen masker nodig"],                juist:2},
+  {v:"Wat betekent LOTOTO?",                                 opts:["Lock Out Tag Out Try Out","Light Off Turn Off","Load On Take Over","Lassen Op Termijn"], juist:0},
+  {v:"Waar ga je naartoe bij evacuatie?",                    opts:["Kantine","De groeve","Parking bedienden (overzijde straat)","Receptie"],    juist:2},
+  {v:"Hoe meld je een gevaarlijke situatie?",                opts:["Niets doen","Enkel mondeling","Via app + leidinggevende","Per brief"],       juist:2},
+];
+
+function Onboarding({user, onComplete}){
+  const type = user.role === "aannemer" ? "extern" : "medewerker";
+  const stappen = ONBOARDING_STAPPEN[type];
+  const [stap, setStap] = useState(0);
+  const [gedaan, setGedaan] = useState({});
+  const [naam, setNaam] = useState("");
+  const [antw, setAntw] = useState({});
+  const [quizDone, setQuizDone] = useState(false);
+  const h = stappen[stap];
+  const score = Object.entries(antw).filter(([i,a])=>ONBOARDING_QUIZ[+i]?.juist===a).length;
+  const bevestig = () => {
+    setGedaan(p=>({...p,[h.id]:true}));
+    if(stap < stappen.length-1) setStap(s=>s+1);
+  };
+
+  return (
+    <div style={{minHeight:"100vh",background:C.bg}}>
+      <div style={{background:`linear-gradient(90deg,${C.clayDp},${C.clay})`,padding:"0 20px",height:54,display:"flex",alignItems:"center",gap:12}}>
+        <Logo sz={30}/>
+        <div>
+          <div style={{fontSize:14,fontWeight:800,color:C.white}}>Argex Safety</div>
+          <div style={{fontSize:11,color:"rgba(255,255,255,.7)"}}>Onboarding — Welkom, {user.nm.split(" ")[0]}</div>
+        </div>
+      </div>
+      <div style={{maxWidth:560,margin:"0 auto",padding:"24px 20px"}}>
+        {/* Voortgang */}
+        <div style={{marginBottom:20}}>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:12,color:C.g500,marginBottom:5}}>
+            <span>Stap {stap+1} van {stappen.length}</span>
+            <span style={{color:C.clay,fontWeight:700}}>{Math.round((Object.keys(gedaan).length/stappen.length)*100)}%</span>
+          </div>
+          <div style={{height:8,background:"#E8D0C0",borderRadius:4,overflow:"hidden"}}>
+            <div style={{height:"100%",width:`${(Object.keys(gedaan).length/stappen.length)*100}%`,background:`linear-gradient(90deg,${C.clayD},${C.clay})`,transition:"width .4s",borderRadius:4}}/>
+          </div>
+          <div style={{display:"flex",gap:5,marginTop:8}}>
+            {stappen.map((s,i)=>(
+              <div key={s.id} style={{flex:1,display:"flex",flexDirection:"column",alignItems:"center",gap:2}}>
+                <div style={{width:22,height:22,borderRadius:"50%",background:gedaan[s.id]?C.clay:i===stap?C.clayL:C.white,border:`2px solid ${gedaan[s.id]?C.clay:i===stap?C.clay:C.g300}`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:10,fontWeight:800,color:gedaan[s.id]?C.white:i===stap?C.clay:C.g300}}>{gedaan[s.id]?"✓":i+1}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Card>
+          <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:16,paddingBottom:12,borderBottom:`1px solid ${C.g100}`}}>
+            <div style={{width:46,height:46,borderRadius:12,background:C.clayL,display:"flex",alignItems:"center",justifyContent:"center",fontSize:22}}>{h.ico}</div>
+            <div>
+              <div style={{fontSize:16,fontWeight:800,color:C.g900}}>{h.tit}</div>
+              <div style={{fontSize:12,color:C.g500,marginTop:2}}>{h.desc}</div>
+            </div>
+          </div>
+
+          {/* WELKOM */}
+          {h.id==="welkom"&&(
+            <div>
+              <div style={{background:C.clayL,borderRadius:10,padding:14,marginBottom:14,border:`1px solid ${C.clay}33`}}>
+                <div style={{fontSize:14,fontWeight:800,color:C.clayD,marginBottom:8}}>Argex NV — Geëxpandeerde kleikorrels</div>
+                <div style={{fontSize:13,color:C.g700,lineHeight:1.7}}>
+                  Argex maakt geëxpandeerde kleikorrels op de site te Burcht/Zwijndrecht. We werken met grote hoeveelheden klei, hoge temperaturen en zware machines. <strong>Veiligheid staat altijd op de eerste plaats.</strong>
+                </div>
+              </div>
+              {type==="extern"&&<div style={{background:C.amberL,borderRadius:8,padding:12,marginBottom:14,border:`1px solid ${C.amber}44`,fontSize:13,color:C.g700}}>
+                <strong>Externen:</strong> Meld je steeds aan bij receptie · Betreed geen zones zonder begeleiding · Volg altijd de instructies van de leidinggevende.
+              </div>}
+              <Btn onClick={bevestig}>Laten we beginnen! →</Btn>
+            </div>
+          )}
+
+          {/* REGELS */}
+          {h.id==="regels"&&(
+            <div>
+              <div style={{background:C.g50,borderRadius:9,padding:14,fontSize:13,color:C.g700,lineHeight:1.8,marginBottom:14,maxHeight:200,overflowY:"auto",border:`1px solid ${C.g100}`}}>
+                <div style={{fontWeight:800,color:C.g900,marginBottom:8}}>Argex — Huisregels</div>
+                {["Draag altijd de verplichte PBM's in aangewezen zones (helm, bril, handschoenen, veiligheidsschoenen).",
+                  "Meld elk incident, hoe klein ook, onmiddellijk aan je leidinggevende of via de app.",
+                  "LMRA uitvoeren vóór elke risicovolle taak.",
+                  "LOTOTO verplicht bij elk onderhoud aan machines en transportbanden.",
+                  "Geen GSM bij het bedienen van machines of rijden met heftruck.",
+                  "Roken uitsluitend in de aangeduide rookzone — VERBODEN bij bruinkool, gasflessen en ATEX-zones.",
+                  "Veiligheidsschoenen S3 verplicht voor iedereen die de productiezone betreedt.",
+                  "FFP3/P3-stofmasker verplicht in alle stofzones (kleikorrelstof = kristallijn silica = silicose risico).",
+                  "Bij twijfel: STOP het werk en vraag advies aan leidinggevende of preventieadviseur.",
+                ].map((r,i)=><div key={i} style={{paddingBottom:5,borderBottom:i<8?`1px solid ${C.g100}`:"none"}}>{i+1}. {r}</div>)}
+              </div>
+              <Inp label="Digitale handtekening — typ je volledige naam" value={naam} onChange={setNaam} placeholder="Volledige naam"/>
+              <Btn onClick={bevestig} disabled={naam.trim().length<3}>✅ Ik bevestig de huisregels gelezen en begrepen te hebben</Btn>
+            </div>
+          )}
+
+          {/* GEVAREN */}
+          {h.id==="gevaren"&&(
+            <div>
+              {[
+                {ico:"⛏",tit:"Groeve",     klr:C.earth,  txt:"Instortingsgevaar, talud, voertuigen. Altijd LMRA. Valharnas bij kanten."},
+                {ico:"🔥",tit:"Ovens",      klr:C.red,    txt:"Hoge temperaturen, draaiende delen. LOTOTO verplicht bij onderhoud."},
+                {ico:"⚙️",tit:"Machines",   klr:C.clay,   txt:"Beknelling, transportbanden, ATEX stof. LOTOTO + noodstop kennen."},
+                {ico:"☢️",tit:"Straling",   klr:C.blue,   txt:"Densiteitsmeter = ioniserende straling. Kettingen NIET verplaatsen."},
+                {ico:"🌫️",tit:"Stof/ATEX",  klr:"#78909C",txt:"Kristallijn silica + bruinkoolstof. FFP3-masker. Geen perslucht!"},
+              ].map(g=>(
+                <div key={g.tit} style={{display:"flex",gap:12,alignItems:"center",padding:"10px 12px",borderRadius:8,background:g.klr+"12",border:`1px solid ${g.klr}33`,marginBottom:8}}>
+                  <span style={{fontSize:24,flexShrink:0}}>{g.ico}</span>
+                  <div><div style={{fontSize:13,fontWeight:700,color:g.klr}}>{g.tit}</div><div style={{fontSize:12,color:C.g700}}>{g.txt}</div></div>
+                </div>
+              ))}
+              <Btn onClick={bevestig} style={{marginTop:8}}>✅ Gevaren begrepen →</Btn>
+            </div>
+          )}
+
+          {/* NOODPLAN */}
+          {h.id==="noodplan"&&(
+            <div>
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:14}}>
+                {[["112","Hulpdiensten",C.red],["03/250.15.15","Receptie",C.clay],["0497/51.50.95","Meldkamer",C.clayD],["0473/77.99.86","Ploegbaas nacht",C.earth]].map(([n,l,col])=>(
+                  <div key={n} style={{background:col+"15",borderRadius:8,padding:"10px",textAlign:"center",border:`1px solid ${col}33`}}>
+                    <div style={{fontSize:10,fontWeight:700,color:col,textTransform:"uppercase"}}>{l}</div>
+                    <div style={{fontSize:16,fontWeight:900,color:col}}>{n}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{background:C.clayL,borderRadius:8,padding:"10px 14px",fontSize:13,color:C.clayD,fontWeight:600,marginBottom:14}}>
+                📍 Verzamelplaats: <strong>Parking bedienden</strong> (overzijde straat)
+              </div>
+              <Btn onClick={bevestig}>✅ Noodplan begrepen →</Btn>
+            </div>
+          )}
+
+          {/* LMRA */}
+          {h.id==="lmra"&&(
+            <div>
+              {[["🔴","STOP","Ken je taak en de aanwezige risico's vóór je start."],
+                ["🟡","THINK","Controleer: werkvergunning, PBM's, LOTOTO, nooduitgangen, collega's verwittigd?"],
+                ["🟢","GO","Kan ik veilig werken? JA → start. NEEN → stop en meld aan leidinggevende."],
+              ].map(([ico,stap,txt])=>(
+                <div key={stap} style={{display:"flex",gap:14,alignItems:"center",padding:"12px 14px",borderRadius:10,background:C.g50,marginBottom:10,border:`1px solid ${C.g100}`}}>
+                  <div style={{fontSize:28,flexShrink:0}}>{ico}</div>
+                  <div><div style={{fontSize:16,fontWeight:900,color:C.g900}}>{stap}</div><div style={{fontSize:13,color:C.g700,marginTop:2}}>{txt}</div></div>
+                </div>
+              ))}
+              <div style={{background:C.clayL,borderRadius:8,padding:"10px 14px",fontSize:13,color:C.clayD,fontWeight:600,marginBottom:14}}>
+                💬 "Als het niet veilig kan, dan doen we het niet!" — H2O Group
+              </div>
+              <Btn onClick={bevestig}>✅ LMRA begrepen →</Btn>
+            </div>
+          )}
+
+          {/* TOOLBOX */}
+          {h.id==="toolbox"&&(
+            <div>
+              <div style={{background:C.g50,borderRadius:9,padding:14,marginBottom:14,border:`1px solid ${C.g100}`}}>
+                <div style={{fontWeight:800,color:C.g900,marginBottom:10}}>🎬 Introductietoolbox Argex</div>
+                {["Argex-site overzicht: zones en signalisatie","PBM's verplicht per zone","Groeve, ovens, machines — de 3 grote risico's",
+                  "LMRA: STOP–THINK–GO","Stofblootstelling en silicose","Incidenten melden via Argex Safety app"].map((p,i)=>(
+                  <div key={i} style={{fontSize:13,color:C.g700,paddingBottom:6,borderBottom:i<5?`1px solid ${C.g100}`:"none"}}>{i+1}. {p}</div>
+                ))}
+              </div>
+              <Inp label="Naam (digitale handtekening toolbox)" value={naam} onChange={setNaam} placeholder="Volledige naam"/>
+              <Btn onClick={bevestig} disabled={naam.trim().length<3}>✍ Toolbox gevolgd & ondertekend</Btn>
+            </div>
+          )}
+
+          {/* QUIZ */}
+          {h.id==="quiz"&&!quizDone&&(
+            <div>
+              {ONBOARDING_QUIZ.slice(0, type==="extern"?3:5).map((q,i)=>(
+                <div key={i} style={{marginBottom:16}}>
+                  <div style={{fontSize:13,fontWeight:700,color:C.g900,marginBottom:8}}>{i+1}. {q.v}</div>
+                  {q.opts.map((o,j)=>(
+                    <div key={j} onClick={()=>setAntw(p=>({...p,[i]:j}))}
+                      style={{padding:"9px 13px",borderRadius:7,cursor:"pointer",fontSize:13,marginBottom:5,background:antw[i]===j?C.clayL:C.g50,border:`1.5px solid ${antw[i]===j?C.clay:C.g300}`,color:antw[i]===j?C.clayD:C.g700,fontWeight:antw[i]===j?700:400}}>
+                      {["A","B","C","D"][j]}. {o}
+                    </div>
+                  ))}
+                </div>
+              ))}
+              <Btn onClick={()=>setQuizDone(true)} disabled={Object.keys(antw).length<(type==="extern"?3:5)}>📊 Resultaat bekijken</Btn>
+            </div>
+          )}
+
+          {/* QUIZ RESULTAAT */}
+          {h.id==="quiz"&&quizDone&&(
+            <div style={{textAlign:"center",padding:"12px 0"}}>
+              <div style={{fontSize:32,marginBottom:8}}>{score>=(type==="extern"?2:4)?""🏆"":"😅"}</div>
+              <div style={{fontSize:26,fontWeight:900,color:score>=(type==="extern"?2:4)?C.clay:C.amber,marginBottom:8}}>{score}/{type==="extern"?3:5} correct</div>
+              <div style={{fontSize:14,color:C.g500,marginBottom:20}}>
+                {score>=(type==="extern"?2:4)?`Uitstekend! Welkom bij Argex, ${user.nm.split(" ")[0]}!`:"Bekijk de huisregels en het noodplan nog eens aandachtig."}
+              </div>
+              {score>=(type==="extern"?2:4)
+                ? <Btn onClick={onComplete}>🚀 Aan de slag! →</Btn>
+                : <Btn variant="ghost" onClick={()=>{setQuizDone(false);setAntw({});}}>🔄 Quiz opnieuw</Btn>}
+            </div>
+          )}
+
+          {/* EXTERN QUIZ / BEVESTIGING */}
+          {h.id==="quiz"&&type==="extern"&&!quizDone&&h.tit==="Bevestiging"&&(
+            <div>
+              <Inp label="Naam (digitale handtekening)" value={naam} onChange={setNaam} placeholder="Volledige naam"/>
+              <Btn onClick={()=>{setQuizDone(true);onComplete();}} disabled={naam.trim().length<3}>✅ Ik bevestig de veiligheidsregels gelezen te hebben</Btn>
+            </div>
+          )}
+        </Card>
+      </div>
+    </div>
+  );
+}
 
 function Login({onLogin}){
   const [email,setEmail]=useState(""); const [pw,setPw]=useState(""); const [err,setErr]=useState("");
@@ -407,7 +799,7 @@ function Login({onLogin}){
           <Btn onClick={go}>Aanmelden →</Btn>
           <div style={{marginTop:18,borderTop:`1px solid ${C.g100}`,paddingTop:14}}>
             <div style={{fontSize:11,fontWeight:700,color:C.g500,letterSpacing:".08em",textTransform:"uppercase",marginBottom:8}}>Demo logins</div>
-            {[["admin@argex.be","admin2026","Admin"],["chef@argex.be","chef2026","Leidinggevende"],["werk@argex.be","werk2026","Medewerker"]].map(([e,p,r])=>(
+            {[["admin@argex.be","admin2026","Admin"],["abdel-hak.charai@argex.be","abdel-hak2026","Leidinggevende"],["rachid.akdim@argex.be","rachid2026","Medewerker"],["beheer@argex.be","beheer2026","Beheer"]].map(([e,p,r])=>(
               <div key={e} onClick={()=>{setEmail(e);setPw(p);}} style={{display:"flex",justifyContent:"space-between",padding:"8px 10px",borderRadius:7,marginBottom:4,cursor:"pointer",border:`1px solid ${C.clay}22`,background:email===e?C.clayL:"#fafafa",fontSize:12,color:C.g700}}>
                 <span>{e}</span><Tag label={r} color={C.clay}/>
               </div>
@@ -801,8 +1193,9 @@ function Bibliotheek(){
   const [cat,setCat]=useState("Alles");
   const [zoek,setZoek]=useState("");
   const [sel,setSel]=useState(null);
-  const cats=["Alles","Procedure","VIK"];
-  const icons={Procedure:"📋",VIK:"🛡","Alles":"📚"};
+  const cats=["Alles","Procedure","VIK","QHSE"];
+  const icons={Procedure:"📋",VIK:"🛡",QHSE:"📘","Alles":"📚"};
+  const catKleur={Procedure:C.clay,VIK:C.earth,QHSE:C.blue,"Alles":C.g500};
 
   const gef=PR.filter(d=>{
     if(cat!=="Alles"&&d.ca!==cat) return false;
@@ -858,8 +1251,8 @@ function Bibliotheek(){
     <div className="fu">
       <SH sub={`${PR.length} documenten`}>Documentenbibliotheek</SH>
       <div style={{display:"flex",gap:6,marginBottom:12,flexWrap:"wrap"}}>
-        {cats.map(c=>(
-          <button key={c} onClick={()=>setCat(c)} style={{padding:"6px 14px",borderRadius:20,border:`1.5px solid ${cat===c?C.clay:C.g300}`,background:cat===c?C.clay:"transparent",color:cat===c?C.white:C.g500,fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>{c}</button>
+        {cats.map(cc=>(
+          <button key={cc} onClick={()=>setCat(cc)} style={{padding:"6px 14px",borderRadius:20,border:`1.5px solid ${cat===cc?(catKleur[cc]||C.clay):C.g300}`,background:cat===cc?(catKleur[cc]||C.clay):"transparent",color:cat===cc?C.white:C.g500,fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>{cc}</button>
         ))}
       </div>
       <input value={zoek} onChange={e=>setZoek(e.target.value)} placeholder="Zoeken..." style={{width:"100%",border:`1.5px solid ${C.g300}`,borderRadius:7,padding:"9px 12px",fontSize:13,marginBottom:12}}/>
@@ -867,7 +1260,7 @@ function Bibliotheek(){
         <Card key={d.id} className="rh" onClick={()=>setSel(d.id)} style={{marginBottom:7,cursor:"pointer"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
             <div>
-              <div style={{display:"flex",gap:6,alignItems:"center",marginBottom:4}}><Tag label={d.ca}/></div>
+              <div style={{display:"flex",gap:6,alignItems:"center",marginBottom:4}}><Tag label={d.ca} color={catKleur[d.ca]||C.clay}/></div>
               <div style={{fontSize:14,fontWeight:700,color:C.g900}}>{d.ti}</div>
               <div style={{display:"flex",gap:4,flexWrap:"wrap",marginTop:5}}>{d.tg.slice(0,3).map(t=><Tag key={t} label={t} color={C.earth}/>)}</div>
             </div>
@@ -1063,7 +1456,7 @@ function Beheer(){
 
       {/* Tabs */}
       <div style={{display:"flex",gap:6,marginBottom:16,flexWrap:"wrap"}}>
-        {[["attesten","📊 Attesten"],["ehbo","🩺 EHBO-nummers"],["info","ℹ️ Info"]].map(([k,l])=>(
+        {[["attesten","📊 Attesten"],["logins","🔑 Logins"],["ehbo","🩺 EHBO-nummers"],["info","ℹ️ Info"]].map(([k,l])=>(
           <button key={k} onClick={()=>setTab(k)} style={{padding:"8px 16px",borderRadius:20,border:`1.5px solid ${tab===k?C.clay:C.g300}`,background:tab===k?C.clay:"transparent",color:tab===k?C.white:C.g500,fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>{l}</button>
         ))}
       </div>
@@ -1125,6 +1518,33 @@ function Beheer(){
         </>
       )}
 
+      {tab==="logins"&&(
+        <>
+          <div style={{background:C.amberL,border:`1px solid ${C.amber}44`,borderRadius:8,padding:"10px 14px",marginBottom:14,fontSize:12,color:C.amber,fontWeight:600}}>
+            🔑 Alle logins — email = voornaam.achternaam@argex.be · wachtwoord = voornaam + 2026
+          </div>
+          <input value={zoek} onChange={e=>setZoek(e.target.value)} placeholder="Zoek medewerker..." style={{width:"100%",border:`1.5px solid ${C.g300}`,borderRadius:7,padding:"9px 12px",fontSize:13,marginBottom:12}}/>
+          <div style={{fontSize:11,color:C.g400,marginBottom:8}}>{Object.entries(ALL_USERS).filter(([e,u])=>zoek===''||u.nm.toLowerCase().includes(zoek.toLowerCase())).length} accounts</div>
+          <div style={{maxHeight:500,overflowY:"auto"}}>
+          {Object.entries(ALL_USERS)
+            .filter(([e,u])=>zoek===''||u.nm.toLowerCase().includes(zoek.toLowerCase()))
+            .map(([email,u])=>(
+              <div key={email} style={{display:"flex",gap:10,alignItems:"center",background:C.white,borderRadius:7,padding:"8px 12px",marginBottom:5,border:`1px solid ${C.g100}`}}>
+                <div style={{width:30,height:30,borderRadius:"50%",background:C.clay+"20",display:"flex",alignItems:"center",justifyContent:"center",fontSize:10,fontWeight:700,color:C.clay,flexShrink:0}}>{u.av}</div>
+                <div style={{flex:1}}>
+                  <div style={{fontSize:12,fontWeight:700,color:C.g900}}>{u.nm}</div>
+                  <div style={{fontSize:11,color:C.g500}}>{email}</div>
+                </div>
+                <div style={{textAlign:"right"}}>
+                  <div style={{fontSize:11,color:C.g600,fontFamily:"monospace"}}>{u.pw}</div>
+                  <Tag label={u.role} color={u.role==="admin"?C.red:u.role==="leidinggevende"?C.amber:C.green}/>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
       {tab==="ehbo"&&(
         <>
           <div style={{background:C.amberL,border:`1px solid ${C.amber}44`,borderRadius:8,padding:"10px 14px",marginBottom:14,fontSize:12,color:C.amber,fontWeight:600}}>
@@ -1176,14 +1596,15 @@ function Beheer(){
 }
 
 // ─── NAVIGATIE ────────────────────────────────────────────────────────────────
+const ALLE_ROLES=["admin","leidinggevende","medewerker","aannemer"];
 const NAV=[
-  {id:"dashboard",  ico:"⊞", lbl:"Home",     roles:["admin","leidinggevende","medewerker"]},
-  {id:"toolboxen",  ico:"🎬", lbl:"Toolbox",  roles:["admin","leidinggevende","medewerker"]},
+  {id:"dashboard",  ico:"⊞", lbl:"Home",     roles:ALLE_ROLES},
+  {id:"toolboxen",  ico:"🎬", lbl:"Toolbox",  roles:ALLE_ROLES},
   {id:"opleidingen",ico:"🎓", lbl:"Opleiding",roles:["admin","leidinggevende","medewerker"]},
-  {id:"bibliotheek",ico:"📚", lbl:"Procedure",roles:["admin","leidinggevende","medewerker"]},
-  {id:"contacten",  ico:"🩺", lbl:"EHBO",     roles:["admin","leidinggevende","medewerker"]},
-  {id:"noodplan",   ico:"🚨", lbl:"Noodplan", roles:["admin","leidinggevende","medewerker"]},
-  {id:"incidenten", ico:"⚠️", lbl:"Incident", roles:["admin","leidinggevende","medewerker"]},
+  {id:"bibliotheek",ico:"📚", lbl:"Procedure",roles:ALLE_ROLES},
+  {id:"contacten",  ico:"🩺", lbl:"EHBO",     roles:ALLE_ROLES},
+  {id:"noodplan",   ico:"🚨", lbl:"Noodplan", roles:ALLE_ROLES},
+  {id:"incidenten", ico:"⚠️", lbl:"Incident", roles:ALLE_ROLES},
   {id:"comite",     ico:"📋", lbl:"CPBW",     roles:["admin","leidinggevende"]},
   {id:"beheer",     ico:"🔧", lbl:"Beheer",   roles:["admin"]},
 ];
@@ -1244,12 +1665,15 @@ function MainApp({user,onLogout}){
 // ─── ROOT ─────────────────────────────────────────────────────────────────────
 export default function App(){
   const [user,setUser]=useState(null);
+  const [obDone,setObDone]=useState(false);
   return(
     <>
       <style>{css}</style>
       {!user
-        ? <Login onLogin={u=>setUser(u)}/>
-        : <MainApp user={user} onLogout={()=>setUser(null)}/>
+        ? <Login onLogin={u=>{setUser(u);setObDone(!!localStorage?.getItem?.("ob_"+u.nm));}}/>
+        : !obDone
+        ? <Onboarding user={user} onComplete={()=>{try{localStorage?.setItem?.("ob_"+user.nm,"1")}catch(e){}setObDone(true);}}/>
+        : <MainApp user={user} onLogout={()=>{setUser(null);setObDone(false);}}/>
       }
     </>
   );
